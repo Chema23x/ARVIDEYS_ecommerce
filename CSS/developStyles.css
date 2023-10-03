@@ -5,9 +5,21 @@
     width: 10%;
     object-fit: contain;
     margin-right: 20px;
+    padding-bottom: 10%;
 }
 #LinkedIn{
     width: 8.5%;
     object-fit: contain;
     margin-left: 20px;
+}
+
+.promo{
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+*{
+    font-family: 'Molengo';
 }
