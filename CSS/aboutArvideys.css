@@ -1,0 +1,37 @@
+
+.titlesAboutUs{
+    font-family: 'Molengo';
+    text-align: center;
+}
+.descripcion-Arvi{
+    font-family: 'Molengo';
+    text-align: justify;
+    margin-bottom: 50px;
+}
+.row{
+    align-content: center;
+    text-align: center;
+    }
+.descuento {
+    width: 400px;
+    height: 150px;
+    background-color: #f7e1ae;
+    border: 1px solid #ccc;
+    position: sticky;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    align-items:center ;
+    margin-top: 100px;
+  }
+
+input{
+    border-radius: 10px;
+    text-align: center;
+
+}
+.registro button{
+    border-radius: 10px;
+
+}
