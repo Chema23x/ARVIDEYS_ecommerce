@@ -3,9 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./CSS/home.css">
+    <title>Home</title>
 </head>
 <body>
-    
+    <nav  class="navbar navbar-expand-lg">
+        <div  class="container-fluid">
+          <a class="navbar-brand" href="./index.html">
+            <img id="logo" src="./ASSETS/IMG/logo.png" alt="Logo">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+         
+          <div  class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            
+            <div class="input-wrapper">
+                <button class="icon"> 
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="25px" width="25px">
+                    <path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" stroke="#fff" d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z"></path>
+                    <path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" stroke="#fff" d="M22 22L20 20"></path>
+                  </svg>
+                </button>
+                <input placeholder="search.." class="input" name="text" type="text">
+              </div>
+                
+                <ul id="menu" class="navbar-nav ml-auto ms-3 float-end">
+                    <li class="nav-item dropdown">
+                        <a href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img class="icons" src="./ASSETS/ICON/menu-hamburguesa.png" alt="menu-hamburguesa">
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">MUJER</a></li>
+                            <li><a class="dropdown-item" href="#">HOMBRE</a></li>
+                            <li><a class="dropdown-item" href="#">NIÑOS</a></li>
+                            <li><a class="dropdown-item" href="#">DESCUENTOS</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">CONTACTO</a></li>
+                            <li><a class="dropdown-item" href="#">AYUDA/FAQ</a></li>
+                            <li><a class="dropdown-item" href="#">+INFO</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <li class="navbar-nav">
+                <a class="nav-link" href="./HTML/Perfil.html"><img id="perfil" src="./ASSETS/ICON/perfil.png" alt="profile"></i></a>
+            </li>
+            <li class="navbar-nav">
+                <a class="nav-link" href="./HTML/Perfil.html"><img class="icons" src="./ASSETS/ICON/carrito-de-compras.png" alt="carrito"></i></a>
+            </li>
+
+            
+          </div>
+        </div>
+      </nav>
+      
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
