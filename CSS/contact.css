@@ -1,0 +1,79 @@
+body {
+    background-color: #f0f0f0;
+}
+
+.titlesContact{
+    font-family: 'Molengo', sans-serif;
+    text-align: center;
+}
+
+#generalShop{
+    justify-content: center;
+    font-family: 'Raleway', sans-serif;
+}
+
+#shopContainer{
+    background-color:#A4D0A4;
+    box-shadow: 0px 0px 10px 0px rgba(221, 12, 12, 0.1);
+    text-align: center;
+    border-radius: 10px;
+    margin: 5px 5px 5px 5px ;
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.card-img{
+    height: 250px;
+    width: 250px;
+}
+
+.inputContact {
+    display: flex;
+    justify-content: center;
+}
+
+.tarjeta {
+    background-color: white;
+    box-shadow: 0px 0px 10px 0px rgba(221, 12, 12, 0.1);
+    padding: 10px;
+    border: 1px solid #A4D0A4;
+    border-radius: 10px;
+    margin: 25px;
+    width: 90%;
+    display: inline-block;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+    font-family: 'Raleway', sans-serif;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #A4D0A4;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #A4D0A4;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #617A55;
+}
