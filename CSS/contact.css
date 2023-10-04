@@ -5,9 +5,28 @@ body {
 .titlesContact{
     font-family: 'Molengo', sans-serif;
     text-align: center;
+    padding-top: 10px;
 }
 
-#generalShop{
+.container{
+    justify-content: center;
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#shopCard{
+    flex-grow: 1;
+    flex-basis: 200;
+    background-color: #A4D0A4;
+    border: 1px solid #617A55;
+    border-radius: 20px;
+    margin: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+/* #generalShop{
     justify-content: center;
     font-family: 'Raleway', sans-serif;
 }
@@ -17,15 +36,27 @@ body {
     box-shadow: 0px 0px 10px 0px rgba(221, 12, 12, 0.1);
     text-align: center;
     border-radius: 10px;
-    margin: 5px 5px 5px 5px ;
+    margin: 5px;
     padding: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
+} */
+
+#jShop, #sdShop, #uhShop{
+    border-radius: 20px;
+
 }
 
 .card-img{
-    height: 250px;
-    width: 250px;
+    height: 200px;
+    width: 200px;
+    /* border-top-left-radius: 20px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 15px; */
+    /* object-fit: cover; */
+    padding: 10px;
+
 }
 
 .inputContact {
@@ -34,15 +65,15 @@ body {
 }
 
 .tarjeta {
-    background-color: white;
+    background-color:#ffffff;
     box-shadow: 0px 0px 10px 0px rgba(221, 12, 12, 0.1);
     padding: 10px;
-    border: 1px solid #A4D0A4;
-    border-radius: 10px;
-    margin: 25px;
-    width: 90%;
+    border: 1px solid #617A55;
+    border-radius: 20px;
+    margin: 10px;
+    width: 65%;
     display: inline-block;
-    text-align: center;
+    text-align: left;
 }
 
 form {
@@ -60,20 +91,29 @@ input, textarea {
     width: 100%;
     padding: 8px;
     border: 1px solid #A4D0A4;
-    border-radius: 5px;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+#buttonShop{
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #A4D0A4;
+    border-radius: 20px;
     box-sizing: border-box;
 }
 
 button {
     background-color: #A4D0A4;
     color: rgb(0, 0, 0);
-    border: none;
+    border: 1px solid #617A55;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 button:hover {
+    border-radius: 20px;
     background-color: #617A55;
 }
