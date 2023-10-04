@@ -1,21 +1,22 @@
 body {
-    background-color: #f0f0f0;
+    background-color: #F6F6F6;
 }
 
-.titlesContact{
+.titlesContact {
     font-family: 'Molengo', sans-serif;
     text-align: center;
     padding-top: 10px;
 }
 
-.container{
+.container {
     justify-content: center;
     font-family: 'Raleway', sans-serif;
+    font-size: 1.2rem;
     display: flex;
     flex-wrap: wrap;
 }
 
-#shopCard{
+#shopCard {
     flex-grow: 1;
     flex-basis: 200;
     background-color: #A4D0A4;
@@ -42,12 +43,14 @@ body {
     padding-bottom: 5px;
 } */
 
-#jShop, #sdShop, #uhShop{
+#jShop,
+#sdShop,
+#uhShop {
     border-radius: 20px;
 
 }
 
-.card-img{
+.card-img {
     height: 200px;
     width: 200px;
     /* border-top-left-radius: 20px;
@@ -65,7 +68,7 @@ body {
 }
 
 .tarjeta {
-    background-color:#ffffff;
+    background-color: #ffffff;
     box-shadow: 0px 0px 10px 0px rgba(221, 12, 12, 0.1);
     padding: 10px;
     border: 1px solid #617A55;
@@ -87,7 +90,8 @@ label {
     font-family: 'Raleway', sans-serif;
 }
 
-input, textarea {
+input,
+textarea {
     width: 100%;
     padding: 8px;
     border: 1px solid #A4D0A4;
@@ -95,7 +99,7 @@ input, textarea {
     box-sizing: border-box;
 }
 
-#buttonShop{
+#buttonShop {
     width: 100%;
     padding: 8px;
     border: 1px solid #A4D0A4;
@@ -116,4 +120,12 @@ button {
 button:hover {
     border-radius: 20px;
     background-color: #617A55;
+}
+
+.warnings {
+    width: 200px;
+    text-align: center;
+    margin: auto;
+    color: #617A55;
+    padding-top: 20px;
 }
