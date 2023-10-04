@@ -1,25 +1,58 @@
-#idLosMictlanes{
-    background-color: #332c1c;
+body {
+    background: grey;
+  }
+
+#backgroundCards {
+    background: #F7E1AE;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(20px);
+    border: 1.5px solid rgba(209, 213, 219, 0.3);
 }
-.iconsContact{
-    width: 10%;
-    object-fit: contain;
+
+.logoMictlanes {
+    margin: 20px;
+    mix-blend-mode: color-burn;
+}
+
+.parrafoAboutUS {
+    font-weight: bold;
+    text-align: justify;
+    font-family: 'Raleway', sans-serif;
+}
+
+.iconsContact {
+    width: 30px;
     margin-right: 20px;
-    padding-bottom: 10%;
+    margin-left: 20px
 }
-#LinkedIn{
-    width: 8.5%;
-    object-fit: contain;
+
+.DeveloperImg {
+    width: 150px;
+    height: 180px;
+    border-radius: 50px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.card-title {
+    font-family: 'Molengo', sans-serif;
+}
+
+.card-text {
+    font-weight: bold;
+    font-family: 'Raleway', sans-serif;
+    text-align: justify;
+}
+
+.card-body {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+
+.bi{
+    color: rgb(0, 0, 0);
+    font-size: 2rem;
     margin-left: 20px;
-}
-
-.promo{
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-}
-
-*{
-    font-family: 'Molengo';
+    margin-right: 20px;
 }
