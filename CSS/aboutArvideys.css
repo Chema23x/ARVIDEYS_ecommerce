@@ -1,37 +1,26 @@
 
 .titlesAboutUs{
-    font-family: 'Molengo';
+    font-family: 'Molengo', sans-serif;
     text-align: center;
+    padding-top:20px;
 }
-.descripcion-Arvi{
-    font-family: 'Molengo';
+.descripcionArvi{
+    font-family: 'Raleway', sans-serif;
     text-align: justify;
     margin-bottom: 50px;
+    font-size: 1rem;
 }
 .row{
     align-content: center;
     text-align: center;
+    padding-bottom: 100px;
     }
-.descuento {
-    width: 400px;
-    height: 150px;
-    background-color: #f7e1ae;
-    border: 1px solid #ccc;
-    position: sticky;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    align-items:center ;
-    margin-top: 100px;
-  }
 
-.input{
-    border-radius: 10px;
-    text-align: center;
+    .container{
+        max-width: 800px;
+        margin: 20px;
+        background-color: #A4D0A4;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    }
 
-}
-.registro button{
-    border-radius: 10px;
-
-}
