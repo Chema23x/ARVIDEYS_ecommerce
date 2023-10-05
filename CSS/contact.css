@@ -1,0 +1,146 @@
+/*SE LE DA COLOR AL BODY DE LA PÁGINA*/
+body {
+    background-color: white;
+}
+
+/*SE DA FORMATO A LA LETRA DE LOS TITULOS*/
+.titlesContact {
+    font-family: 'Molengo', sans-serif;
+    text-align: center;
+    padding-top: 10px;
+}
+
+/*SE DA FORMATO A LAS LETRA CONTENIDA EN LAS TARJETAS*/
+.container {
+    justify-content: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.2rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*FORMATO DE TRES TARJETAS*/
+#shopCard {
+    flex-grow: 1;
+    flex-basis: 200;
+    background-color: #A4D0A4;
+    border: 1px solid #617A55;
+    border-radius: 20px;
+    margin: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+/* #generalShop{
+    justify-content: center;
+    font-family: 'Raleway', sans-serif;
+}
+
+#shopContainer{
+    background-color:#A4D0A4;
+    box-shadow: 0px 0px 10px 0px rgba(221, 12, 12, 0.1);
+    text-align: center;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+} */
+
+/*SE REDONDEAN LAS IMAGENES DENTRO DE LAS TARJETAS*/
+#jShop,
+#sdShop,
+#uhShop {
+    border-radius: 20px;
+
+}
+
+/*IMAGENES CONTENIDAS EN LAS TARJETAS*/
+.card-img {
+    height: 200px;
+    width: 200px;
+    /* border-top-left-radius: 20px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 15px; */
+    /* object-fit: cover; */
+    padding: 10px;
+
+}
+
+/*CUERPO DEL FORMULARIO*/
+.inputContact {
+    display: flex;
+    justify-content: center;
+}
+
+/*FORMATO GENERAL DE LA TARJETA DEL FORMULARIO*/
+.tarjeta {
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px 0px rgba(221, 12, 12, 0.1);
+    padding: 10px;
+    border: 1px solid #617A55;
+    border-radius: 20px;
+    margin: 10px;
+    width: 65%;
+    display: inline-block;
+    text-align: left;
+}
+
+/*APARTADOS-RENGLONES DEL FORMULARIO*/
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/*LETRA UTILIZADA EN EL FORMULARIO*/
+label {
+    font-weight: bold;
+    font-family: 'Raleway', sans-serif;
+}
+
+/*BORDE DE LA TARJETA DEL FORMULARIO*/
+input,
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #A4D0A4;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+/*CAJAS DEL FORMULARIO*/
+#buttonShop {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #A4D0A4;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+/*BOTON PARA ENVIAR LA INFORMACIÓN*/
+button {
+    background-color: #A4D0A4;
+    color: rgb(0, 0, 0);
+    border: 1px solid #617A55;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/*CAMBIO DE COLOR DE BOTON CUANDO SE INTERACTUA CON EL*/
+button:hover {
+    border-radius: 20px;
+    background-color: #617A55;
+}
+
+/*WARNINGS MOSTRADOS AL USUARIO CUANDO INGRESA INFORMACIÓN*/
+.warnings {
+    width: 200px;
+    text-align: center;
+    margin: auto;
+    color: #617A55;
+    padding-top: 20px;
+}
