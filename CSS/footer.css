@@ -1,0 +1,22 @@
+footer{
+    left: 0px;
+    width: 100%;
+    background-color: #617a55;
+    font-family: 'Raleway', sans-serif; 
+
+}
+
+.container-fluid a{
+    text-decoration: none;
+    font-size: .8rem;
+}
+
+.titleFooter{
+    font-size: 1rem;
+}
+
+.LogoEmpresa{
+    height: 50px;
+    width: auto;
+    margin-left: 15px;
+}
