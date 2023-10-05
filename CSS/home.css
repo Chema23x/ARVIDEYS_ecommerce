@@ -1,34 +1,25 @@
+
+/*Seccion de la imagen del logo*/
 #logo {
     width: 170px;
     height: 50px;
 }
-
-.icons{
-    width: 50px;
-    height: 50px
-}
-
-#search {
-    width: 50px;
-    height: 25px;
-}
-
-#perfil{
-    width: 60px;
-    height: 60px;
-    border: 5px solid #617A55;
-    border-radius: 50%;
-}
-
 .navbar-nav.dropdown {
-    margin-right: 20px; /* Ajusta el valor según sea necesario */
+    margin-right: 20px; 
 }
 
+/* Contenedor de icono de perfil y carrito*/
+.menu{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/*info importada para la barra de busqueda*/
 .input-wrapper {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
+    align-items: flex-start;
+    justify-content: flex-start;
     position: relative;
   }
   
@@ -44,6 +35,8 @@
     box-shadow: 0px 0px 3px #617A55;
     padding-right: 40px;
     color: #617A55;
+    position: relative;
+    right: 50px;
   }
   
   .input::placeholder,
@@ -55,12 +48,12 @@
   .input::placeholder {
     color: #8f8f8f;
   }
-  
+
   .icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
+    position: relative;
     right: 0px;
     cursor: pointer;
     width: 50px;
@@ -71,6 +64,7 @@
     pointer-events: painted;
     background-color: transparent;
     transition: .2s linear;
+    z-index: 10;
   }
   
   .icon:focus ~ .input,
@@ -82,17 +76,85 @@
     border-bottom: 3px solid #617A55;
     transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
   }
+
+/*Secciones desplegables en menu de hamburguesa responsivo */
+
+@media (min-width: 1024px) {
+    #seccionesNav {
+        display: none;
+    }
+  }
+
+/* Seccion boton hamburguesa responsive*/
+
+  @media (max-width: 1023px) {
+    #hamburguesa {
+        display: none;
+    }
+  }
+/* Posición del menu hamburguesa en vista pc*/
+  #hamburguesa{
+    position: relative;
+    left: -15px
+  }
+
+/* Propiedades para la vista y colocacion de las subsecciones en Menu hamburguesa*/
+  .seccion-1, .seccion-2, .seccion-3 {
+    display: none;
+  }
   
+  .visible {
+    display: block;
+    text-align: center;
+  }
+  
+  /*En espera de revision*/
+  
+  /* @media (max-width: 1023px) {
+  .visible {
+    display: block;
+    text-align: left;
+  }
+  } */
+
+
+/*Seccion del icono de perfil*/
+  .perfil{
+    width: 60px;
+    height: 60px;
+    border: 5px solid #617A55;
+    border-radius: 50%;
+}
+
+/*Sección de perfil responsive*/
+@media (max-width: 1023px) {
+    .perfil {
+        width: 30px;
+        height: 30px;
+    }
+  }
+
+/*Sección de cart */
+  .cart{
+    width: 50px;
+    height: 50px;
+}
+
+/*Sección de cart responsive*/
+@media (max-width: 1023px) {
+  .cart {
+      width: 30px;
+      height: 30px;
+  }
+}
+
+/* CSS para sección de Servicios*/
+
   .images{
     height: 50px;
     width: 50px;
-  }
-
-  .card{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    bottom: 8px;
   }
 
   .card-body{
@@ -105,7 +167,7 @@
     color: #617A55;
   }
 
-  .card--container{
+  .cardContainer{
     display: flex;
     justify-content:space-evenly;
     width: 100%;
@@ -117,7 +179,11 @@
   align-items: center;
 }
 
-.images{
-  position: relative;
-  bottom: 8px;
+/* Font families*/
+.titleText{
+  font-family: 'Molengo', sans-serif;
+}
+
+.text{
+  font-family: 'Raleway', sans-serif;
 }

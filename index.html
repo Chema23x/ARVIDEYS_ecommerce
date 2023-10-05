@@ -5,87 +5,150 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="./CSS/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Molengo&family=Raleway:wght@600&display=swap" rel="stylesheet">
     <title>Home</title>
 </head>
 <body>
-    <nav  class="navbar navbar-expand-lg">
-        <div  class="container-fluid">
-          <a class="navbar-brand" href="./index.html">
+  <!--Código para navbar-->
+  <!--Sección de logo-->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="./index.html">
             <img id="logo" src="./ASSETS/IMG/logo.png" alt="Logo">
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-         
-          <div  class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-            
-            <div class="input-wrapper">
-                <button class="icon"> 
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="25px" width="25px">
-                    <path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" stroke="#fff" d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z"></path>
-                    <path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" stroke="#fff" d="M22 22L20 20"></path>
-                  </svg>
-                </button>
-                <input placeholder="search.." class="input" name="text" type="text">
-              </div>
-                
-                <ul id="menu" class="navbar-nav ml-auto ms-3 float-end">
-                    <li class="nav-item dropdown">
-                        <a href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img class="icons" src="./ASSETS/ICON/menu-hamburguesa.png" alt="menu-hamburguesa">
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">MUJER</a></li>
-                            <li><a class="dropdown-item" href="#">HOMBRE</a></li>
-                            <li><a class="dropdown-item" href="#">NIÑOS</a></li>
-                            <li><a class="dropdown-item" href="#">DESCUENTOS</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">CONTACTO</a></li>
-                            <li><a class="dropdown-item" href="#">AYUDA/FAQ</a></li>
-                            <li><a class="dropdown-item" href="#">+INFO</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                
-                <li class="navbar-nav">
-                <a class="nav-link" href="./HTML/Perfil.html"><img id="perfil" src="./ASSETS/ICON/perfil.png" alt="profile"></i></a>
-            </li>
-            <li class="navbar-nav">
-                <a class="nav-link" href="./HTML/Perfil.html"><img class="icons" src="./ASSETS/ICON/carrito-de-compras.png" alt="carrito"></i></a>
-            </li>
-          </div>
+        </a>
+
+        <!--Boton de menu Hamburguesa responsivo-->
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+       </button>
+
+    <!--Secciones del menu de hamburguesa-->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul id="seccionesNav" class="navbar-nav ms-auto">
+
+      <!--Sección desplegable Mujer en menu responsivo-->
+        <li class="nav-item desplegar-seccion">
+          <a class="nav-link titleText" href="#">MUJER</a>
+            <div class="seccion-1 text">Nuevo</div>
+            <div class="seccion-2 text">Catego1</div>
+            <div class="seccion-3 text">Catego2</div>
+        </li>
+
+      <!--Sección desplegable Hombre en menu responsivo-->
+        <li class="nav-item desplegar-seccion ">
+          <a class="nav-link titleText" href="#">HOMBRE</a>
+            <div class="seccion-1 text">Nuevo</div>
+            <div class="seccion-2 text">Catego1</div>
+            <div class="seccion-3 text">Catego2</div>
+        </li>
+
+        <!--Sección desplegable Niños en menu responsivo-->
+        <li class="nav-item desplegar-seccion">
+          <a class="nav-link titleText" href="#">NIÑOS</a>
+            <div class="seccion-1 text">Niña</div>
+            <div class="seccion-2 text">Niño</div>
+        </li>
+        <!--Secciones de menu hamburguesa sin opciones desplegable-->
+        <li class="nav-item"><a class="nav-link titleText" href="#">DESCUENTOS</a></li>
+        <li class="nav-item"><a class="nav-link titleText" href="#">CONTACTO</a></li>
+        <li class="nav-item"><a class="nav-link titleText" href="#">AYUDA/FAQ</a></li>
+        <li class="nav-item"><a class="nav-link titleText" href="#">+INFO</a></li>
+      </ul>
+    </div>
+        
+      <!--Sección de input busqueda-->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent"> 
+         <div class="input-wrapper">
+            <button class="icon"> 
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" height="25px" width="25px">
+                <path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" stroke="#fff" d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z"></path>
+                <path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" stroke="#fff" d="M22 22L20 20"></path>
+              </svg>
+            </button>
+            <input placeholder="search.." class="input" name="text" type="text">
         </div>
-      </nav>
-      
-    
-      <div class="card">
-        <div class="card-body">
-          <h5 class="title">ARVIDEYS</h5>
-          <p class="title">Te ofrece los siguientes servicios: </p>
-        </div>
-        <div class="card--container">
-          <div class="subContainer">
-            <img class="images" src="./ASSETS/ICON/cubo.png" class="card-img-bottom" alt="cube" >
-              <p class="title">Envíos a todo México</p>
-          </div>
-          <div class="subContainer">
-           <img class="images" src="./ASSETS/ICON/tarjeta-de-credito.png" class="card-img-bottom" alt="card">
-              <p class="title">Pagos totalmente seguros</p>
-          </div>
-           <div class="subContainer">
-          <img class="images" src="./ASSETS/ICON/mano-sosteniendo-corazon.png" class="card-img-bottom" alt="hands">
-            <p class="title">Producción 100% artesanal</p>
-          </div>
-        </div>
+
+        <!--Sección de menú hamburguesa para secciones de ropa-->  
+        <ul id="hamburguesa" class="navbar-nav">
+          <li class="nav-item">
+            <a href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img class="icons" src="./ASSETS/ICON/menu-hamburguesa.png" alt="menu-hamburguesa">
+            </a>
+        <ul class="dropdown-menu">
+
+         <!--Sección desplegable Mujer-->
+          <li class="nav-item desplegar-seccion">
+            <a class="nav-link titleText" href="#">MUJER</a>
+              <div class="seccion-1 text">Nuevo</div>
+              <div class="seccion-2 text">Catego1</div>
+             <div class="seccion-3 text">Catego2</div>
+          </li>
+
+         <!--Sección desplegable Hombre-->
+          <li class="nav-item desplegar-seccion">
+            <a class="nav-link titleText" href="#">HOMBRE</a>
+               <div class="seccion-1 text">Nuevo</div>
+               <div class="seccion-2 text">Catego1</div>
+               <div class="seccion-3 text">Catego2</div>
+           </li>
+
+           <!--Sección desplegable Niños-->
+           <li class="nav-item desplegar-seccion">
+             <a class="nav-link titleText" href="#">NIÑOS</a>
+               <div class="seccion-1 text">Niña</div>
+               <div class="seccion-2 text">Niño</div>
+           </li>
+           <!--Linea divisoria en menu-->
+           <li><hr class="dropdown-divider"></li>
+           <!--Secciones desplegables sin subsecciones-->
+           <li><a class="dropdown-item titleText" href="#">DESCUENTOS</a></li>
+           <li><a class="dropdown-item titleText" href="#">CONTACTO</a></li>
+           <li><a class="dropdown-item titleText" href="#">AYUDA/FAQ</a></li>
+           <li><a class="dropdown-item titleText" href="#">+INFO</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <!--Sección de icono de perfil-->
+      <div class="menu">
+        <li class="navbar-nav">
+          <a class="nav-link" href="./HTML/Perfil.html"><img class="perfil" src="./ASSETS/ICON/perfil.png" alt="profile"></i></a>
+        </li>
+              
+    <!--Sección de carrito de compras-->
+        <li class="navbar-nav">
+          <a class="nav-link" href="./HTML/Perfil.html"><img class="cart" src="./ASSETS/ICON/carrito-de-compras.png" alt="carrito"></i></a>
+        </li>
       </div>
+    </div>
+  </div>
+ </nav>
+      
+  <!--Código para card de servicios-->
 
-
-
-
-
-
-
-
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <div class="card subContainer">
+    <div class="card-body">
+      <h5 class="title titleText">ARVIDEYS</h5>
+       <p class="title text">Te ofrece los siguientes servicios: </p>
+     </div>
+     <div class="cardContainer">
+       <div class="subContainer">
+         <img class="images" src="./ASSETS/ICON/cubo.png" class="card-img-bottom" alt="cube" >
+           <p class="title text">Envíos a todo México</p>
+       </div>
+       <div class="subContainer">
+        <img class="images" src="./ASSETS/ICON/tarjeta-de-credito.png" class="card-img-bottom" alt="card">
+            <p class="title text">Pagos totalmente seguros</p>
+       </div>
+         <div class="subContainer">
+       <img class="images" src="./ASSETS/ICON/mano-sosteniendo-corazon.png" class="card-img-bottom" alt="hands">
+         <p class="title text">Producción 100% artesanal</p>
+       </div>
+     </div>
+    </div>
+<script src="./JS/hamburguesa.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
