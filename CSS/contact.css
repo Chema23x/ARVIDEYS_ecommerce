@@ -1,13 +1,16 @@
+/*SE LE DA COLOR AL BODY DE LA PÁGINA*/
 body {
-    background-color: #F6F6F6;
+    background-color: white;
 }
 
+/*SE DA FORMATO A LA LETRA DE LOS TITULOS*/
 .titlesContact {
     font-family: 'Molengo', sans-serif;
     text-align: center;
     padding-top: 10px;
 }
 
+/*SE DA FORMATO A LAS LETRA CONTENIDA EN LAS TARJETAS*/
 .container {
     justify-content: center;
     font-family: 'Raleway', sans-serif;
@@ -16,6 +19,7 @@ body {
     flex-wrap: wrap;
 }
 
+/*FORMATO DE TRES TARJETAS*/
 #shopCard {
     flex-grow: 1;
     flex-basis: 200;
@@ -43,6 +47,7 @@ body {
     padding-bottom: 5px;
 } */
 
+/*SE REDONDEAN LAS IMAGENES DENTRO DE LAS TARJETAS*/
 #jShop,
 #sdShop,
 #uhShop {
@@ -50,6 +55,7 @@ body {
 
 }
 
+/*IMAGENES CONTENIDAS EN LAS TARJETAS*/
 .card-img {
     height: 200px;
     width: 200px;
@@ -62,11 +68,13 @@ body {
 
 }
 
+/*CUERPO DEL FORMULARIO*/
 .inputContact {
     display: flex;
     justify-content: center;
 }
 
+/*FORMATO GENERAL DE LA TARJETA DEL FORMULARIO*/
 .tarjeta {
     background-color: #ffffff;
     box-shadow: 0px 0px 10px 0px rgba(221, 12, 12, 0.1);
@@ -79,17 +87,20 @@ body {
     text-align: left;
 }
 
+/*APARTADOS-RENGLONES DEL FORMULARIO*/
 form {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
+/*LETRA UTILIZADA EN EL FORMULARIO*/
 label {
     font-weight: bold;
     font-family: 'Raleway', sans-serif;
 }
 
+/*BORDE DE LA TARJETA DEL FORMULARIO*/
 input,
 textarea {
     width: 100%;
@@ -99,6 +110,7 @@ textarea {
     box-sizing: border-box;
 }
 
+/*CAJAS DEL FORMULARIO*/
 #buttonShop {
     width: 100%;
     padding: 8px;
@@ -107,6 +119,7 @@ textarea {
     box-sizing: border-box;
 }
 
+/*BOTON PARA ENVIAR LA INFORMACIÓN*/
 button {
     background-color: #A4D0A4;
     color: rgb(0, 0, 0);
@@ -117,11 +130,13 @@ button {
     transition: background-color 0.3s ease;
 }
 
+/*CAMBIO DE COLOR DE BOTON CUANDO SE INTERACTUA CON EL*/
 button:hover {
     border-radius: 20px;
     background-color: #617A55;
 }
 
+/*WARNINGS MOSTRADOS AL USUARIO CUANDO INGRESA INFORMACIÓN*/
 .warnings {
     width: 200px;
     text-align: center;
