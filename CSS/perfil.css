@@ -1,0 +1,20 @@
+.flex-nowrap {
+    flex-wrap: nowrap!important;
+}
+.d-flex {
+    display: flex!important;
+}
+main {
+    height: 100vh;
+    height: -webkit-fill-available;
+    max-height: 100vh;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+user agent stylesheet
+main {
+    display: block;
+}
