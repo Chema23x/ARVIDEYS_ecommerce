@@ -2,23 +2,21 @@
     margin-top: 60px;
     font-family: 'Raleway', sans-serif; 
 }
-.card{
-    width: 150px;  
-}
-
-.card-img-top{
-    width: 100%; 
-    height: auto;
-}
 
 h1{
     font-family: 'Molengo', sans-serif;
 }
 
-.list-group-item{
-    font-size: .7rem;
+.ropa{
+  height: 250px;
+  width:auto ;
+  border-radius: 10px;
+  margin: 10px;
 }
 
+#card-back{
+  background-color: #a4d0a4;
+}
 
 /* Estilos del Boton */
 
@@ -31,16 +29,14 @@ h1{
     border-radius: 0.8em;
     border: none;
     background: #617a55;
-    color: white;
+    color: black;
     overflow: hidden;
   }
   
-  .cssbuttons-io svg {
-    width: 1.2em;
-    height: 1.2em;
-    margin-right: 0.5em;
+  .cssbuttons-io:hover {
+    color: white; /* Cambiamos el color del texto a blanco al hacer hover */
   }
-  
+
   .cssbuttons-io span {
     position: relative;
     z-index: 10;
