@@ -1,58 +1,51 @@
-body {
-    background: grey;
-  }
 
-#backgroundCards {
-    background: #F7E1AE;
-    -webkit-backdrop-filter: blur(5px);
+#backgroundCards {  /*Tarjetas*/
+    background: #A4D0A4;
     backdrop-filter: blur(20px);
     border: 1.5px solid rgba(209, 213, 219, 0.3);
 }
 
-.logoMictlanes {
+.logoMictlanes { /*Logo los Mictlanes*/
     margin: 20px;
     mix-blend-mode: color-burn;
+    mix-blend-mode: color white;
 }
 
-.parrafoAboutUS {
-    font-weight: bold;
+.parrafoAboutUS { /*Parrafo Info los Mictlanes*/
     text-align: justify;
     font-family: 'Raleway', sans-serif;
 }
 
-.iconsContact {
-    width: 30px;
-    margin-right: 20px;
-    margin-left: 20px
-}
-
-.DeveloperImg {
+.DeveloperImg { /*Imagenes*/
     width: 150px;
     height: 180px;
     border-radius: 50px;
     margin-top: 30px;
     margin-bottom: 10px;
+    box-shadow: 0 0 15px #fff;
 }
 
-.card-title {
-    font-family: 'Molengo', sans-serif;
+.card-title { /*Cuerpo de tarjeta e info de Desarrolladores: titulos o nombres*/
+    font-family: 'Raleway', sans-serif;
 }
 
-.card-text {
-    font-weight: bold;
+.card-text { /*Cuerpo de tarjeta e info de Desarrolladores:  Informacion*/
     font-family: 'Raleway', sans-serif;
     text-align: justify;
 }
 
-.card-body {
+.card-body { /*Cuerpo de tarjeta e info de Desarrolladores*/
     margin-top: 20px;
     margin-bottom: 10px;
 }
 
 
-.bi{
+.bi{ /*ICONOS de LINKEDIN y GIT HUB*/
     color: rgb(0, 0, 0);
     font-size: 2rem;
     margin-left: 20px;
     margin-right: 20px;
+}
+.bi:hover{ /*ICONOS de LINKEDIN y GIT HUB*/
+    text-shadow: 0 0 15px #fff;
 }
