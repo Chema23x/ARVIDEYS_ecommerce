@@ -1,0 +1,26 @@
+
+.titlesAboutUs{
+    font-family: 'Molengo', sans-serif;
+    text-align: center;
+    padding-top:20px;
+}
+.descripcionArvi{
+    font-family: 'Raleway', sans-serif;
+    text-align: justify;
+    margin-bottom: 50px;
+    font-size: 1rem;
+}
+.row{
+    align-content: center;
+    text-align: center;
+    padding-bottom: 100px;
+    }
+
+    .container{
+        max-width: 800px;
+        margin: 20px;
+        background-color: #A4D0A4;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    }
+

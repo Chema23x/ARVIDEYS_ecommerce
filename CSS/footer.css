@@ -1,0 +1,27 @@
+/* Foramato para el footer */
+footer{ 
+    left: 0px;
+    width: 100%;
+    background-color: #617a55;
+}
+
+/* Foramato para el contenedor y los links */
+.container a{
+    text-decoration: none;
+    font-size: .8rem;
+    color: white;
+    font-family: 'Raleway', sans-serif; 
+}
+
+/* Foramato para el titulo del footer */
+.titleFooter{
+    font-size: 1rem;
+    font-family: 'Molengo', sans-serif;
+}
+
+/* Foramato para el logo de la empresa */
+.LogoEmpresa{
+    height: 50px;
+    width: auto;
+    margin-left: 15px;
+}

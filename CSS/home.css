@@ -1,0 +1,205 @@
+
+/*Seccion de la imagen del logo*/
+#logo {
+    width: 170px;
+    height: 50px;
+}
+.navbar-nav.dropdown {
+    margin-right: 20px; 
+}
+
+/* Contenedor de icono de perfil y carrito*/
+.menu{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/*info importada para la barra de busqueda*/
+
+/* Contenedor de input y boton*/
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: -50px;
+  }
+  
+/* Versión responsiva*/
+  @media (max-width: 980px){
+    .input-wrapper {
+      left: -120px;
+      position: relative;
+    }
+  }
+
+  .input {
+    border-style: none;
+    height: 50px;
+    width: 50px; 
+    padding: 10px;
+    outline: none;
+    border-radius: 50%;
+    transition: .5s ease-in-out;
+    background-color: #617A55;
+    box-shadow: 0px 0px 3px #617A55;
+    padding-right: 40px;
+    color: #617A55;
+    position: relative;
+    margin-left: 70px;
+  }
+  
+  /*Texto y color de fuente de la barra de busqueda*/
+  .input::placeholder,
+  .input {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 17px;
+  }
+
+  .input::placeholder {
+    color: #8f8f8f;
+  }
+
+/* Botón con icono de la barra de navegación*/
+  .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    outline: none;
+    border-style: none;
+    border-radius: 50%;
+    pointer-events: painted;
+    background-color: transparent;
+    transition: .2s linear;
+    z-index: 10;
+  }
+
+  @media (max-width: 980px) {
+    .icon {
+        position: relative;
+        left: 120px;
+    }
+  }
+  
+  .icon:focus ~ .input,
+  .input:focus {
+    box-shadow: none;
+    width: 250px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom: 3px solid #617A55;
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+  }
+
+/*Secciones desplegables en menu de hamburguesa responsivo */
+
+@media (min-width: 980px) {
+    #seccionesNav {
+        display: none;
+    }
+  }
+
+/* Seccion boton hamburguesa responsive*/
+
+  @media (max-width: 980px) {
+    #hamburguesa {
+        display: none;
+    }
+  }
+/* Posición del menu hamburguesa en vista pc*/
+  #hamburguesa{
+    position: relative;
+    left: -15px
+  }
+
+/* Propiedades para la vista y colocacion de las subsecciones en Menu hamburguesa*/
+  .seccion-1, .seccion-2, .seccion-3 {
+    display: none;
+  }
+  
+  .visible {
+    display: block;
+    text-align: center;
+  }
+
+/* Visualización de las subsecciones*/
+
+.subtext{
+  text-decoration: none;
+  color: black;
+}
+
+/*Seccion del icono de perfil*/
+  .perfil{
+    width: 60px;
+    height: 60px;
+    border: 5px solid #617A55;
+    border-radius: 50%;
+}
+
+/*Sección de perfil responsive*/
+@media (max-width: 980px) {
+    .perfil {
+        width: 30px;
+        height: 30px;
+    }
+  }
+
+/*Sección de cart */
+  .cart{
+    width: 50px;
+    height: 50px;
+}
+
+/*Sección de cart responsive*/
+@media (max-width: 980px) {
+  .cart {
+      width: 30px;
+      height: 30px;
+  }
+}
+
+/* CSS para sección de Servicios*/
+
+  .images{
+    height: 50px;
+    width: 50px;
+    position: relative;
+    bottom: 8px;
+  }
+
+  .card-body{
+    position: relative;
+    left: -20px;
+  }
+
+  .title{
+    text-align: center;
+    color: #617A55;
+  }
+
+  .cardContainer{
+    display: flex;
+    justify-content:space-evenly;
+    width: 100%;
+  }
+
+.subContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Font families*/
+.titleText{
+  font-family: 'Molengo', sans-serif;
+}
+
+.text{
+  font-family: 'Raleway', sans-serif;
+}
