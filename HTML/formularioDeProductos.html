@@ -27,37 +27,41 @@
                     <div class="card-header" id="barraSuperior">
                         <h4>Añade un Producto</h4>
                     </div>
-                    <form id="product-form" class="card-body">
+                    <form id="product-form" class="card-body" >
                         <!-- Primer Input -->
                         <div class="form-group mt-2">
-                            <input type="text" id="nombreProducto" placeholder="Nombre del producto"
+                            <input type="text"   id="nombreProducto" placeholder="Nombre del producto"
                                 class="form-control" />
+                                <div id="validacionNombre"></div>
                         </div>
                         <!-- Segundo Input -->
                         <div class="form-group mt-2">
-                            <input type="text" id="precioUnitario" placeholder="Precio del Producto"
+                            <input type="text"   id="precioUnitario" placeholder="Precio del Producto"
                                 class="form-control" />
+                                <div id="validacionPrecio"></div>
                         </div>
                         <!-- Tercer imput -->
                         <div class="form-group mt-2">
-                            <input type="number" id="cantidadProducto" placeholder="Cantidad" class="form-control" />
+                            <input type="number"   id="cantidadProducto" placeholder="Cantidad" class="form-control" />
+                            <div id="validacionCantidad"></div>
                         </div>
                         <!-- Cuarto Input -->
                         <!-- Id Selector Talliita -->
                         <div class="form-group mt-2 text-center">
                             <select class="form-select mt-2 text-muted" aria-label="Default select example" id="tallaProducto">
-                                <option selected>Talla</option>
+                                <option selected hidden>Talla</option>
                                 <option value="Chica">Chica</option>
                                 <option value="Mediana">Mediana</option>
                                 <option value="Grande">Grande</option>
                                 <option value="Extra-Grande">Extra-Grande</option>
                             </select>
+                            <div id="validacionTalla"></div>
                         </div>
                         <!-- Quinto Input Color -->
                         <!-- ID selector color  -->
                         <select class="form-select mt-2 text-muted" aria-label="Default select example"
-                            id="colorPrenda">
-                            <option selected>Color De Prendas</option>
+                            id="colorPrenda" >
+                            <option selected hidden>Color De Prendas</option>
                             <option value="Blanco">Blanco</option>
                             <option value="Negro">Negro</option>
                             <option value="Rosa">Rosa</option>
@@ -65,14 +69,16 @@
                             <option value="Rojo">Rojo</option>
                             <option value="Amarillo">Amarillo</option>
                         </select>
+                        <div id="validacionColor"></div>
                         <!-- Sexto Input -->
                         <!-- Tipo de bordado -->
                         <div class="form-group mt-2 text-center">
-                            <select class="form-select mt-2 text-muted" aria-label="Default select example" id="tipoProducto">
-                                <option selected>Tipo De Bordado</option>
+                            <select class="form-select mt-2 text-muted" aria-label="Default select example" id="tipoProducto" >
+                                <option selected hidden>Tipo De Bordado</option>
                                 <option value="A Mano">A Mano</option>
                                 <option value="A Máquina">A Máquina</option>
                             </select>
+                            <div id="validacionBordado"></div>
 
 
                             <!--boton Salvar  -->

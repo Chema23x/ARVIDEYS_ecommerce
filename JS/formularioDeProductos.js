@@ -67,8 +67,8 @@ class UI {
 
 document.getElementById('product-form').addEventListener('submit', function (e) {
     const nombreProducto = document.getElementById('nombreProducto').value;
-    const precioUnitario = document.getElementById('precioUnitario').value;
-    const cantidadProducto = document.getElementById('cantidadProducto').value;
+    const precioUnitario = parseFloat(document.getElementById('precioUnitario').value);
+    const cantidadProducto = parseFloat(document.getElementById('cantidadProducto').value);
     const tallaProducto = document.getElementById('tallaProducto').value;
     const colorPrenda = document.getElementById('colorPrenda').value;
     const tipoProducto = document.getElementById('tipoProducto').value;
@@ -80,10 +80,70 @@ document.getElementById('product-form').addEventListener('submit', function (e) 
     ui.showAddAlert();
     ui.resetForm();
     console.log(new Product(nombreProducto, precioUnitario, cantidadProducto, tallaProducto, colorPrenda, tipoProducto));
+    /**Validaciones */
+    var contadorErrores = 0;
+    
+    //Nombre
+    if(nombreProducto == '' || nombreProducto.length<=4){
+        alert('Por favor, ingrese un nombre de la prenda');
+        e.preventDefault();
+        return;
+    }
+
+    //Precio 
+if(isNaN(precioUnitario) || (precioUnitario) <=0 || precioUnitario == ''){
+        alert('Por favor, ingrese un precio valido');
+        e.preventDefault();
+        return;
+    }
+    //Cantidad
+if(isNaN(cantidadProducto) || (cantidadProducto) <=0 || cantidadProducto==''){
+        alert('Por favor, ingresa una cantidad valida');
+        e.preventDefault();
+        return;
+    }
+    //Talla
+if(tallaProducto=='Talla'){
+    alert('Por favor, seleccione una talla');
+    e.preventDefault();
+    return;
+}
+
+//Color
+if(colorPrenda=='Color De Prendas'){
+    alert('Por favor, seleccione un color');
+    e.preventDefault();
+    return;
+}
+//Tipo de Bordado
+ if(tipoProducto=='Tipo De Bordado'){
+     alert('Por favor, seleccione un tipo de bordado');
+     e.preventDefault();
+     return;
+}
+
     // Funcion listaProductoJSON sera enviada a un formato JSON para una reutilizacion posterior
     const listaProductoJSON = JSON.stringify(product);
     console.log(listaProductoJSON);
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json;'
+        },
+        body: listaProductoJSON
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        })
+         .catch(error => {
+             console.error('Error:', error);
+            });
+
+    //FIN DEL PROCESO POST
     e.preventDefault();
+
+
 });
 
 document.getElementById('product-list').addEventListener('click', function(e){
@@ -91,3 +151,6 @@ document.getElementById('product-list').addEventListener('click', function(e){
     ui.deleteProduct(e.target);
     ui.showDeleteAlert();
 })
+
+
+
