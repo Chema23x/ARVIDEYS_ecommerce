@@ -22,22 +22,47 @@ class UI {
                     <strong>Size:</strong> ${product.tallaProducto}<br>
                     <strong>Color:</strong> ${product.colorPrenda}<br>
                     <strong>Type:</strong> ${product.tipoProducto}<br>
+                    <a href="#" class="btn btn-danger" name='delete'>
+                        Eliminar
+                    </a>
                 </div>
             </div>
         `;
         productList.appendChild(element);
     }
-    
-    //resetForm() {
-      ///  document.getElementById('product-form').reset();
-   /// }
-    
-  //  deleteProduct(element) { 
-    //    if (element.name === 'delete') {
-      //      element.parentElement.parentElement.parentElement.remove();
-        //}
-    //}
-    showMessage(message, cssClass) {}
+
+    resetForm() {
+      document.getElementById('product-form').reset();
+    }
+
+    deleteProduct(element) { 
+        if (element.name === 'delete') {
+            element.parentElement.parentElement.parentElement.remove();
+        }
+    }
+
+
+    showAddAlert() {
+        const alertElement = document.getElementById('alert');
+        alertElement.textContent = 'Producto agregado exitosamente';
+        alertElement.classList.add('alert-success');
+
+        setTimeout(() => {
+            alertElement.textContent = '';
+            alertElement.classList.remove('alert-success');
+        }, 3000); 
+    }
+
+    showDeleteAlert() {
+        const alertElement = document.getElementById('alert');
+        alertElement.textContent = 'Producto eliminado exitosamente';
+        alertElement.classList.add('alert-danger');
+
+        setTimeout(() => {
+            alertElement.textContent = '';
+            alertElement.classList.remove('alert-danger');
+        }, 3000); 
+    }
 }
 
 
@@ -48,8 +73,20 @@ document.getElementById('product-form').addEventListener('submit', function (e) 
     const tallaProducto = document.getElementById('tallaProducto').value;
     const colorPrenda = document.getElementById('colorPrenda').value;
     const tipoProducto = document.getElementById('tipoProducto').value;
+
     const product = new Product (nombreProducto, precioUnitario, cantidadProducto, tallaProducto, colorPrenda, tipoProducto);
-    console.log(new Product(nombreProducto, precioUnitario, cantidadProducto, tallaProducto, colorPrenda, tipoProducto));
     const ui = new UI();
+    ui.addProduct(product);
+    ui.showAddAlert();
+    
+    console.log(new Product(nombreProducto, precioUnitario, cantidadProducto, tallaProducto, colorPrenda, tipoProducto));
+
     e.preventDefault();
 });
+
+document.getElementById('product-list').addEventListener('click', function(e){
+    const ui = new UI();
+    ui.deleteProduct(e.target);
+    ui.showDeleteAlert();
+})
+             
