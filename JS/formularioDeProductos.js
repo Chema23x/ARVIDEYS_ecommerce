@@ -30,12 +30,12 @@ class UI {
         `;
         productList.appendChild(element);
     }
-    
+
     resetForm() {
-      document.getElementById('product-form').reset();
+        document.getElementById('product-form').reset();
     }
-    
-    deleteProduct(element) { 
+
+    deleteProduct(element) {
         if (element.name === 'delete') {
             element.parentElement.parentElement.parentElement.remove();
         }
@@ -49,7 +49,7 @@ class UI {
         setTimeout(() => {
             alertElement.textContent = '';
             alertElement.classList.remove('alert-success');
-        }, 1000); 
+        }, 1000);
     }
 
     showDeleteAlert() {
@@ -60,7 +60,7 @@ class UI {
         setTimeout(() => {
             alertElement.textContent = '';
             alertElement.classList.remove('alert-danger');
-        }, 1000); 
+        }, 1000);
     }
 }
 
@@ -72,73 +72,90 @@ document.getElementById('product-form').addEventListener('submit', function (e) 
     const tallaProducto = document.getElementById('tallaProducto').value;
     const colorPrenda = document.getElementById('colorPrenda').value;
     const tipoProducto = document.getElementById('tipoProducto').value;
-    console.log(nombreProducto,precioUnitario, cantidadProducto, tallaProducto, colorPrenda, tipoProducto);
-    const product = new Product (nombreProducto, precioUnitario, cantidadProducto, tallaProducto, colorPrenda, tipoProducto);
-    const ui = new UI();
 
-    ui.addProduct(product);
-    ui.showAddAlert();
-    ui.resetForm();
-    console.log(new Product(nombreProducto, precioUnitario, cantidadProducto, tallaProducto, colorPrenda, tipoProducto));
+    //Alerta
+
+    function mostrarAlerta(mensaje, contenedorID) {
+        const contenedor = document.getElementById(contenedorID);
+        const alertDiv = document.createElement('div');
+        alertDiv.className = 'alert alert-danger alertText';
+        alertDiv.textContent = mensaje;
+
+        contenedor.appendChild(alertDiv);
+
+        setTimeout(() => {
+            contenedor.removeChild(alertDiv); // Oculta la alerta después de 0.7 segundos
+        }, 700);
+
+        validacion = false;
+    }
+
     /**Validaciones */
-    var contadorErrores = 0;
-    
+    let validacion = true;
+
     //Nombre
-    if(nombreProducto == '' || nombreProducto.length<=4){
-        alert('Por favor, ingrese un nombre de la prenda');
+    if (nombreProducto == '' || nombreProducto.length <= 4) {
+        mostrarAlerta('Por favor, ingrese un nombre de la prenda', 'validacionNombre');
+
         e.preventDefault();
-        return;
     }
 
     //Precio 
-if(isNaN(precioUnitario) || (precioUnitario) <=0 || precioUnitario == ''){
-        alert('Por favor, ingrese un precio valido');
+    if (isNaN(precioUnitario) || (precioUnitario) <= 0 || precioUnitario == '') {
+        mostrarAlerta('Por favor, ingrese un precio de la prenda', 'validacionPrecio');
         e.preventDefault();
-        return;
     }
     //Cantidad
-if(isNaN(cantidadProducto) || (cantidadProducto) <=0 || cantidadProducto==''){
-        alert('Por favor, ingresa una cantidad valida');
+    if (isNaN(cantidadProducto) || (cantidadProducto) <= 0 || cantidadProducto == '') {
+        mostrarAlerta('Por favor, ingresa una cantidad valida', 'validacionCantidad');
         e.preventDefault();
-        return;
     }
     //Talla
-if(tallaProducto=='Talla'){
-    alert('Por favor, seleccione una talla');
-    e.preventDefault();
-    return;
-}
+    if (tallaProducto == 'Talla') {
+        mostrarAlerta('Por favor, seleccione una talla', 'validacionTalla');
+        e.preventDefault();
+    }
 
-//Color
-if(colorPrenda=='Color De Prendas'){
-    alert('Por favor, seleccione un color');
-    e.preventDefault();
-    return;
-}
-//Tipo de Bordado
- if(tipoProducto=='Tipo De Bordado'){
-     alert('Por favor, seleccione un tipo de bordado');
-     e.preventDefault();
-     return;
-}
+    //Color
+    if (colorPrenda == 'Color De Prendas') {
+        mostrarAlerta('Por favor, seleccione un color', 'validacionColor');
+        e.preventDefault();
+    }
+    //Tipo de Bordado
+    if (tipoProducto == 'Tipo De Bordado') {
+        mostrarAlerta('Por favor, seleccione un tipo de bordado', 'validacionBordado');
+        e.preventDefault();
+    }
 
-    // Funcion listaProductoJSON sera enviada a un formato JSON para una reutilizacion posterior
-    const listaProductoJSON = JSON.stringify(product);
-    console.log(listaProductoJSON);
-    fetch('https://jsonplaceholder.typicode.com/posts', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json;'
-        },
-        body: listaProductoJSON
+    if (validacion) {
+        console.log(nombreProducto, precioUnitario, cantidadProducto, tallaProducto, colorPrenda, tipoProducto);
+        const product = new Product(nombreProducto, precioUnitario, cantidadProducto, tallaProducto, colorPrenda, tipoProducto);
+        const ui = new UI();
+
+        ui.addProduct(product);
+        ui.showAddAlert();
+        ui.resetForm();
+        console.log(new Product(nombreProducto, precioUnitario, cantidadProducto, tallaProducto, colorPrenda, tipoProducto));
+
+
+        // Funcion listaProductoJSON sera enviada a un formato JSON para una reutilizacion posterior
+        const listaProductoJSON = JSON.stringify(product);
+        console.log(listaProductoJSON);
+        fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;'
+            },
+            body: listaProductoJSON
         })
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-        })
-         .catch(error => {
-             console.error('Error:', error);
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
             });
+    }
 
     //FIN DEL PROCESO POST
     e.preventDefault();
@@ -146,7 +163,7 @@ if(colorPrenda=='Color De Prendas'){
 
 });
 
-document.getElementById('product-list').addEventListener('click', function(e){
+document.getElementById('product-list').addEventListener('click', function (e) {
     const ui = new UI();
     ui.deleteProduct(e.target);
     ui.showDeleteAlert();

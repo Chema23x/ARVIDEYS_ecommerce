@@ -26,7 +26,7 @@
 }
 
 
-.alert {
+ .alert {
   position: fixed;
   top: 0;
   left: 50%;
@@ -37,7 +37,7 @@
   font-weight: bold;
   border-radius: 5px;
   z-index: 9999;
-}
+} 
 
 .alert-success {
   background-color: #28a745; 
@@ -47,4 +47,12 @@
 .alert-danger {
   background-color: #dc3545;
   color: #fff;
+}
+
+.alertText{
+  font-size: 10px;
+  text-align: center;
+  width: 300px;
+  margin-top: 10px;
+  align-items: center;
 }
