@@ -8,23 +8,26 @@ var callBack = function(datos){
         app.ropa.forEach(ropa => {
             html += `
                 <div class="product-card">
+                    <figure>
                     <img src="${ropa.img}" alt="${ropa.Nombre}" class="product-image">
+                    </figure>
                     <div class="product-details">
                         <h2>${ropa.Nombre}</h2>
-                        <p>${ropa.Descripción}</p>
                         <ul>
                             <li>Talla: ${ropa.Talla}</li>
                             <li>Precio: $${ropa.Precio}</li>
                             <li>Color: ${ropa.Color}</li>
                             <li>Tipo de bordado: ${ropa['Tipo de bordado']}</li>
-                            <li>Cantidad: ${ropa.Cantidad}</li>
                         </ul>
+                        <div class="boton">
+                        <button id="buttonCart">Añadir al carrito</button>
+                        </div>
                     </div>
                 </div>
             `;
         });
 
         // Agrega las tarjetas al contenedor
-    document.getElementById("results-container").innerHTML = html;    
+    document.getElementById("articles-container").innerHTML = html;    
 }
 

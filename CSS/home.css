@@ -52,7 +52,7 @@
   /*Texto y color de fuente de la barra de busqueda*/
   .input::placeholder,
   .input {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Raleway',sans-serif;
     font-size: 17px;
   }
 
