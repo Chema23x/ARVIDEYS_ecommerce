@@ -6,7 +6,7 @@ footer{
 }
 
 /* Foramato para el contenedor y los links */
-.container a{
+.link-footer{
     text-decoration: none;
     font-size: .8rem;
     color: white;
