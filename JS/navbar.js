@@ -31,7 +31,7 @@ var html = test(navbar =>{
             <div class="seccion-1 text"><a class="subtext" href="#">Niña</a></div>
             <div class="seccion-2 text"><a class="subtext" href="#">Niño</a></div>
         </li>
-        <li class="nav-item"><a class="nav-link titleText" href="#">DESCUENTOS</a></li>
+        <li class="nav-item"><a class="nav-link titleText" href="./formularioDeProductos.html">DESCUENTOS</a></li>
         <li class="nav-item"><a class="nav-link titleText" href="./contact.html">CONTACTO</a></li>
         <li class="nav-item"><a class="nav-link titleText" href="./FAQ's.html">AYUDA/FAQ</a></li>
         <li class="nav-item"><a class="nav-link titleText" href="./aboutUs.html">+INFO</a></li>
