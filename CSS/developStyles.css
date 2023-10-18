@@ -62,13 +62,13 @@
     font-size: 15px;
 }
 
-.bi{ /*ICONOS de LINKEDIN y GIT HUB*/
+.bi--ico{ /*ICONOS de LINKEDIN y GIT HUB*/
     color: rgb(0, 0, 0);
     font-size: 2rem;
     margin-left: 20px;
     margin-right: 20px;
 }
-.bi:hover{ /*ICONOS de LINKEDIN y GIT HUB*/
+.bi--ico:hover{ /*ICONOS de LINKEDIN y GIT HUB*/
     text-shadow: 0 0 10px #A4D0A4;
     color: var(--color);
     

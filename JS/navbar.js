@@ -86,11 +86,11 @@ var html = test(navbar =>{
 
       <div class="menu">
         <li class="navbar-nav">
-          <a class="nav-link" href="../HTML/Perfil.html"><img class="perfil" src="../ASSETS/ICON/perfil.png" alt="profile"></i></a>
+          <a class="nav-link" href="../HTML/productos.html"><img class="perfil" src="../ASSETS/ICON/perfil.png" alt="profile"></i></a>
         </li>
               
         <li class="navbar-nav">
-          <a class="nav-link" href="../HTML/Perfil.html"><img class="cart" src="../ASSETS/ICON/carrito-de-compras.png" alt="carrito"></i></a>
+          <a class="nav-link" href="../HTML/devolucionesFormulario.html"><img class="cart" src="../ASSETS/ICON/carrito-de-compras.png" alt="carrito"></i></a>
         </li>
       </div>
     </div>

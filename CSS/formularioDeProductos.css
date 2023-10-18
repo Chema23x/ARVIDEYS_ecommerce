@@ -2,29 +2,6 @@
   background-color: #A4D0A4;
 }
 
-.alert {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 300px;
-  padding: 10px;
-  text-align: center;
-  font-weight: bold;
-  border-radius: 5px;
-  z-index: 9999;
-}
-
-.alert-success {
-  background-color: #28a745; 
-  color: #fff;
-}
-
-.alert-danger {
-  background-color: #dc3545;
-  color: #fff;
-}
-
 
  .alert {
   position: fixed;
@@ -37,10 +14,10 @@
   font-weight: bold;
   border-radius: 5px;
   z-index: 9999;
-} 
+}
 
 .alert-success {
-  background-color: #28a745; 
+  background-color: #28a745;
   color: #fff;
 }
 

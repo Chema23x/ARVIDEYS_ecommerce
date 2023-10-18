@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <a class="link-footer" href="../HTML/aboutArvideys.html">¡Conocenos!</a> 
             </p>
             <p>
-                <a class="link-footer" href="../HTML/terminos.html">Terminos y condicones de envios y devoluciones</a> 
+                <a class="link-footer" href="../HTML/terminos.html">Términos y Condiciones</a> 
             </p>
           </div>
         </div>
