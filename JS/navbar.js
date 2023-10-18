@@ -74,7 +74,7 @@ var html = test(navbar =>{
            <div>
            <li><hr class="dropdown-divider"></li>
            <!--Secciones desplegables sin subsecciones-->
-           <li><a class="dropdown-item titleText" href="#">DESCUENTOS</a></li>
+           <li><a class="dropdown-item titleText" href="./formularioDeProductos.html">DESCUENTOS</a></li>
            <li><a class="dropdown-item titleText" href="./contact.html">CONTACTO</a></li>
            <li><a class="dropdown-item titleText" href="./FAQ's.html">AYUDA/FAQ</a></li>
            <li><a class="dropdown-item titleText" href="./aboutUs.html">+INFO</a></li>
