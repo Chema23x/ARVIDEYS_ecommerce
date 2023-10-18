@@ -5,27 +5,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Equipo de Desarrollo</title>
         <link rel="stylesheet" href="../CSS/developStyles.css">
+        <link rel="stylesheet" href="../CSS/footer.css">
+        <link rel="stylesheet" href="../CSS/home.css">
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
             rel="stylesheet"
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous">
-            <link rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap"
-            rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Molengo&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     </head>
     <body>
+
+    <!--Navbar-->
+    <div id="navbar">
+    </div>
+
         <br>
         <br>
         <div class="container-fluid text-center align-items-center"> <!---Contenedor para tarjeta de about us-->
             <div class="row justify-content-center"><!---Damos Rows y colocamos al centro como arriba-->
-                <div class="col-11 card" id="backgroundCards"> <!---Colocamos las columnas con 11 para tomar 11 de los 12 espacios -->
+                <div class="col-11 card" id="backgroundCardsPrincipal"> <!---Colocamos las columnas con 11 para tomar 11 de los 12 espacios -->
                     <div class="logoMictlanes"><!---Nuevo Logo-->
-                        <img alt="logoMictlanes"
+                        <img alt="logoMictlanes" id="imagenMictlanes"
                             src="../ASSETS/icon/LogoMictlanes.png">
                     </div><!---Nuevo Logo-->
                     <p class="parrafoAboutUS">Los Mictlanes, nosotros somos un
@@ -57,23 +62,20 @@
                 </div>
                 <div><!---Parrafo About Us-->
                 </div>
-                <br>
             </div>
+
             <br>
             <br>
-            <!--tarjetas para developers-->
-            <!--tarjeta 1 DIANA CHEMA-->
+            <!--tarjetas para developers-->   
             <div class="col-10 container-fluid text-center align-items-center"> <!--Container para columnas y tarjetas -->
-                <div class="card mb-3 mx-auto"
-                    id="backgroundCards"> <!--Creacion de Tarjeta-->
+                 <!--tarjeta 1 DIANA-->
+                <div class="card mb-3 mx-auto" id="backgroundCards" > <!--Creacion de Tarjeta-->
                     <div class="row g-0"> <!--Creacion de Filas-->
-                        <div class="col-md-2 text-center"> <!--Columnas para imgen-->
-                            <img class="DeveloperImg" 
-                                src="../ASSETS/equipo/diana.jpeg"
-                                class="img-fluid rounded-start"
-                                alt="DeveloperIMG"> <!--Imagen DEV-->
+                        <div class="col-md-4 text-center"> <!--Columnas para imgen-->
+                            <img class="DeveloperImg img-fluid " 
+                                src="../ASSETS/equipo/diana.jpeg" alt="DeveloperIMG"> <!--Imagen DEV-->
                         </div>
-                        <div class="col-md-10"> <!--Columna para informacion-->
+                        <div class="col-md-8"> <!--Columna para informacion-->
                             <div class="card-body"> <!--Cuerpo de tarjeta-->
                                 <h5 class="card-title text-center">Diana Ríos</h5> 
                                 <br>
@@ -87,11 +89,11 @@
                                     estudie una Ingeniera en Computación.</p>
                                 <div class="container img-fluid text-center"> <!--ICONOS-->
                                     <a class="iconContact"
-                                        href="https://github.com/DianaRiosS">
+                                        href="https://github.com/DianaRiosS" target="_blank">
                                         <i class="bi bi-github"></i>
                                     </a>
                                     <a class="iconContact"
-                                        href="https://www.linkedin.com/in/diana-rios-santos/">
+                                        href="https://www.linkedin.com/in/diana-rios-santos/" target="_blank">
                                         <i class="bi bi-linkedin"></i>
                                     </a>
                                 </div>
@@ -100,19 +102,19 @@
                     </div>
                 </div>
                 <!--tarjeta 2 CHEMA-->
-                <div class="card mb-3 mx-auto" style="max-width:fit-content;"
-                    id="backgroundCards">
+                <div class="card mb-3 mx-auto"id="backgroundCards">
                     <div class="row g-0">
-                        <div class="col-md-2 text-center">
-                            <img class="DeveloperImg"
+                        <div class="col-md-4 text-center">
+                            <img class="DeveloperImg img-fluid" 
                                 src="../ASSETS/equipo/chema.jpeg"
                                 class="img-fluid rounded-start"
                                 alt="DeveloperIMG">
                         </div>
-                        <div class="col-md-10">
+                        <div class="col-md-8">
                             <div class="card-body">
                                 <h5 class="card-title text-center">Manuel
                                     Hernández</h5>
+                                    <br>
                                 <p class="card-text">¡Hola! Mi nombre es José
                                     Manuel y soy desarrollador Java Full Stack
                                     en proceso.
@@ -140,13 +142,12 @@
                 <div class="card mb-3 mx-auto" style="max-width:fit-content"
                     id="backgroundCards">
                     <div class="row g-0">
-                        <div class="col-md-2 text-center">
-                            <img class="DeveloperImg"
+                        <div class="col-md-4 text-center">
+                            <img class="DeveloperImg img-fluid" 
                                 src="../ASSETS/equipo/hugo.jpg"
-                                class="img-fluid rounded-start"
                                 alt="DeveloperIMG">
                         </div>
-                        <div class="col-md-10">
+                        <div class="col-md-8">
                             <div class="card-body">
                                 <h5 class="card-title text-center">Hugo
                                     Hernández</h5>
@@ -157,7 +158,6 @@
                                     fotografía.
                                     Exploro el mundo de los datos y capturo
                                     momentos únicos con mi cámara.</p>
-                                <br>
                                 <div class="container img-fluid text-center">
                                     <a class="iconContact"
                                         href="https://github.com/HugoRHM"
@@ -179,13 +179,10 @@
                 <div class="card mb-3 mx-auto" style="max-width:fit-content;"
                     id="backgroundCards">
                     <div class="row g-0">
-                        <div class="col-md-2 text-center">
-                            <img class="DeveloperImg"
-                                src="../ASSETS/equipo/samuel.jpeg"
-                                class="img-fluid rounded-start"
-                                alt="DeveloperIMG">
+                        <div class="col-md-4 text-center">
+                            <img class="DeveloperImg img-fluid" src="../ASSETS/equipo/samuel.jpeg" alt="DeveloperIMG">
                         </div>
-                        <div class="col-md-10">
+                        <div class="col-md-8">
                             <div class="card-body">
                                 <h5 class="card-title text-center">Samuel
                                     Esteves</h5>
@@ -198,7 +195,6 @@
                                     de TI.
                                     Me gusta salir a correr en las mañanas con
                                     mi perro y jugar videojuegos online.</p>
-                                <br>
                                 <div class="container img-fluid text-center">
                                     <a class="iconContact"
                                         href="https://github.com/octasam"
@@ -215,17 +211,16 @@
                         </div>
                     </div>
                 </div>
-                <!--tarjeta 5 FERNANDA-->
+                <!-- tarjeta 5 FERNANDA-->
                 <div class="card mb-3 mx-auto" style="max-width:fit-content;"
                     id="backgroundCards">
                     <div class="row g-0">
-                        <div class="col-md-2 text-center">
-                            <img class="DeveloperImg"
+                        <div class="col-md-4 text-center">
+                            <img class="DeveloperImg img-fluid" 
                                 src="../ASSETS/equipo/Monica.jpeg"
-                                class="img-fluid rounded-start"
                                 alt="DeveloperIMG">
                         </div>
-                        <div class="col-md-10">
+                        <div class="col-md-8">
                             <div class="card-body">
                                 <h5 class="card-title text-center">Monica Campos</h5>
                                 <br>
@@ -237,7 +232,6 @@
                                     Estoy en constante aprendizaje, y me
                                     apasiona compartir mi conocimiento con
                                     otros.</p>
-                                <br>
                                 <div class="container img-fluid text-center">
                                     <a class="iconContact"
                                         href="https://github.com/Monfer30"
@@ -253,18 +247,17 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> 
                 <!--tarjeta 6 FABRIZIO-->
                 <div class="card mb-3 mx-auto" style="max-width:fit-content;"
                     id="backgroundCards">
                     <div class="row g-0">
-                        <div class="col-md-2 text-center">
-                            <img class="DeveloperImg"
+                        <div class="col-md-4 text-center">
+                            <img class="DeveloperImg img-fluid" 
                                 src="../ASSETS/equipo/fabrizio.jpg"
-                                class="img-fluid rounded-start"
                                 alt="DeveloperIMG">
                         </div>
-                        <div class="col-md-10">
+                        <div class="col-md-8">
                             <div class="card-body">
                                 <h5 class="card-title text-center">Fabrizio
                                     Cabrera</h5>
@@ -275,7 +268,6 @@
                                     soy un apasionado del aprendizaje y los
                                     grandes retos, así mismo me encantan los
                                     videojuegos, los gatos y la vida fitness.</p>
-                                <br>
                                 <div class="container img-fluid text-center">
                                     <a class="iconContact"
                                         href="https://github.com/FabrizioCM"
@@ -296,13 +288,12 @@
                 <div class="card mb-3 mx-auto" style="max-width:fit-content;"
                     id="backgroundCards">
                     <div class="row g-0">
-                        <div class="col-md-2 text-center">
-                            <img class="DeveloperImg"
+                        <div class="col-md-4 text-center">
+                            <img class="DeveloperImg img-fluid" 
                                 src="../ASSETS/equipo/Itzel.jpg"
-                                class="img-fluid rounded-start"
                                 alt="DeveloperIMG">
                         </div>
-                        <div class="col-md-10">
+                        <div class="col-md-8">
                             <div class="card-body">
                                 <h5 class="card-title text-center">Itzel
                                     Hernández</h5>
@@ -315,7 +306,6 @@
                                     profesionales apasionados.
                                     Disfruto conocer nuevos lugares y aprender
                                     sobre las personas. </p>
-                                <br>
                                 <div class="container img-fluid text-center">
                                     <a class="iconContact"
                                         href="https://github.com/itzelaviles27"
@@ -333,6 +323,14 @@
                     </div>
                 </div>
             </div>
+        </div>
+      <br>
+            <div id="footer">
+            </div>
+               
+               <script src="../JS/footer.js"></script>
+               <script src="../JS/navbar.js"></script>
+               <script src="../JS/hamburguesa.js"></script>
 
             <script
                 src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
