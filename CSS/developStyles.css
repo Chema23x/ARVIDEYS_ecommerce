@@ -1,8 +1,13 @@
-
+#backgroundCardsPrincipal{
+    background: #A4D0A4;
+    backdrop-filter: blur(20px);
+    border: 1.5px solid rgba(209, 213, 219, 0.3); 
+}
 #backgroundCards {  /*Tarjetas*/
     background: #A4D0A4;
     backdrop-filter: blur(20px);
     border: 1.5px solid rgba(209, 213, 219, 0.3);
+    height: fit-content;
 }
 
 .logoMictlanes { /*Logo los Mictlanes*/
@@ -17,12 +22,15 @@
 }
 
 .DeveloperImg { /*Imagenes*/
-    width: 150px;
-    height: 180px;
-    border-radius: 50px;
-    margin-top: 30px;
-    margin-bottom: 10px;
-    box-shadow: 0 0 15px #fff;
+    aspect-ratio: 1/1;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-top: 15%;
+    margin-bottom: 10%;
+    margin-left: 2%;
+    margin-right: 2%;
 }
 
 .card-title { /*Cuerpo de tarjeta e info de Desarrolladores: titulos o nombres*/
