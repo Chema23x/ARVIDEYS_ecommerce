@@ -120,7 +120,7 @@ textarea {
 }
 
 /*BOTON PARA ENVIAR LA INFORMACIÓN*/
-button {
+.submitButton {
     background-color: #A4D0A4;
     color: rgb(0, 0, 0);
     border: 1px solid #617A55;
@@ -131,7 +131,7 @@ button {
 }
 
 /*CAMBIO DE COLOR DE BOTON CUANDO SE INTERACTUA CON EL*/
-button:hover {
+.submitButton:hover {
     border-radius: 20px;
     background-color: #617A55;
 }
