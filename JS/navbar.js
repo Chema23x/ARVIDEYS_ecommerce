@@ -14,16 +14,16 @@ var html = test(navbar =>{
 
         <li class="nav-item desplegar-seccion">
           <a class="nav-link titleText" href="#">MUJER</a>
-            <div class="seccion-1 text"><a class="subtext" href="#">Nuevo</a></div>
-            <div class="seccion-2 text"><a class="subtext" href="#">Catego1</a></div>
-            <div class="seccion-3 text"><a class="subtext" href="#">Catego2</a></div>
+            <div class="seccion-1 text"><a class="subtext" href="#">Huipiles</a></div>
+            <div class="seccion-2 text"><a class="subtext" href="#">Faldas</a></div>
+            <div class="seccion-3 text"><a class="subtext" href="#">Vestidos</a></div>
         </li>
         
         <li class="nav-item desplegar-seccion ">
           <a class="nav-link titleText" href="#">HOMBRE</a>
-            <div class="seccion-1 text"><a class="subtext" href="#">Nuevo</a></div>
-            <div class="seccion-2 text"><a class="subtext" href="#">Catego1</a></div>
-            <div class="seccion-3 text"><a class="subtext" href="#">Catego2</a></div>
+            <div class="seccion-1 text"><a class="subtext" href="#">Guayaberas</a></div>
+            <div class="seccion-2 text"><a class="subtext" href="#">Pantalones</a></div>
+            <div class="seccion-3 text"><a class="subtext" href="#">Huaraches</a></div>
         </li>
 
         <li class="nav-item desplegar-seccion">
@@ -31,11 +31,10 @@ var html = test(navbar =>{
             <div class="seccion-1 text"><a class="subtext" href="#">Niña</a></div>
             <div class="seccion-2 text"><a class="subtext" href="#">Niño</a></div>
         </li>
-
         <li class="nav-item"><a class="nav-link titleText" href="#">DESCUENTOS</a></li>
-        <li class="nav-item"><a class="nav-link titleText" href="#">CONTACTO</a></li>
-        <li class="nav-item"><a class="nav-link titleText" href="#">AYUDA/FAQ</a></li>
-        <li class="nav-item"><a class="nav-link titleText" href="#">+INFO</a></li>
+        <li class="nav-item"><a class="nav-link titleText" href="./contact.html">CONTACTO</a></li>
+        <li class="nav-item"><a class="nav-link titleText" href="./FAQ's.html">AYUDA/FAQ</a></li>
+        <li class="nav-item"><a class="nav-link titleText" href="./aboutUs.html">+INFO</a></li>
       </ul>
     </div>
         
@@ -57,27 +56,29 @@ var html = test(navbar =>{
         <ul class="dropdown-menu">
           <li class="nav-item desplegar-seccion">
             <a class="nav-link titleText" href="#">MUJER</a>
-            <div class="seccion-1 text"><a class="subtext" href="#">Nuevo</a></div>
-            <div class="seccion-2 text"><a class="subtext" href="#">Catego1</a></div>
-            <div class="seccion-3 text"><a class="subtext" href="#">Catego2</a></div>
+            <div class="seccion-1 text"><a class="subtext" href="#">Huipiles</a></div>
+            <div class="seccion-2 text"><a class="subtext" href="#">Faldas</a></div>
+            <div class="seccion-3 text"><a class="subtext" href="#">Vestidos</a></div>
           </li>
           <li class="nav-item desplegar-seccion">
             <a class="nav-link titleText" href="#">HOMBRE</a>
-              <div class="seccion-1 text"><a class="subtext" href="#">Nuevo</a></div>
-              <div class="seccion-2 text"><a class="subtext" href="#">Catego1</a></div>
-              <div class="seccion-3 text"><a class="subtext" href="#">Catego2</a></div>
+              <div class="seccion-1 text"><a class="subtext" href="#">Guayaberas</a></div>
+              <div class="seccion-2 text"><a class="subtext" href="#">Pantalones</a></div>
+              <div class="seccion-3 text"><a class="subtext" href="#">Huaraches</a></div>
            </li>
            <li class="nav-item desplegar-seccion">
              <a class="nav-link titleText" href="#">NIÑOS</a>
               <div class="seccion-1 text"><a class="subtext" href="#">Niña</a></div>
               <div class="seccion-2 text"><a class="subtext" href="#">Niño</a></div>
            </li>
+           <div>
            <li><hr class="dropdown-divider"></li>
-
+           <!--Secciones desplegables sin subsecciones-->
            <li><a class="dropdown-item titleText" href="#">DESCUENTOS</a></li>
-           <li><a class="dropdown-item titleText" href="#">CONTACTO</a></li>
-           <li><a class="dropdown-item titleText" href="#">AYUDA/FAQ</a></li>
-           <li><a class="dropdown-item titleText" href="#">+INFO</a></li>
+           <li><a class="dropdown-item titleText" href="./contact.html">CONTACTO</a></li>
+           <li><a class="dropdown-item titleText" href="./FAQ's.html">AYUDA/FAQ</a></li>
+           <li><a class="dropdown-item titleText" href="./aboutUs.html">+INFO</a></li>
+          </div>
         </ul>
       </li>
     </ul>
