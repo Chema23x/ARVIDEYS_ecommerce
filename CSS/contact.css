@@ -183,3 +183,10 @@ textarea {
     color: #617A55;
     padding-top: 20px;
 }
+
+#linkContact{
+    text-align: center;
+    /* justify-content: center; */
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.2rem;
+}
