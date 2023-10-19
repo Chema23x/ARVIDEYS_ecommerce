@@ -27,28 +27,29 @@
                     <div class="card-header" id="barraSuperior">
                         <h4>Añade un Producto</h4>
                     </div>
-                    <form id="product-form" class="card-body" >
+                    <form id="product-form" class="card-body">
                         <!-- Primer Input -->
                         <div class="form-group mt-2">
-                            <input type="text"   id="nombreProducto" placeholder="Nombre del producto"
+                            <input type="text" id="nombreProducto" placeholder="Nombre del producto"
                                 class="form-control" />
-                                <div id="validacionNombre"></div>
+                            <div id="validacionNombre"></div>
                         </div>
                         <!-- Segundo Input -->
                         <div class="form-group mt-2">
-                            <input type="text"   id="precioUnitario" placeholder="Precio del Producto"
+                            <input type="text" id="precioUnitario" placeholder="Precio del Producto"
                                 class="form-control" />
-                                <div id="validacionPrecio"></div>
+                            <div id="validacionPrecio"></div>
                         </div>
                         <!-- Tercer imput -->
                         <div class="form-group mt-2">
-                            <input type="number"   id="cantidadProducto" placeholder="Cantidad" class="form-control" />
+                            <input type="number" id="cantidadProducto" placeholder="Cantidad" class="form-control" />
                             <div id="validacionCantidad"></div>
                         </div>
                         <!-- Cuarto Input -->
                         <!-- Id Selector Talliita -->
                         <div class="form-group mt-2 text-center">
-                            <select class="form-select mt-2 text-muted" aria-label="Default select example" id="tallaProducto">
+                            <select class="form-select mt-2 text-muted" aria-label="Default select example"
+                                id="tallaProducto">
                                 <option selected hidden>Talla</option>
                                 <option value="Chica">Chica</option>
                                 <option value="Mediana">Mediana</option>
@@ -60,7 +61,7 @@
                         <!-- Quinto Input Color -->
                         <!-- ID selector color  -->
                         <select class="form-select mt-2 text-muted" aria-label="Default select example"
-                            id="colorPrenda" >
+                            id="colorPrenda">
                             <option selected hidden>Color De Prendas</option>
                             <option value="Blanco">Blanco</option>
                             <option value="Negro">Negro</option>
@@ -73,7 +74,8 @@
                         <!-- Sexto Input -->
                         <!-- Tipo de bordado -->
                         <div class="form-group mt-2 text-center">
-                            <select class="form-select mt-2 text-muted" aria-label="Default select example" id="tipoProducto" >
+                            <select class="form-select mt-2 text-muted" aria-label="Default select example"
+                                id="tipoProducto">
                                 <option selected hidden>Tipo De Bordado</option>
                                 <option value="A Mano">A Mano</option>
                                 <option value="A Máquina">A Máquina</option>
@@ -83,21 +85,20 @@
 
                             <!--boton Salvar  -->
                             <br>
-                            <input id="submit" type="submit" value="Guardar" class="btn btn-primary btn-block mt-5" />
+                            <input id="submit" type="submit" value="Guardar"
+                                class="btn btn-primary btn-block mt-5" />
                     </form>
                 </div>
             </div>
-                            <!-- Tu contenido de la lista de productos -->
-                            
-        </div>   
+            <!-- Tu contenido de la lista de productos -->
+        </div>
         <div class="col-md-8 col-ms-8 text-center">
             <div class="card">
                 <div class="card-header" id="product-list">
                 </div>
             </div>
-    </div> 
-
-
+        </div>
+    </div>
 
     <script src="../JS/formularioDeProductos.js"></script>
 </body>

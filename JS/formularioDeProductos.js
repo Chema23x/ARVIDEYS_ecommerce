@@ -64,6 +64,7 @@ class UI {
     }
 }
 
+let listaProductos = [];
 
 document.getElementById('product-form').addEventListener('submit', function (e) {
     const nombreProducto = document.getElementById('nombreProducto').value;
@@ -72,8 +73,6 @@ document.getElementById('product-form').addEventListener('submit', function (e) 
     const tallaProducto = document.getElementById('tallaProducto').value;
     const colorPrenda = document.getElementById('colorPrenda').value;
     const tipoProducto = document.getElementById('tipoProducto').value;
-
-    //Alerta
 
     function mostrarAlerta(mensaje, contenedorID) {
         const contenedor = document.getElementById(contenedorID);
@@ -84,44 +83,39 @@ document.getElementById('product-form').addEventListener('submit', function (e) 
         contenedor.appendChild(alertDiv);
 
         setTimeout(() => {
-            contenedor.removeChild(alertDiv); // Oculta la alerta después de 0.7 segundos
+            contenedor.removeChild(alertDiv);
         }, 700);
 
         validacion = false;
     }
 
-    /**Validaciones */
     let validacion = true;
 
-    //Nombre
     if (nombreProducto == '' || nombreProducto.length <= 4) {
         mostrarAlerta('Por favor, ingrese un nombre de la prenda', 'validacionNombre');
-
         e.preventDefault();
     }
 
-    //Precio 
     if (isNaN(precioUnitario) || (precioUnitario) <= 0 || precioUnitario == '') {
         mostrarAlerta('Por favor, ingrese un precio de la prenda', 'validacionPrecio');
         e.preventDefault();
     }
-    //Cantidad
+
     if (isNaN(cantidadProducto) || (cantidadProducto) <= 0 || cantidadProducto == '') {
         mostrarAlerta('Por favor, ingresa una cantidad valida', 'validacionCantidad');
         e.preventDefault();
     }
-    //Talla
+
     if (tallaProducto == 'Talla') {
         mostrarAlerta('Por favor, seleccione una talla', 'validacionTalla');
         e.preventDefault();
     }
 
-    //Color
     if (colorPrenda == 'Color De Prendas') {
         mostrarAlerta('Por favor, seleccione un color', 'validacionColor');
         e.preventDefault();
     }
-    //Tipo de Bordado
+
     if (tipoProducto == 'Tipo De Bordado') {
         mostrarAlerta('Por favor, seleccione un tipo de bordado', 'validacionBordado');
         e.preventDefault();
@@ -137,8 +131,6 @@ document.getElementById('product-form').addEventListener('submit', function (e) 
         ui.resetForm();
         console.log(new Product(nombreProducto, precioUnitario, cantidadProducto, tallaProducto, colorPrenda, tipoProducto));
 
-
-        // Funcion listaProductoJSON sera enviada a un formato JSON para una reutilizacion posterior
         const listaProductoJSON = JSON.stringify(product);
         console.log(listaProductoJSON);
         fetch('https://jsonplaceholder.typicode.com/posts', {
@@ -155,19 +147,21 @@ document.getElementById('product-form').addEventListener('submit', function (e) 
             .catch(error => {
                 console.error('Error:', error);
             });
+
+       
+        listaProductos.push(product);
     }
 
-    //FIN DEL PROCESO POST
     e.preventDefault();
-
-
 });
 
 document.getElementById('product-list').addEventListener('click', function (e) {
     const ui = new UI();
     ui.deleteProduct(e.target);
     ui.showDeleteAlert();
-})
 
+    const nombreProducto = e.target.parentElement.querySelector('strong:first-child').textContent.trim();
 
-
+   
+    listaProductos = listaProductos.filter(producto => producto.nombreProducto !== nombreProducto);
+});
