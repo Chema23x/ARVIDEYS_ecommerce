@@ -1,0 +1,178 @@
+/*Propiedad pra todo la página*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*Tipo de letra para etiquetas*/
+h1 h2{
+    font-family: 'Molengo', sans-serif;
+}
+
+h3 h4 h5 h6 p {
+    font-family: 'Raleway', sans-serif;
+}
+/*Contenedoroes para la parte inferior del carrusel*/
+.wrap{
+    max-width: 1400px;
+    width: 90%;
+    margin: auto;
+}
+
+.store-wrapper{
+    display: flex;
+}
+/*Responsive contenedor para la parte inferior del carrusel*/
+@media(max-width:1000px) {
+    .store-wrapper{
+        display: grid;
+        
+    }
+}
+
+/*Contenedor de los filtros de busqueda*/
+.category_list{
+    display: flex;
+    flex-direction: column;
+    width: 18%;
+    margin-top: 40px;
+    margin-right: 20px;
+}
+/*Responsive de las tarjetas de productos*/
+@media screen and (max-width: 1000px){
+	.articles-container .product-card{
+		width: 70%;
+	}
+    .product-details{
+        width: 60%;
+    }
+    #buttonCart{
+        font-size: 10px;
+    }
+}
+
+/*Responsive contenedores de los filtros*/
+@media screen and (max-width:1000px) {
+    .category_list{
+        width: 65%;
+        flex-direction: column;
+    }
+    .category_item{
+      justify-content: center;  
+    }
+
+    .category_list .category_item{
+		align-self: flex-start;
+		width: 100%;
+		font-size: 14px;
+        margin-bottom: 10px;
+	}
+    .articles-container .product-card{
+		margin-left: 4.5%;
+	}
+}
+
+/*Seccion de los cuadros de busqueda (filtros)*/
+.category_item{
+    display: block;
+    width: 90%;
+    padding: 15px 0;
+    margin-bottom: 20px;
+    background: #A4d0A4;
+
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+}
+
+/*Clases para las secciones del filtro afectadas por js*/
+.filtro-section-1, .filtro-section-2, .filtro-section-3, .filtro-section-4, .filtro-section-5, .filtro-section-6 {
+    display: none;
+  }
+
+  .visible {
+    display: block;
+    text-align: center;
+  }
+
+a{
+cursor: pointer;
+text-decoration: none;
+color: black;
+}
+
+
+
+/* Seccion de cards*/
+/*Division del contenedor para las 2 tarjetas por renglón*/
+.articles-container{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 82%;
+}
+/*Propiedades de la card*/
+.product-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+/*Imagen del producto*/
+.product-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: all .5s;
+
+}
+/*Recuadro de la imagen*/
+.product-card figure{
+    overflow: hidden;
+}
+/*Animacion de la imagen*/
+.product-image:hover{
+    transform: scale(1.2);
+}
+/*Contenedor de la info del producto*/
+.product-details {
+    flex:1
+}
+
+.product-details h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.product-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.product-details ul li {
+    margin-bottom: 5px;
+}
+
+/*Sección del boton del artículo*/
+.boton{
+    display: flex;
+    justify-content: center;
+}
+
+#buttonCart {
+    background-color: #A4d0A4;
+    font-weight:700;
+    border: none;
+    border-radius: 8px;
+    width: 200px;
+    height: 30px;
+}
+#buttonCart:hover{
+    box-shadow: 0 10px 15px -3px #488aec4f, 0 4px 6px -2px #488aec17;
+}
+

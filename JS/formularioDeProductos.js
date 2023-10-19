@@ -1,11 +1,12 @@
 class Product {
-    constructor(nombreProducto, precioUnitario, cantidadProducto, tallaProducto, colorPrenda, tipoProducto) {
+    constructor(nombreProducto, precioUnitario, cantidadProducto, tallaProducto, colorPrenda, tipoProducto,imagenProducto) {
         this.nombreProducto = nombreProducto;
         this.precioUnitario = precioUnitario;
         this.cantidadProducto = cantidadProducto;
         this.tallaProducto = tallaProducto;
         this.colorPrenda = colorPrenda;
         this.tipoProducto = tipoProducto;
+        this.imagenProducto = imagenProducto;
     }
 }
 
@@ -21,10 +22,11 @@ class UI {
                     <strong> Cantidad:</strong> ${product.cantidadProducto}<br>
                     <strong> Talla:</strong> ${product.tallaProducto}
                     <strong> Color:</strong> ${product.colorPrenda}
-                    <strong> Tipo de Bordado:</strong> ${product.tipoProducto}<br>
-                    <a href="#" class="btn btn-danger" name="delete">
+                    <strong> Tipo de Bordado:</strong> ${product.tipoProducto}
+                    <strong> Imagen de Producto: </strong> ${product.imagenProducto}<br>
+                    <button class="btn btn-danger" name="delete">
                         Eliminar
-                    </a>
+                    </button>
                 </div>
             </div>
         `;
@@ -38,6 +40,7 @@ class UI {
     deleteProduct(element) {
         if (element.name === 'delete') {
             element.parentElement.parentElement.parentElement.remove();
+            showDeleteAlert();
         }
     }
 
@@ -52,19 +55,18 @@ class UI {
         }, 1000);
     }
 
-    showDeleteAlert() {
-        const alertElement = document.getElementById('alert');
-        alertElement.textContent = 'Producto eliminado exitosamente';
-        alertElement.classList.add('alert-danger');
-
-        setTimeout(() => {
-            alertElement.textContent = '';
-            alertElement.classList.remove('alert-danger');
-        }, 1000);
-    }
 }
 
-let listaProductos = [];
+function showDeleteAlert() {
+    const alertElement = document.getElementById('alert');
+    alertElement.textContent = 'Producto eliminado exitosamente';
+    alertElement.classList.add('alert-danger');
+
+    setTimeout(() => {
+        alertElement.textContent = '';
+        alertElement.classList.remove('alert-danger');
+    }, 1000);
+}
 
 document.getElementById('product-form').addEventListener('submit', function (e) {
     const nombreProducto = document.getElementById('nombreProducto').value;
@@ -73,6 +75,7 @@ document.getElementById('product-form').addEventListener('submit', function (e) 
     const tallaProducto = document.getElementById('tallaProducto').value;
     const colorPrenda = document.getElementById('colorPrenda').value;
     const tipoProducto = document.getElementById('tipoProducto').value;
+    const imagenProducto = document.getElementById('imagenProducto').value;
 
     function mostrarAlerta(mensaje, contenedorID) {
         const contenedor = document.getElementById(contenedorID);
@@ -83,13 +86,15 @@ document.getElementById('product-form').addEventListener('submit', function (e) 
         contenedor.appendChild(alertDiv);
 
         setTimeout(() => {
-            contenedor.removeChild(alertDiv);
-        }, 700);
+            contenedor.removeChild(alertDiv); // Oculta la alerta después de 1.5 segundos
+        }, 1500);
 
         validacion = false;
     }
 
     let validacion = true;
+    const validacionURL = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/;
+
 
     if (nombreProducto == '' || nombreProducto.length <= 4) {
         mostrarAlerta('Por favor, ingrese un nombre de la prenda', 'validacionNombre');
@@ -121,16 +126,25 @@ document.getElementById('product-form').addEventListener('submit', function (e) 
         e.preventDefault();
     }
 
+    //Imagen
+
+    if (!validacionURL.test(imagenProducto)){
+        mostrarAlerta('Por favor, igrese un URL valido', 'validacionImagen');
+        e.preventDefault();
+    }
+
     if (validacion) {
-        console.log(nombreProducto, precioUnitario, cantidadProducto, tallaProducto, colorPrenda, tipoProducto);
-        const product = new Product(nombreProducto, precioUnitario, cantidadProducto, tallaProducto, colorPrenda, tipoProducto);
+        console.log(nombreProducto, precioUnitario, cantidadProducto, tallaProducto, colorPrenda, tipoProducto,imagenProducto);
+        const product = new Product(nombreProducto, precioUnitario, cantidadProducto, tallaProducto, colorPrenda, tipoProducto,imagenProducto);
         const ui = new UI();
 
         ui.addProduct(product);
         ui.showAddAlert();
         ui.resetForm();
-        console.log(new Product(nombreProducto, precioUnitario, cantidadProducto, tallaProducto, colorPrenda, tipoProducto));
+        console.log(new Product(nombreProducto, precioUnitario, cantidadProducto, tallaProducto, colorPrenda, tipoProducto,imagenProducto));
 
+
+        // Funcion listaProductoJSON sera enviada a un formato JSON para una reutilizacion posterior
         const listaProductoJSON = JSON.stringify(product);
         console.log(listaProductoJSON);
         fetch('https://jsonplaceholder.typicode.com/posts', {
@@ -158,10 +172,8 @@ document.getElementById('product-form').addEventListener('submit', function (e) 
 document.getElementById('product-list').addEventListener('click', function (e) {
     const ui = new UI();
     ui.deleteProduct(e.target);
-    ui.showDeleteAlert();
+    //ui.showDeleteAlert();
+})
 
-    const nombreProducto = e.target.parentElement.querySelector('strong:first-child').textContent.trim();
 
-   
-    listaProductos = listaProductos.filter(producto => producto.nombreProducto !== nombreProducto);
-});
+
