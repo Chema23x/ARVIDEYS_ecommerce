@@ -26,39 +26,45 @@
     <div class="inputUser">
         <div class="tarjeta">
             <!--SE UTILIZA LA API ""FORMSUBMIT" PARA HACER LLEGAR LOS MENSAJE AL CORREO DE LA TIENDA-->
-            <form>
+            <form action="" method="post" id="registro-form" enctype="text/plain">
                 <div class="row">
                     <div class="col">
                         <label for="inputName" class="col-sm-2 col-form-label">Nombre(s) </label>
-                        <input type="text" class="form-control" id="inputName">
+                        <input type="text" class="form-control" id="inputName" maxlength="30">
+                        <div id="validacionNombre"></div>
                     </div>
                     <div class="col">
                         <label for="inputLastName" class="col-sm-2 col-form-label">Apellidos</label>
-                        <input type="text" class="form-control" id="inputLastName">
+                        <input type="text" class="form-control" id="inputLastName" maxlength="30">
+                        <div id="validacionApellidos"></div>
                     </div>
                 </div>
                 <div class="form-group col">
                     <label for="inputTelephone" class="col-sm-2 col-form-label">Teléfono</label>
                     <div class="col-sm-12">
-                        <input type="text" class="form-control" id="inputTelephone">
+                        <input type="text" class="form-control" id="inputTelephone" maxlength="10">
+                        <div id="validacionTelefono"></div>
                     </div>
                 </div>
                 <div class="form-group col">
                     <label for="inputEmail" class="col-sm-6 col-form-label">Correo Electronico</label>
                     <div class="col-sm-12">
-                        <input type="email" class="form-control" id="inputEmail">
+                        <input type="email" class="form-control" id="inputEmail" maxlength="30">
+                        <div id="validacionEmail"></div>
                     </div>
                 </div>
                 <div class="form-group col">
                     <label for="inputPassword" class="col-sm-2 col-form-label">Contraseña</label>
                     <div class="col-sm-12">
-                        <input type="password" class="form-control" id="inputPassword">
+                        <input type="password" class="form-control" name="inputPassword" id="inputPassword">
+                        <div id="validacionPassword"></div>
                     </div>
                 </div>
                 <div class="form-group col">
                     <label for="inputConfirPassword" class="col-sm-6 col-form-label">Confirmacion de Contraseña</label>
                     <div class="col-sm-12">
                         <input type="password" class="form-control" id="inputConfirPassword">
+                        <div id="validacionConfirPassword"></div>
                     </div>
                 </div>
                 <div class="botonesDev">
@@ -67,10 +73,12 @@
                         <span>Registrar</span>
                     </button>
                 </div>
+                <p class="wanings" id="warnings"></p>
             </form>
         </div>
     </div>
     
+    <script src="../JS/registroUsuario.js"></script>
     <script src="../JS/footer.js"></script>
     <script src="../JS/navbar.js"></script>
     <script src="../JS/hamburguesa.js"></script>
