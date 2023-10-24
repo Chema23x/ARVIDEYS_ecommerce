@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../CSS/home.css">
+    <link rel="stylesheet" href="../CSS/carrusel.css">
+    <link rel="stylesheet" href="../CSS/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Molengo&family=Raleway:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/listaDeObjetos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>Lista de Objetos</title>
+</head>
+<body>
+  
+  <!--Navbar-->
+    <div id="navbar">
+   </div>
+
+     
+        <!--carousel section-->
+        <div id="carouselTop" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div id="buttonSlide" class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+              <img src="https://picsum.photos/1200/400" class="d-block w-100" alt="...">
+                <div class="carousel-caption  d-none d-md-block text-start" >
+                 <h5 class="carousel-title">¿COMO NACE ARVIDEYS?</h5>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At hic consectetur explicabo alias atque odio porro, non a, deleniti perspiciatis soluta recusandae voluptatibus animi? Atque.</p>
+                </div>
+            </div>
+          <div class="carousel-item" data-bs-interval="10000">
+            <img src="https://picsum.photos/1200/400" class="d-block w-100" alt="...">
+             <div class="carousel-caption d-none d-md-block">
+              <h5 class="carousel-title">Second slide label</h5>
+               <p>Some representative placeholder content for the second slide.</p>
+             </div>
+          </div>
+            <div class="carousel-item" data-bs-interval="10000">
+              <img src="https://picsum.photos/1200/400" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5 class="carousel-title">Third slide label</h5>
+                    <p>Some representative placeholder content for the third slide.</p>
+                </div>
+           </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselTop" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselTop" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+    </div>
+    <!--Seccion de Filtros-->
+    <div class="wrap">
+    <div class="store-wrapper">   
+        <div class="category_list">
+          <ul class="desplegar-filtro">
+          <a class="category_item" category="all">Todo</a>
+        </ul>
+          <ul class="desplegar-filtro">
+            <a class="category_item" category="talla ">Talla</a>
+            <div class="filtro-section-1"><a>Chica</a></div>  
+            <div class="filtro-section-2"><a>Mediana</a></div>  
+            <div class="filtro-section-3"><a>Grande</a></div> 
+          </ul>
+
+          <ul class="desplegar-filtro">
+            <a class="category_item" category="color">Color</a>
+            <div class="filtro-section-1"><a>Rojo</a></div>
+            <div class="filtro-section-2"><a>Azul</a></div>
+            <div class="filtro-section-3"><a>Amarillo</a></div>
+            <div class="filtro-section-4"><a>Morado</a></div>
+            <div class="filtro-section-5"><a>Verde</a></div>
+            <div class="filtro-section-6"><a>Rosa</a></div>
+          </ul>
+          <ul class="desplegar-filtro">
+            <a class="category_item" category="tipoDeBordado">Tipo de bordado</a>
+            <div class="filtro-section-1"><a>A mano</a></div>
+            <div class="filtro-section-2"><a>Máquina</a></div>
+          </ul>
+        </div>
+
+    <!--Sección de productos-->
+
+       <div id="articles-container" class="articles-container">
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+
+
+<script src="../JS/footer.js"></script>
+<script src="../JS/navbar.js"></script>
+<script src="../JS/hamburguesa.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="../JS/filtrosRopa.js"></script>
+<script src="../JS/ropaCards.js"></script>
+<script src="../JS/ropa.jsonp"></script>
+</body>
+<footer id="footer"> 
+</footer>
+</html>
+

@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="row">
 
             <div class="col-md-4 mt-5"> 
-                <img class="LogoEmpresaFooter" src="./ARVIDEYS.png" alt="LogoEmpresa">
+                <img class="LogoEmpresa" src="../assets/ARVIDEYS.png" alt="LogoEmpresa">
             </div>
 
             <div class="col-md-2 mt-3"> 
@@ -38,10 +38,10 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="col-md-3 mt-3"> 
                 <h6 class="text-uppercase mb-3 titleFooter">Acerca de nosotros</h6> 
             <p>
-                <a class="link-footer" href="">¡Conocenos!</a> 
+                <a class="link-footer" href="../HTML/aboutArvideys.html">¡Conocenos!</a> 
             </p>
             <p>
-                <a class="link-footer" href="">Terminos y condicones de envios y devoluciones</a> 
+                <a class="link-footer" href="../HTML/terminos.html">Términos y Condiciones</a> 
             </p>
           </div>
         </div>

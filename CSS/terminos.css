@@ -5,9 +5,11 @@
     margin: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    
 }
+
 .tarjetaTerminos{
-    background: #F6F6F6;
+    background-color: #f3f0f0;
     box-shadow: 0 0 20px #A4D0A4;
 }
 
