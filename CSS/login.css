@@ -8,6 +8,14 @@
   font-family: 'Raleway', sans-serif;
   margin-top: 20px;
   margin-bottom: 20px;
+  border-color: #A4D0A4 !important;
+  box-shadow: none !important;
+  border-radius: 20px !important;
+}
+.form-control:focus{
+  border-color: black !important;
+  box-shadow: none !important;
+  border-radius: 20px !important;
 }
 
 /*BOTON DEL FORMULARIO*/
