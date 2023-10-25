@@ -20,7 +20,9 @@ var callBack = function(datos){
                             <li>Tipo de bordado: ${ropa['Tipo de bordado']}</li>
                         </ul>
                         <div class="boton">
-                        <button id="buttonCart">Añadir al carrito</button>
+                        <button id="buttonCart" class="cssbuttons-io">
+                                <span>Añadir al carrito</span>
+                              </button>
                         </div>
                     </div>
                 </div>
