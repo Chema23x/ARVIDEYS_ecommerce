@@ -5,11 +5,11 @@ document.getElementById('loginOn').addEventListener('click', function (e) {
     const password = document.getElementById("exampleInputPassword1");
     const parrafo = document.getElementById("warnings");
 
-    let validacion = true; // Declarar la variable validacion antes de usarla
+    let Validation = true; // Declarar la variable Validacion antes de usarla
 
 
     //Recordar Usuario mediante el checkbox
-    const rememberUserCheckbox = document.getElementById("flexCheckChecked");
+    const rememberUserCheckbox = document.getElementById("rememberUser");
     const rememberUser = rememberUserCheckbox.checked;
 
     function mostrarAlerta(mensaje, contenedorID) {
@@ -24,34 +24,47 @@ document.getElementById('loginOn').addEventListener('click', function (e) {
             contenedor.removeChild(alertContact); // Oculta la alerta después de 1.5 segundos
         }, 2500);
 
-        validacion = false;
+        Validation = false;
     }
 
-    // VALIDACIONES
+    // ValidationES
 
     /* Verifica que el correo electrónico cumple con un formato válido */
     const regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
     if (!regexEmail.test(email.value)) {
-        mostrarAlerta('Correo electrónico no válido', 'validacionEmail');
+        mostrarAlerta('Correo electrónico no válido', 'EmailValidation');
     }
 
     /* Verifica que la contraseña tenga al menos 6 caracteres */
     if (password.value.length < 6) {
-        mostrarAlerta('Contraseña no válida, debe tener al menos 6 caracteres', 'validacionPassword');
+        mostrarAlerta('Contraseña no válida, debe tener al menos 6 caracteres', 'PasswordValidation');
     }
 
-    /* Aquí puedes agregar más validaciones si es necesario */
+    /* Aquí puedes agregar más Validationes si es necesario */
 
     /* Envía el formulario si la validación es exitosa */
-    if (validacion) {
+    if (Validation) {
         parrafo.innerHTML = "Iniciar sesión exitoso";
         console.log("Listo");
         // Aquí puedes enviar el formulario si es necesario
         // document.getElementById('login-form').submit();
     }
-
-    if (validacion && rememberUser) {
+    //Validacion para almacenar los Items en el LocalStorage
+    if (Validation && rememberUser) {
         localStorage.setItem("email", email.value);
         localStorage.setItem("password", password.value);
+        //Si el checkbox esta desactivado y login elimina del local Storage
+    } else if(!rememberUser){
+        localStorage.clear("email",email.value);
+        localStorage.clear("password",password.value);
     }
 });
+if (localStorage.getItem("email") && localStorage.getItem("password")) {
+    // Recupera los datos almacenados en localStorage
+    const rememberUserLS = localStorage.getItem("email");
+    const RememberPasswordLS = localStorage.getItem("password");
+
+    // Llena los campos de entrada con los datos almacenados
+    document.getElementById("exampleInputEmail1").value = rememberUserLS;
+    document.getElementById("exampleInputPassword1").value = RememberPasswordLS;
+}
