@@ -3,10 +3,7 @@
 #barraSuperior{
   background-color: #A4D0A4;
 }
-.form-control:focus {
-  border-color: black !important;
-  box-shadow: none !important;
-}
+
 #barraSuperior{
   background-color: #A4D0A4;
 }
