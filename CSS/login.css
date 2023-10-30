@@ -1,48 +1,36 @@
-.titleUser {
-    font-family: 'Molengo', sans-serif;
-    font-size: 25px;
-    text-align: center;
-    padding-top: 10px;
+.titleLogin {
+  font-family: 'Molengo', sans-serif;
+  text-align: center;
+  margin-top: 20px;
 }
 
-.inputUser {
-    display: flex;
-    justify-content: center;
+
+.form-check-input:checked {
+  background-color: #617A55  !important; 
+  color: white; /* Cambia el color del texto seleccionado */
+  box-shadow: none !important;
+  border-color: none !important;
+
 }
 
-.tarjeta {
-    margin: 10px;
-    width: 50%;
-    display: inline-block;
-    text-align: left;
+.form-check-input:focus{
+  box-shadow: none !important;
+  border-color: none !important;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    font-family: 'Raleway', sans-serif;
-}
 
-/*BORDE DE LA TARJETA DEL FORMULARIO*/
-.form-control {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #A4D0A4;
-    box-sizing: border-box;
-    border-color: #A4D0A4 !important;
-    box-shadow: none !important;
-    border-radius: 20px !important;
+.form-control, .form-group  {
+  font-family: 'Raleway', sans-serif;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-color: #A4D0A4 !important;
+  box-shadow: none !important;
+  border-radius: 20px !important;
 }
 .form-control:focus{
   border-color: black !important;
   box-shadow: none !important;
   border-radius: 20px !important;
-}
-
-.botonesDev{
-  display: flex;
-  justify-content: center;
 }
 
 /*BOTON DEL FORMULARIO*/
@@ -97,12 +85,4 @@ form {
 
   .cssbuttons-io:active {
     transform: scale(0.95);
-  }
-
-  .alertText{
-    font-size: 9px;
-    text-align: left;
-    width: 100%;
-    margin-top: 5px;
-    align-items: center;
   }

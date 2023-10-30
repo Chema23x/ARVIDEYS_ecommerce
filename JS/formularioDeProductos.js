@@ -175,5 +175,12 @@ document.getElementById('product-list').addEventListener('click', function (e) {
     //ui.showDeleteAlert();
 })
 
+// const mySQL = require ('mysql')
+// const connection =mySQL.createConnection({
+//     host: 'localhost',
+//     user: 'root',
+//     password: 'Pa$$w0rd',
+//     database: 'arvideys'
+// })
 
 
