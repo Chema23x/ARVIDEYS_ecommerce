@@ -4,6 +4,21 @@
   margin-top: 20px;
 }
 
+
+.form-check-input:checked {
+  background-color: #617A55  !important; 
+  color: white; /* Cambia el color del texto seleccionado */
+  box-shadow: none !important;
+  border-color: none !important;
+
+}
+
+.form-check-input:focus{
+  box-shadow: none !important;
+  border-color: none !important;
+}
+
+
 .form-control, .form-group  {
   font-family: 'Raleway', sans-serif;
   margin-top: 20px;
