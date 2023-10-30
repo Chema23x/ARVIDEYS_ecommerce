@@ -27,11 +27,11 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="col-md-3 mt-5"> 
                 <p>
                     <i class="bi bi-telephone"></i> 
-                   555555555 
+                    +52 9712618213
                 </p>
                 <p>
                     <i class="bi bi-geo-alt"></i> 
-                    <a class="link-footer" href="" >Ubicacion de tiendas</a> 
+                    <a class="link-footer" href="../HTML/contact.html" >Ubicacion de tiendas</a> 
                 </p>
               </div>
             

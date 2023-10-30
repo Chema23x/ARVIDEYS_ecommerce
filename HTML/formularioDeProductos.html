@@ -36,12 +36,18 @@
                     </div>
                     <form id="product-form" class="card-body">
                         <!-- Primer Input -->
-                        <div class="form-group mt-2">
-
-
-                            <input type="text"   id="nombreProducto" placeholder="Nombre del producto"
-                                class="form-control"  />
-                                <div id="validacionNombre"></div>
+                        <div class="form-group mt-2 text-center">
+                            <select class="form-select mt-2 text-muted" aria-label="Default select example"
+                                id="categoriaProducto">
+                                <option selected hidden>Categoria</option>
+                                <option value="Huipil">Huipil</option>
+                                <option value="Falda">Falda</option>
+                                <option value="Vestido">Vestido</option>
+                                <option value="Guayabera">Guayabera</option>
+                                <option value="Pantalon">Pantalon</option>
+                                <option value="Huarache">Huarache</option>
+                            </select>
+                            <div id="validacionCategoria"></div>
                         </div>
                         <!-- Segundo Input -->
                         <div class="form-group mt-2">

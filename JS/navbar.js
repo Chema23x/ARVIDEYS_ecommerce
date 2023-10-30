@@ -10,7 +10,7 @@ var html = test(navbar =>{
      
        
        <li id="botonPerfil" class="navbar-nav">
-         <a  class="nav-link" href="../HTML/productos.html"><img class="perfil" src="../ASSETS/ICON/perfil.png" alt="profile"></i></a>
+         <a  class="nav-link" href="../HTML/Perfil.html"><img class="perfil" src="../ASSETS/ICON/perfil.png" alt="profile"></i></a>
        </li>
              
    <!--Sección de carrito de compras-->
@@ -34,24 +34,24 @@ var html = test(navbar =>{
      <!--Sección desplegable Mujer en menu responsivo-->
        <li class="nav-item desplegar-seccion">
          <a class="nav-link titleText" href="#">MUJER</a>
-           <div class="seccion-1 text"><a class="subtext" href="#">Huipiles</a></div>
-           <div class="seccion-2 text"><a class="subtext" href="#">Faldas</a></div>
-           <div class="seccion-3 text"><a class="subtext" href="#">Vestidos</a></div>
+           <div class="seccion-1 text"><a class="subtext" href="../HTML/productos.html">Huipiles</a></div>
+           <div class="seccion-2 text"><a class="subtext" href="../HTML/productos.html">Faldas</a></div>
+           <div class="seccion-3 text"><a class="subtext" href="../HTML/productos.html">Vestidos</a></div>
        </li>
 
      <!--Sección desplegable Hombre en menu responsivo-->
        <li class="nav-item desplegar-seccion ">
          <a class="nav-link titleText" href="#">HOMBRE</a>
-           <div class="seccion-1 text"><a class="subtext" href="#">Guayaberas</a></div>
-           <div class="seccion-2 text"><a class="subtext" href="#">Pantalones</a></div>
-           <div class="seccion-3 text"><a class="subtext" href="#">Huaraches</a></div>
+           <div class="seccion-1 text"><a class="subtext" href="../HTML/productos.html">Guayaberas</a></div>
+           <div class="seccion-2 text"><a class="subtext" href="../HTML/productos.html">Pantalones</a></div>
+           <div class="seccion-3 text"><a class="subtext" href="../HTML/productos.html">Huaraches</a></div>
        </li>
 
        <!--Sección desplegable Niños en menu responsivo-->
        <li class="nav-item desplegar-seccion">
          <a class="nav-link titleText" href="#">NIÑOS</a>
-           <div class="seccion-1 text"><a class="subtext" href="#">Niña</a></div>
-           <div class="seccion-2 text"><a class="subtext" href="#">Niño</a></div>
+           <div class="seccion-1 text"><a class="subtext" href="../HTML/productos.html">Niña</a></div>
+           <div class="seccion-2 text"><a class="subtext" href="../HTML/productos.html">Niño</a></div>
        </li>
        <!--Secciones de menu hamburguesa sin opciones desplegable-->
        <li class="nav-item"><a class="nav-link titleText" href="../HTML/formularioDeProductos.html">DESCUENTOS</a></li>
@@ -84,24 +84,24 @@ var html = test(navbar =>{
         <!--Sección desplegable Mujer-->
          <li class="nav-item desplegar-seccion">
            <a class="nav-link titleText" href="#">MUJER</a>
-           <div class="seccion-1 text"><a class="subtext" href="#">Huipiles</a></div>
-           <div class="seccion-2 text"><a class="subtext" href="#">Faldas</a></div>
-           <div class="seccion-3 text"><a class="subtext" href="#">Vestidos</a></div>
+           <div class="seccion-1 text"><a class="subtext" href="../HTML/productos.html">Huipiles</a></div>
+           <div class="seccion-2 text"><a class="subtext" href="../HTML/productos.html">Faldas</a></div>
+           <div class="seccion-3 text"><a class="subtext" href="../HTML/productos.html">Vestidos</a></div>
          </li>
 
         <!--Sección desplegable Hombre-->
          <li class="nav-item desplegar-seccion">
            <a class="nav-link titleText" href="#">HOMBRE</a>
-             <div class="seccion-1 text"><a class="subtext" href="#">Guayaberas</a></div>
-             <div class="seccion-2 text"><a class="subtext" href="#">Pantalones</a></div>
-             <div class="seccion-3 text"><a class="subtext" href="#">Huaraches</a></div>
+             <div class="seccion-1 text"><a class="subtext" href="../HTML/productos.html">Guayaberas</a></div>
+             <div class="seccion-2 text"><a class="subtext" href="../HTML/productos.html">Pantalones</a></div>
+             <div class="seccion-3 text"><a class="subtext" href="../HTML/productos.html">Huaraches</a></div>
           </li>
 
           <!--Sección desplegable Niños-->
           <li class="nav-item desplegar-seccion">
             <a class="nav-link titleText" href="#">NIÑOS</a>
-             <div class="seccion-1 text"><a class="subtext" href="#">Niña</a></div>
-             <div class="seccion-2 text"><a class="subtext" href="#">Niño</a></div>
+             <div class="seccion-1 text"><a class="subtext" href="../HTML/productos.html">Niña</a></div>
+             <div class="seccion-2 text"><a class="subtext" href="../HTML/productos.html">Niño</a></div>
           </li>
           <!--Linea divisoria en menu-->
           <div>
@@ -117,11 +117,11 @@ var html = test(navbar =>{
    </ul>
    <div class="menu">
      <li class="navbar-nav">
-       <a class="nav-link" href="../HTML/productos.html"><img class="perfil" src="../ASSETS/ICON/perfil.png" alt="profile"></i></a>
+       <a class="nav-link" href="../HTML/Perfil.html"><img class="perfil" src="../ASSETS/ICON/perfil.png" alt="profile"></i></a>
      </li>
            
      <li class="navbar-nav">
-       <a class="nav-link" href="../HTML/devolucionesFormulario.html"><img class="cart" src="../ASSETS/ICON/carrito-de-compras.png" alt="carrito"></i></a>
+       <a class="nav-link"><img class="cart" src="../ASSETS/ICON/carrito-de-compras.png" alt="carrito"></i></a>
      </li>
    </div>
    </div>
