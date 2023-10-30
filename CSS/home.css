@@ -171,23 +171,36 @@
         width: 30px;
         height: 30px;
     }
-/*Sección responsive de los iconos de perfil, carrito y hamburguesa*/    
+/*Sección responsive de los iconos de perfil, carrito y hamburguesa*/  
+
   .contenedorIconos{ 
   display: grid;
-  grid-template-columns: 33% 33% 34%;
-  width: 200px;
+  grid-template-columns: 20% 40% 40%;
+  width: 120px;
   justify-content: space-between;
 }
+}
+
+/*Vista de los iconos con maximo de 300px*/
+@media(max-width: 300px){
+  .contenedorIconos{
+    position: relative;
+    left: 70px;
+  }
+  #logo{
+    position: relative;
+    left: 30px;
+  }
 }
 
 /*Sección de la img de cart */
   .cart{
     width: 35x;
     height: 35px;
-
+  
 }
 
-/*Sección de cart y perfil responsive*/
+/*Sección de cart */
 @media (max-width: 980px) {
   .cart {
       width: 30px;
@@ -197,7 +210,70 @@
     display: none; 
   }
 }
+/*Distorsión a las imagenes del carrusel*/
+#img-distorsion, #img-distorsion2, #img-distorsion3{
+  filter: blur(10px);
+}
+/*Centrar el texto en la imagen del carrusel*/
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  text-align: center; 
+}
+/*Contenedor del texto del carrusel*/
+.d-flex {
+  flex-wrap: wrap;
+  width: 80%;
+  height: 100%;
+  justify-content: center;
+}
 
+/*Propiedades para los textos del carrusel responsive*/
+@media (max-width: 730px){
+  .carousel-title{
+    font-size: 10px;
+  }
+  .carrusel-text{
+    font-size: 7px;
+  }
+}
+
+@media (max-width: 300px){
+  .carousel-title{
+    font-size: 8px;
+  }
+  .carrusel-text{
+    font-size: 4px;
+  }
+}
+
+@media (min-width: 900px){
+  .carousel-title{
+    position: relative;
+    top: 40px;
+  }
+}
+/*Propiedades al texto del carrusel*/
+.carousel-title{
+  text-align: center;
+  font-weight: bold;
+}
+.carrusel-text{
+  font-weight: bold;
+  text-align: justify;
+}
+
+
+/*Cambiar color de los iconos de las flechas*/
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23617a55' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+ }
+
+ .carousel-control-next-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23617a55' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+}
 
 /* CSS para sección de Servicios*/
 
@@ -213,7 +289,7 @@
     left: -20px;
   }
 
-  .title{
+  .titleServices{
     text-align: center;
     color: #617A55;
   }
@@ -228,6 +304,49 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* Frame de las imagenes de home*/
+.figure {
+  position: relative;
+  overflow: hidden;
+  border-radius: 5%;
+}
+
+/* Tamaño de las imagenes de Home Hombre - Mujer*/
+.size{
+  height: 600px;
+  width: 500px;
+  transition: all .5s;
+  object-fit: cover;
+}
+.size:hover{
+  transform: scale(1.2);
+}
+
+/*Contenedor del texto de la card de Hombre y Mujer*/
+.text-container {
+  position: absolute;
+  top: 85%;
+  text-align: center;
+}
+
+/*Posicion del texto para hombre y mujer*/
+.man{
+  left: 34%;
+}
+
+.woman{
+  left: 38%
+}
+/*Retirar el underline del texto*/
+.link-success{
+  text-decoration: none;
+}
+/*Color del texto*/
+.label{
+  color: white;
+  font-size: 40px;
 }
 
 /* Font families*/
