@@ -77,8 +77,6 @@ document.getElementById('product-form').addEventListener('submit', function (e) 
     const tipoProducto = document.getElementById('tipoProducto').value;
     const imagenProducto = document.getElementById('imagenProducto').value;
 
-    //Alerta
-
     function mostrarAlerta(mensaje, contenedorID) {
         const contenedor = document.getElementById(contenedorID);
         const alertDiv = document.createElement('div');
@@ -94,40 +92,35 @@ document.getElementById('product-form').addEventListener('submit', function (e) 
         validacion = false;
     }
 
-    /**Validaciones */
     let validacion = true;
     const validacionURL = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/;
 
 
-    //Nombre
     if (nombreProducto == '' || nombreProducto.length <= 4) {
         mostrarAlerta('Por favor, ingrese un nombre de la prenda', 'validacionNombre');
-
         e.preventDefault();
     }
 
-    //Precio 
     if (isNaN(precioUnitario) || (precioUnitario) <= 0 || precioUnitario == '') {
         mostrarAlerta('Por favor, ingrese un precio de la prenda', 'validacionPrecio');
         e.preventDefault();
     }
-    //Cantidad
+
     if (isNaN(cantidadProducto) || (cantidadProducto) <= 0 || cantidadProducto == '') {
         mostrarAlerta('Por favor, ingresa una cantidad valida', 'validacionCantidad');
         e.preventDefault();
     }
-    //Talla
+
     if (tallaProducto == 'Talla') {
         mostrarAlerta('Por favor, seleccione una talla', 'validacionTalla');
         e.preventDefault();
     }
 
-    //Color
     if (colorPrenda == 'Color De Prendas') {
         mostrarAlerta('Por favor, seleccione un color', 'validacionColor');
         e.preventDefault();
     }
-    //Tipo de Bordado
+
     if (tipoProducto == 'Tipo De Bordado') {
         mostrarAlerta('Por favor, seleccione un tipo de bordado', 'validacionBordado');
         e.preventDefault();
@@ -168,12 +161,12 @@ document.getElementById('product-form').addEventListener('submit', function (e) 
             .catch(error => {
                 console.error('Error:', error);
             });
+
+       
+        listaProductos.push(product);
     }
 
-    //FIN DEL PROCESO POST
     e.preventDefault();
-
-
 });
 
 document.getElementById('product-list').addEventListener('click', function (e) {
@@ -182,5 +175,12 @@ document.getElementById('product-list').addEventListener('click', function (e) {
     //ui.showDeleteAlert();
 })
 
+// const mySQL = require ('mysql')
+// const connection =mySQL.createConnection({
+//     host: 'localhost',
+//     user: 'root',
+//     password: 'Pa$$w0rd',
+//     database: 'arvideys'
+// })
 
 

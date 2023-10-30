@@ -10,12 +10,14 @@ var html = test(navbar =>{
      
        
        <li id="botonPerfil" class="navbar-nav">
-         <a  class="nav-link" href="./HTML/productos.html"><img class="perfil" src="../ASSETS/ICON/perfil.png" alt="profile"></i></a>
+         <a  class="nav-link" href="../HTML/productos.html"><img class="perfil" src="../ASSETS/ICON/perfil.png" alt="profile"></i></a>
        </li>
              
    <!--Sección de carrito de compras-->
        <li id="botonCarrito"  clase="displayIcon" class="navbar-nav">
+
          <a class="nav-link"><img class="cart" data-toggle="modal" data-target=".bd-example-modal-lg" id="botonCarrito" src="../ASSETS/ICON/carrito-de-compras.png" alt="carrito"></i></a>
+
        </li>
      
 
