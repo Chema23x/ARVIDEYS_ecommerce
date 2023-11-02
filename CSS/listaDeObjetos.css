@@ -41,8 +41,11 @@ h3 h4 h5 h6 p {
 /*Responsive de las tarjetas de productos*/
 @media screen and (max-width: 1000px){
 	.articles-container .product-card{
-		width: 100%;
+		width: 90%;
 	}
+    .articles-container{
+        margin: 20px;
+    }
     .product-details{
         width: 100%;
     }
@@ -51,17 +54,21 @@ h3 h4 h5 h6 p {
     }
 }
 
+
+    
+
+
 /*Responsive contenedores de los filtros*/
 @media screen and (max-width:1000px) {
     .category_list{
         width: 65%;
         flex-direction: column;
     }
-    .category_item{
+    .category_items{
       justify-content: center;  
     }
 
-    .category_list .category_item{
+    .category_list .category_items{
 		align-self: flex-start;
 		width: 100%;
 		font-size: 14px;
@@ -73,7 +80,7 @@ h3 h4 h5 h6 p {
 }
 
 /*Seccion de los cuadros de busqueda (filtros)*/
-.category_item{
+.category_items{
     display: block;
     width: 90%;
     padding: 15px 0;

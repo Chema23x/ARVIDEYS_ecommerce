@@ -54,7 +54,7 @@ var html = test(navbar =>{
            <div class="seccion-2 text"><a class="subtext" href="../HTML/productos.html">Niño</a></div>
        </li>
        <!--Secciones de menu hamburguesa sin opciones desplegable-->
-       <li class="nav-item"><a class="nav-link titleText" href="../HTML/formularioDeProductos.html">DESCUENTOS</a></li>
+       <li class="nav-item"><a class="nav-link titleText" href="../HTML/formularioDeProductos.html">FORM MUESTRA</a></li>
        <li class="nav-item"><a class="nav-link titleText" href="../HTML/contact.html">CONTACTO</a></li>
        <li class="nav-item"><a class="nav-link titleText" href="../HTML/FAQ's.html">AYUDA/FAQ</a></li>
        <li class="nav-item"><a class="nav-link titleText" href="../HTML/aboutUs.html">+INFO</a></li>
@@ -107,7 +107,7 @@ var html = test(navbar =>{
           <div>
           <li><hr class="dropdown-divider"></li>
           <!--Secciones desplegables sin subsecciones-->
-          <li><a class="dropdown-item titleText" href="../HTML/formularioDeProductos.html">DESCUENTOS</a></li>
+          <li><a class="dropdown-item titleText" href="../HTML/formularioDeProductos.html">FORM MUESTRA</a></li>
           <li><a class="dropdown-item titleText" href="../HTML/contact.html">CONTACTO</a></li>
           <li><a class="dropdown-item titleText" href="../HTML/FAQ's.html">AYUDA/FAQ</a></li>
           <li><a class="dropdown-item titleText" href="../HTML/aboutUs.html">+INFO</a></li>
