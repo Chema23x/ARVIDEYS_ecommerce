@@ -4,9 +4,11 @@ var callBack = function(datos){
     console.log(datos);
     app.ropa=datos;
     // Se genera la variable html, con el fin de mostrar posteriormente la información generada mediante un asignador de adición
+    function mostrarTarjetas(categoria) {
     var html = "";
         app.ropa.forEach(ropa => {
-            html += `
+            if (categoria === "all" || ropa.Talla === categoria || ropa.Color === categoria || ropa['Tipo de bordado'] === categoria) {
+                html += `
                 <div class="product-card">
                     <figure>
                     <img src="${ropa.img}" alt="${ropa.Nombre}" class="product-image">
@@ -27,8 +29,21 @@ var callBack = function(datos){
                     </div>
                 </div>
             `;
-        });
+        }
+    });      
 
         // Agrega las tarjetas al contenedor
     document.getElementById("articles-container").innerHTML = html;
+
 }
+    // Manejar eventos de clic en los elementos de filtro
+    var filterItems = document.querySelectorAll('.filter-item');
+    filterItems.forEach(item => {
+        item.addEventListener('click', function() {
+            var categoria = item.getAttribute('category');
+            mostrarTarjetas(categoria);
+        });
+    });
+
+    mostrarTarjetas('all'); // Muestra todas las tarjetas al principio
+};

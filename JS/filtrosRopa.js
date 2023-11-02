@@ -1,3 +1,4 @@
+// Despliegue de secciones del filtro de ropa
 
 document.addEventListener("DOMContentLoaded", function() {
     let desplegarFiltros = document.querySelectorAll(".desplegar-filtro");
@@ -13,3 +14,4 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+

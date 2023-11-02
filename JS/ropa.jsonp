@@ -1,35 +1,35 @@
 callBack([
 {
-    "Nombre": "Lorem",
+    "Nombre": "Huipil",
     "Descripción": "Lorem ipsum dolor sit amet.",
     "Talla": "Mediana",
     "Precio": 250 ,
     "Color": "Verde",
-    "Tipo de bordado": "Lorem ipsum dolor sit amet.",
+    "Tipo de bordado": "Sin bordado",
     "Cantidad": 20,
     "img": "https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1856&q=80" 
     
     
 },
 {
-    "Nombre": "Lorem",
+    "Nombre": "Pantalon",
     "Descripción": "Lorem ipsum dolor sit amet.",
     "Talla": "Grande",
     "Precio": 300 ,
     "Color": "Azul",
-    "Tipo de bordado": "Lorem ipsum dolor sit amet.",
+    "Tipo de bordado": "A mano",
     "Cantidad": 27,
     "img": "https://images.unsplash.com/photo-1613005798967-632017e477c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80" 
     
     
 },
 {
-    "Nombre": "Lorem",
+    "Nombre": "Guayabera",
     "Descripción": "Lorem ipsum dolor sit amet.",
     "Talla": "Chica",
     "Precio": 500 ,
     "Color": "Rojo",
-    "Tipo de bordado": "Lorem ipsum dolor sit amet.",
+    "Tipo de bordado": "A mano",
     "Cantidad": 78,
     "img": "https://images.unsplash.com/photo-1564485377539-4af72d1f6a2f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80" 
     
@@ -41,7 +41,7 @@ callBack([
     "Talla": "Chica",
     "Precio": 200 ,
     "Color": "Amarillo",
-    "Tipo de bordado": "Lorem ipsum dolor sit amet.",
+    "Tipo de bordado": "Maquina",
     "Cantidad": 60,
     "img": "https://images.unsplash.com/photo-1492288991661-058aa541ff43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80" 
     
@@ -53,7 +53,7 @@ callBack([
     "Talla": "Mediana",
     "Precio": 280 ,
     "Color": "Azul",
-    "Tipo de bordado": "Lorem ipsum dolor sit amet.",
+    "Tipo de bordado": "Maquina",
     "Cantidad": 50,
     "img": "https://images.unsplash.com/photo-1578432156830-0ca0d7913b7f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80" 
     
@@ -65,7 +65,7 @@ callBack([
     "Talla": "Chica",
     "Precio": 200 ,
     "Color": "Azul",
-    "Tipo de bordado": "Lorem ipsum dolor sit amet.",
+    "Tipo de bordado": "Maquina",
     "Cantidad": 50,
     "img": "https://images.unsplash.com/photo-1513269890889-8e4e362e5593?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80"  
     
@@ -77,7 +77,7 @@ callBack([
     "Talla": "Chica",
     "Precio": 200 ,
     "Color": "Azul",
-    "Tipo de bordado": "Lorem ipsum dolor sit amet.",
+    "Tipo de bordado": "A mano",
     "Cantidad": 50,
     "img": "https://images.unsplash.com/photo-1514471269849-fda3a4441307?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80"  
     
@@ -88,8 +88,8 @@ callBack([
     "Descripción": "Lorem ipsum dolor sit amet.",
     "Talla": "Chica",
     "Precio": 200 ,
-    "Color": "Azul",
-    "Tipo de bordado": "Lorem ipsum dolor sit amet.",
+    "Color": "Rosa",
+    "Tipo de bordado": "A mano",
     "Cantidad": 50,
     "img": "https://images.unsplash.com/photo-1530860762580-f63d12fd9d6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2576&q=80"  
     
@@ -101,7 +101,7 @@ callBack([
     "Talla": "Chica",
     "Precio": 200 ,
     "Color": "Azul",
-    "Tipo de bordado": "Lorem ipsum dolor sit amet.",
+    "Tipo de bordado": "Maquina",
     "Cantidad": 50,
     "img": "https://images.unsplash.com/photo-1491349174775-aaafddd81942?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80" 
     
@@ -112,8 +112,8 @@ callBack([
     "Descripción": "Lorem ipsum dolor sit amet.",
     "Talla": "Chica",
     "Precio": 200 ,
-    "Color": "Azul",
-    "Tipo de bordado": "Lorem ipsum dolor sit amet.",
+    "Color": "Morado",
+    "Tipo de bordado": "Sin bordado",
     "Cantidad": 50,
     "img": "https://images.unsplash.com/photo-1610048615966-11d681a76eee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80"
     
