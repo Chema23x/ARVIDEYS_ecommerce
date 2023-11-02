@@ -9,6 +9,11 @@
     font-family: 'Molengo', sans-serif;
   }
   
+  #ContenedorCupones{
+    margin-top:80px ;
+  }
+
+ 
   .sidebar{
     background-color: #333;
     color: rgb(14, 14, 14);
@@ -42,9 +47,8 @@
     box-sizing: border-box;
   }
   a:hover, a:focus {
-    color: #617461 !important; /* Cambiar 'yourDesiredHoverColor' al color que prefieras para el estado de hover y foco */
-    text-decoration: none; /* Esto evita que los enlaces estén subrayados */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el enlace */
+    color: #617461 !important;
+    cursor: pointer; 
   }
 
   
