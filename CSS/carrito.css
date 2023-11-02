@@ -1,3 +1,64 @@
+.modal-body {
+  margin: 30px 0px 30px 0px;
+  display: grid;
+  width: 100%;
+}
+
+.product-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px; /* Espacio entre las tarjetas de producto */
+  width: 100%;
+}
+
+/*Propiedades de la card*/
+.product-card {
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 300px; /* Ancho máximo para cada tarjeta de producto */
+}
+
+/*Imagen del producto*/
+.product-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: all .5s;
+}
+
+/*Recuadro de la imagen*/
+.product-card figure{
+  overflow: hidden;
+}
+/*Animacion de la imagen*/
+.product-image:hover{
+  transform: scale(1.2);
+}
+/*Contenedor de la info del producto*/
+.product-details {
+  flex:1
+}
+
+.product-details h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.product-details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.product-details ul li {
+  margin-bottom: 5px;
+}
+
 .cssbuttons-io {
     position: relative;
     font-family: 'Raleway', sans-serif;
