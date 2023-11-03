@@ -1,0 +1,72 @@
+callBack([
+{
+    "Nombre": "Huipil con flores moradas",
+    "Descripción": "Lorem ipsum dolor sit amet.",
+    "Talla": "Mediana",
+    "Precio": 300,
+    "Color": "Negro",
+    "Tipo de bordado": "A mano",
+    "Cantidad": 20,
+    "img": "https://lh3.googleusercontent.com/pw/ADCreHfHTV4Yp_1USx3Bo_mKfKAsaBC4FrnnIwKQ4IaEf67Df0idFKkc1QUgW5qbzWaQevt0-te9wSV0rge2YS9vwH2-qkyVUpNQPDcrSzPQxy4t6yrUkC_XA-4PixI4-E0bVOtC5wv5QpRf7gUn7zEtHVXu=w540-h720-s-no-gm?authuser=0" 
+    
+    
+},
+{
+    "Nombre": "Huipil oscuro",
+    "Descripción": "Lorem ipsum dolor sit amet.",
+    "Talla": "Grande",
+    "Precio": 300 ,
+    "Color": "Negro",
+    "Tipo de bordado": "A mano",
+    "Cantidad": 27,
+    "img": "https://lh3.googleusercontent.com/pw/ADCreHfNVlvTgmU1ggoJeRLcm-vTfAAYqxBL_p76gtCFiUOiKXTOF0WCGuu5kgw60XnSFIbIQYGxQFntXIddy2w6TUNGUUte8kZ2_qIsI19n7AOtnNsXRB8PCG1oAfG52ZIfjSblzAsg9npyD_VfrcssiHfE=w1080-h918-s-no-gm?authuser=0" 
+    
+    
+},
+{
+    "Nombre": "Huipil clásico",
+    "Descripción": "Lorem ipsum dolor sit amet.",
+    "Talla": "Chica",
+    "Precio": 300,
+    "Color": "Rojo",
+    "Tipo de bordado": "A mano",
+    "Cantidad": 78,
+    "img": "https://lh3.googleusercontent.com/pw/ADCreHcOUY10FAayIFpX3h40Xmk8ermnYvX-w2-KGYJNyo0ufgFX3K0SVOYNeJkfqGozeubOjyKe-z6Iza1wOuxIhlqvMAcaKGNXykfilf9GSMqqAZ_yRk7VyS-2v5rwNWNI3iO1n8rzai9oNm4e6YCCBv_h=w700-h934-s-no-gm?authuser=0" 
+    
+    
+},
+{
+    "Nombre": "Huipil rayas amarillas",
+    "Descripción": "Lorem ipsum dolor sit amet.",
+    "Talla": "Chica",
+    "Precio": 200 ,
+    "Color": "Negro",
+    "Tipo de bordado": "Maquina",
+    "Cantidad": 60,
+    "img": "https://lh3.googleusercontent.com/pw/ADCreHfpXjbFFTJS26AQoehINNE91fblj_AIfJjAqWVZdVdR2F4mtmJQAQUpkwqRIouDeIhyP8wDdZo9n6rJAa9TpE4EITZciL8zkHErjlhKFe0RChcXF9sDA1xI0Avb7dXfEGPGSQmQ1PvoKsexxgZG64Ew=w700-h934-s-no-gm?authuser=0" 
+    
+    
+},
+{
+    "Nombre": "Huipil celeste",
+    "Descripción": "Lorem ipsum dolor sit amet.",
+    "Talla": "Mediana",
+    "Precio": 200 ,
+    "Color": "Azul",
+    "Tipo de bordado": "Maquina",
+    "Cantidad": 50,
+    "img": "https://lh3.googleusercontent.com/pw/ADCreHfg4MqV7oy1WFg2dT0YJMqilloD5aojVnVm59vrt5zSLu-kN7ybjh34YcGvqun5MLQSyXdYTijfpq1KO0OHB62HV4ckNkaqKlP4rvjI2i1aKaia5lFWkqRM8ThRMszHhSFBKU_8vSR1JJ0pvY27v9I7=w420-h934-s-no-gm?authuser=0" 
+    
+    
+},
+{
+    "Nombre": "Huipil especial",
+    "Descripción": "Lorem ipsum dolor sit amet.",
+    "Talla": "Chica",
+    "Precio": 200 ,
+    "Color": "Rojo",
+    "Tipo de bordado": "Maquina",
+    "Cantidad": 50,
+    "img": "https://lh3.googleusercontent.com/pw/ADCreHfKyeI4wYwpsGZhKLZoLffg-VJsDXjufScebOoArXZn28FGeaH4nrbNdoKk2TvwYKkmplvD-LaANF7X6PdMXfI04U-J_InMjGkFV7pByPDtIYCLtmY3G5Se75GrxvySO1foDlKBkuAYD6amxvkJVpVr=w420-h934-s-no-gm?authuser=0"  
+
+}])
