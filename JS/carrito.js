@@ -3,12 +3,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const bodyCarrito = document.getElementById('carrito-body');
   const totalCarrito = document.getElementById('carrito-total');
   const buttonComprar = document.getElementById('button-comprar');
-  
+
   function showDeleteAlert() {
     const alertElement = document.getElementById('alert');
     alertElement.textContent = 'Producto eliminado del carrito';
     alertElement.classList.add('alert-danger');
-  
+
     setTimeout(() => {
       alertElement.textContent = '';
       alertElement.classList.remove('alert-danger');
@@ -23,23 +23,34 @@ document.addEventListener("DOMContentLoaded", function () {
       divElement.remove();
 
       // Elimina el producto del carrito
-      carrito.productos.splice(productIndex, 1);
+      const deletedProduct = carrito.productos.splice(productIndex, 1)[0]; // Remueve el producto y obtiene la referencia
 
-      // Actualiza el total del carrito
-      carrito.total = 0;
-      carrito.productos.forEach(producto => {
-      carrito.total += producto.precio;
+      // Resta el precio del producto eliminado del total del carrito
+      carrito.total -= deletedProduct.precio;
       localStorage.setItem('carrito', JSON.stringify(carrito));
-    });
-    
-    // Actualiza el almacenamiento local
-    localStorage.setItem('carrito', JSON.stringify(carrito));
-    totalCarrito.textContent = carrito.total
+
+      totalCarrito.textContent = carrito.total;
 
       // Muestra una alerta
       showDeleteAlert();
     }
   }
+
+  function restElement(producto) {
+    if (producto.cantidad > 1) {
+      producto.cantidad--; // Restar 1 a la cantidad del producto
+    } else {
+      // Si la cantidad llega a 1, eliminar el producto del carrito
+      removeProduct(producto); // Pasar el producto en lugar de divElement
+    }
+    
+    // Restar el precio del producto eliminado del total del carrito
+    carrito.total -= producto.precio;
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    totalCarrito.textContent = carrito.total;
+  }
+  
+  
 
   if (carrito != null) {
     carrito.productos.forEach(producto => {
@@ -56,6 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                <li>Color: ${producto.color}</li>
                                <li>Precio: $${producto.precio}</li>
                            </ul>
+                           <p><i name="resta-producto" class="bi bi-dash-circle"></i>Cantidad: ${producto.cantidad}<i id="suma-producto" class="bi bi-plus-circle"></i></p>
                        </div>
                        <button class="btn btn-danger" name="delete">
                         Eliminar
@@ -69,28 +81,25 @@ document.addEventListener("DOMContentLoaded", function () {
         removeProduct(divElement);
       });
 
+      const botonRest = divElement.querySelector('[name="resta-producto"]');
+      botonRest.addEventListener('click', () => {
+        restElement(producto);
+      });
+
+
 
     });
 
     totalCarrito.textContent = carrito.total;
 
     const boton = document.createElement('div');
-      boton.innerHTML = `
+    boton.innerHTML = `
         <button class="btn btn-success">
         Comprar
         </button>
       `;
-      buttonComprar.appendChild(boton);
-    
-  } else {
+    buttonComprar.appendChild(boton);
 
-    const divElement = document.createElement('div');
-      divElement.innerHTML = `
-        <h1> Carrito Vacio </h1>
-      `;
 
-      carrito.total = 0;
-      bodyCarrito.appendChild(divElement);
   }
-
 });

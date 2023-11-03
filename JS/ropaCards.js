@@ -13,6 +13,7 @@ var callBack = function(datos){
     function mostrarTarjetas(categoria) {
     var html = "";
         app.ropa.forEach(ropa => {
+            ropa.CantidadEnCarrito = 0;
             if (categoria === "all" || ropa.Talla === categoria || ropa.Color === categoria || ropa['Tipo de bordado'] === categoria) {
                 html += `
                 <div class="product-card">
@@ -45,18 +46,35 @@ var callBack = function(datos){
         let botones = document.querySelectorAll(".cssbuttons-io");
         botones.forEach((boton, index) => {
             boton.addEventListener('click', () => {
-              const producto = {
-                img: app.ropa[index].img,
-                nombre: app.ropa[index].Nombre,
-                talla: app.ropa[index].Talla,
-                precio: app.ropa[index].Precio,
-                color: app.ropa[index].Color,
-              };
+
+                
+
+                const productoId = app.ropa[index].Id;
+                const repeatProduct = carrito.productos.find(producto => producto.id === productoId);
+
+                if(repeatProduct){
+                    repeatProduct.cantidad += 1;
+                    carrito.total += app.ropa[index].Precio;
+                    localStorage.setItem('carrito', JSON.stringify(carrito));
+
+                } else{
+                    const producto = {
+                        id: app.ropa[index].Id,
+                        img: app.ropa[index].img,
+                        nombre: app.ropa[index].Nombre,
+                        talla: app.ropa[index].Talla,
+                        precio: app.ropa[index].Precio,
+                        color: app.ropa[index].Color,
+                        cantidad: 1,
+                      };
+                    carrito.productos.push(producto);
+                    app.ropa[index].CantidadEnCarrito += 1;
+                    carrito.total += app.ropa[index].Precio;    
+                    localStorage.setItem('carrito', JSON.stringify(carrito));
+                }
+
               
-              carrito.productos.push(producto);
-              carrito.total += producto.precio;
               
-              localStorage.setItem('carrito', JSON.stringify(carrito));
               
               console.log(carrito);
             });
