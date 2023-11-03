@@ -1,5 +1,6 @@
 callBack([
 {
+    "Id": 16,
     "Nombre": "Pantalon Formal",
     "Descripción": "Lorem ipsum dolor sit amet.",
     "Talla": "Mediana",
@@ -7,42 +8,49 @@ callBack([
     "Color": "Gris",
     "Tipo de bordado": "Sin bordado",
     "Cantidad": 20,
+    "CantidadEnCarrito": 0,
     "img": "https://lh3.googleusercontent.com/pw/ADCreHf09dWAeRrs1BZQN-1H2zVl8OMoe8wwHCkQ1bpCouojoIF1gKow72AiK6TdAv5Xl3BYyrnCjzSlRjbz6k7QrtI5zasoxV9lQxiOEm4gAjJb5toG1peg-GmtIzapfz0Lx3uP6pfn5s0MC_oIUM3FxufK=w448-h934-s-no-gm?authuser=0" 
     
     
 },
 {
+    "Id": 17,
     "Nombre": "Pantalon de mezclilla",
     "Descripción": "Lorem ipsum dolor sit amet.",
     "Talla": "Grande",
     "Precio": 500 ,
     "Color": "Azul",
-    "Tipo de bordado": "A mano",
+    "Tipo de bordado": "Sin bordado",
     "Cantidad": 27,
+    "CantidadEnCarrito": 0,
     "img": "https://i.ebayimg.com/images/g/DjYAAOSw6R9Zy9UL/s-l1200.jpg" 
     
     
 },
 {
+    "Id": 18,
     "Nombre": "Pantalon vaquero",
     "Descripción": "Lorem ipsum dolor sit amet.",
     "Talla": "Chica",
     "Precio": 500 ,
-    "Color": "Rojo",
-    "Tipo de bordado": "A mano",
+    "Color": "Azul",
+    "Tipo de bordado": "Sin bordado",
     "Cantidad": 78,
+    "CantidadEnCarrito": 0,
     "img": "https://homecenterco.scene7.com/is/image/SodimacCO/448559" 
     
     
 },
 {
+    "Id": 19,
     "Nombre": "Pantalon oscuro",
     "Descripción": "Lorem ipsum dolor sit amet.",
     "Talla": "Chica",
     "Precio": 500 ,
-    "Color": "Amarillo",
-    "Tipo de bordado": "Maquina",
+    "Color": "Azul",
+    "Tipo de bordado": "Sin bordado",
     "Cantidad": 60,
+    "CantidadEnCarrito": 0,
     "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwqliUM-rtImzKlTRrVWFfq4WU1rn2bSa-FVxuyOq01btmm4u04mcIJ54-rg-t7ouYnzA&usqp=CAU" 
     
     
