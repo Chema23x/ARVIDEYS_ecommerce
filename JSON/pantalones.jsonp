@@ -1,0 +1,49 @@
+callBack([
+{
+    "Nombre": "Pantalon Formal",
+    "Descripción": "Lorem ipsum dolor sit amet.",
+    "Talla": "Mediana",
+    "Precio": 450 ,
+    "Color": "Gris",
+    "Tipo de bordado": "Sin bordado",
+    "Cantidad": 20,
+    "img": "https://lh3.googleusercontent.com/pw/ADCreHf09dWAeRrs1BZQN-1H2zVl8OMoe8wwHCkQ1bpCouojoIF1gKow72AiK6TdAv5Xl3BYyrnCjzSlRjbz6k7QrtI5zasoxV9lQxiOEm4gAjJb5toG1peg-GmtIzapfz0Lx3uP6pfn5s0MC_oIUM3FxufK=w448-h934-s-no-gm?authuser=0" 
+    
+    
+},
+{
+    "Nombre": "Pantalon de mezclilla",
+    "Descripción": "Lorem ipsum dolor sit amet.",
+    "Talla": "Grande",
+    "Precio": 500 ,
+    "Color": "Azul",
+    "Tipo de bordado": "A mano",
+    "Cantidad": 27,
+    "img": "https://i.ebayimg.com/images/g/DjYAAOSw6R9Zy9UL/s-l1200.jpg" 
+    
+    
+},
+{
+    "Nombre": "Pantalon vaquero",
+    "Descripción": "Lorem ipsum dolor sit amet.",
+    "Talla": "Chica",
+    "Precio": 500 ,
+    "Color": "Rojo",
+    "Tipo de bordado": "A mano",
+    "Cantidad": 78,
+    "img": "https://homecenterco.scene7.com/is/image/SodimacCO/448559" 
+    
+    
+},
+{
+    "Nombre": "Pantalon oscuro",
+    "Descripción": "Lorem ipsum dolor sit amet.",
+    "Talla": "Chica",
+    "Precio": 500 ,
+    "Color": "Amarillo",
+    "Tipo de bordado": "Maquina",
+    "Cantidad": 60,
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwqliUM-rtImzKlTRrVWFfq4WU1rn2bSa-FVxuyOq01btmm4u04mcIJ54-rg-t7ouYnzA&usqp=CAU" 
+    
+    
+}])

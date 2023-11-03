@@ -1,0 +1,37 @@
+callBack([
+{
+    "Nombre": "Huaraches",
+    "Descripción": "Lorem ipsum dolor sit amet.",
+    "Talla": "Mediana",
+    "Precio": 250 ,
+    "Color": "Cafe",
+    "Tipo de bordado": "Sin bordado",
+    "Cantidad": 20,
+    "img": "https://lh3.googleusercontent.com/pw/ADCreHc4hy0aNU1_h073A5Wv0fkImm7tothgI6gvdTh7DiARKR_krsymOfovVegU32eMGbT3PXhrCE3Oh9S4GFbi3lQKZMeCahYFF9l2-Sv0NnjSkkIRr2FCgSonjVocoxXst1FpoQ9u1YBKfcWvEVzWX0YYYg=w700-h934-s-no-gm?authuser=0" 
+    
+    
+},
+{
+    "Nombre": "Huaraches",
+    "Descripción": "Lorem ipsum dolor sit amet.",
+    "Talla": "Grande",
+    "Precio": 250 ,
+    "Color": "Cafe",
+    "Tipo de bordado": "A mano",
+    "Cantidad": 27,
+    "img": "https://lh3.googleusercontent.com/pw/ADCreHdrJyvHwHD8sCZuZ5lxmf3fvEFX6uWV1ALy6uqRlsYbNIDg9QUQI1N_nlnc3zAXbonJogLyUibc3htpZ2iOeeLDhYX6u5m6AH2QzR4vsaN19l6T0ey3JY4Mlq6liKJruAntYRw9VS7N1htjm-vCr7DxSA=w700-h934-s-no-gm?authuser=0" 
+    
+    
+},
+{
+    "Nombre": "Huaraches",
+    "Descripción": "Lorem ipsum dolor sit amet.",
+    "Talla": "Chica",
+    "Precio": 250 ,
+    "Color": "Negro",
+    "Tipo de bordado": "A mano",
+    "Cantidad": 78,
+    "img": "https://lh3.googleusercontent.com/pw/ADCreHfhSSvUnocWksRzLvDtfTyFXwTSOTcdOdFl7rCsEbZ5Hm-wRgZwAPmN98g7M7aWk46e2buKC3cW7KkdPVvx-py8fNLuKYLcfP3w7lc6Ue1z9LIQrcgtC74k3ccpMlB1-4k4XcDepPsWOICAK9eI-ucv=w700-h934-s-no-gm?authuser=0" 
+    
+    
+}])
