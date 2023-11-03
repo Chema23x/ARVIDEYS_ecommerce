@@ -3,6 +3,7 @@ document.getElementById('registro-form').addEventListener('submit', function (e)
     const apellidos = document.getElementById("inputLastName")
     const telefono = document.getElementById("inputTelephone")
     const email = document.getElementById("inputEmail")
+    const direction = document.getElementById("inputDireccion")
     const password = document.getElementById("inputPassword")
     const confirPassword = document.getElementById("inputConfirPassword")
     const parrafo = document.getElementById("warnings")
@@ -32,6 +33,10 @@ document.getElementById('registro-form').addEventListener('submit', function (e)
         /*SE VERIFICA QUE EL NOMBRE CUMPLA CON M�S DE 6 CARACTERES*/
         if (nombre.value.length < 2) {
             mostrarAlerta('Nombre no valido', 'validacionNombre');
+            e.preventDefault();
+        }
+        if (direction.value.length < 15) {
+            mostrarAlerta('Dirección no valida', 'validacionDireccion');
             e.preventDefault();
         }
 
