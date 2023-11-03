@@ -1,84 +1,96 @@
-// var carrito = JSON.parse(localStorage.getItem('carrito'));
+document.addEventListener("DOMContentLoaded", function () {
+  const carrito = JSON.parse(localStorage.getItem('carrito'));
+  const bodyCarrito = document.getElementById('carrito-body');
+  const totalCarrito = document.getElementById('carrito-total');
+  const buttonComprar = document.getElementById('button-comprar');
+  
+  function showDeleteAlert() {
+    const alertElement = document.getElementById('alert');
+    alertElement.textContent = 'Producto eliminado del carrito';
+    alertElement.classList.add('alert-danger');
+  
+    setTimeout(() => {
+      alertElement.textContent = '';
+      alertElement.classList.remove('alert-danger');
+    }, 1000);
+  }
 
-// var verCarrito = document.getElementById('botonCarrito');
-// var modalBody = document.getElementById('modal-body');
+  function removeProduct(divElement) {
+    const productIndex = Array.from(bodyCarrito.children).indexOf(divElement);
 
-// verCarrito.addEventListener('click', function () {
-//     // Limpiar el contenido del modal antes de mostrar el carrito
-//     modalBody.innerHTML = '';
+    if (productIndex > -1) {
+      // Elimina el elemento del DOM
+      divElement.remove();
 
-//     // Recorre los elementos del carrito y muestra cada elemento en el modal
-//     carrito.forEach(ropa => {
-//         var divElement = document.createElement('div');
-//         divElement.className = 'modal-body';
-//         divElement.innerHTML = `
-//         <div class="product-card">
-//                      <figure>
-//                          <img src="${ropa.img}" alt="${ropa.Nombre}" class="product-image">
-//                      </figure>
-//                      <div class="product-details">
-//                          <h2>${ropa.Nombre}</h2>
-//                          <ul>
-//                              <li>Talla: ${ropa.Talla}</li>
-//                              <li>Precio: $${ropa.Precio}</li>
-//                              <li>Color: ${ropa.Color}</li>
-//                              <li>Tipo de bordado: ${ropa['Tipo de bordado']}</li>
-//                          </ul>
-//                      </div>
-//                  </div>
-//         `;
+      // Elimina el producto del carrito
+      carrito.productos.splice(productIndex, 1);
 
-//         modalBody.appendChild(divElement);
-//     });
-// });
+      // Actualiza el total del carrito
+      carrito.total = 0;
+      carrito.productos.forEach(producto => {
+      carrito.total += producto.precio;
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+    });
+    
+    // Actualiza el almacenamiento local
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    totalCarrito.textContent = carrito.total
 
+      // Muestra una alerta
+      showDeleteAlert();
+    }
+  }
 
+  if (carrito != null) {
+    carrito.productos.forEach(producto => {
+      const divElement = document.createElement('div');
+      divElement.innerHTML = `
+        <div class="product-card">
+                       <figure>
+                           <img src="${producto.img}" alt="${producto.nombre}" class="product-image">
+                       </figure>
+                       <div class="product-details">
+                           <h2>${producto.nombre}</h2>
+                           <ul>
+                               <li>Talla: ${producto.talla}</li>
+                               <li>Color: ${producto.color}</li>
+                               <li>Precio: $${producto.precio}</li>
+                           </ul>
+                       </div>
+                       <button class="btn btn-danger" name="delete">
+                        Eliminar
+                    </button>
+                   </div>
+         `;
+      bodyCarrito.appendChild(divElement);
 
-// let verCarrito = document.getElementById('botonCarrito');
-// var carrito = JSON.parse(localStorage.getItem('carrito'));
-// const modalContainer = document.getElementById('modal-conteiner');
-// verCarrito.addEventListener('click', () => {
-//     const modalHeader = document.createElement('div');
-//     modalHeader.className = 'modal-header'
-//     modalHeader.innerHTML = `
-//     <h1 id="modal-header-title">Carrito de compras</h1>
-//     `;
-//     modalContainer.append(modalHeader);
-
-//     const modalButton = document.createElement('button');
-//     modalButton.innerText = "x";
-//     modalButton.className = 'modal-header-button';
-//     modalHeader.append(modalButton);
-
-//     carrito.forEach(product => {
-//         let carritoContent = document.createElement('div');
-//         carritoContent.className = 'modal-content';
-//         carritoContent.innerHTML = `
-//             <div class="product-card">
-//                 <figure>
-//                     <img src="${product.img}" alt="${product.Nombre}" class="product-image">
-//                 </figure>
-//                 <div class="product-details">
-//                     <h2>${product.Nombre}</h2>
-//                     <ul>
-//                         <li>Talla: ${product.Talla}</li>
-//                         <li>Precio: $${product.Precio}</li>
-//                         <li>Color: ${product.Color}</li>
-//                         <li>Tipo de bordado: ${product['Tipo de bordado']}</li>
-//                     </ul>
-//                 </div>
-//             </div>
-//         `;
-//         modalContainer.append(carritoContent);
-
-//         const total = carrito.reduce((acc, el) => acc + el.Precio, 0);
-//         const totalCompra = document.createElement('div');
-//         totalCompra.className = 'total-content';
-//         totalCompra.innerText = `Total a pagar: $ ${total}`;
-
-//         modalContainer.append(totalCompra);
-//     });
-// });
+      const deleteButton = divElement.querySelector('[name="delete"]');
+      deleteButton.addEventListener('click', () => {
+        removeProduct(divElement);
+      });
 
 
+    });
 
+    totalCarrito.textContent = carrito.total;
+
+    const boton = document.createElement('div');
+      boton.innerHTML = `
+        <button class="btn btn-success">
+        Comprar
+        </button>
+      `;
+      buttonComprar.appendChild(boton);
+    
+  } else {
+
+    const divElement = document.createElement('div');
+      divElement.innerHTML = `
+        <h1> Carrito Vacio </h1>
+      `;
+
+      carrito.total = 0;
+      bodyCarrito.appendChild(divElement);
+  }
+
+});

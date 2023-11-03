@@ -16,7 +16,7 @@ var html = test(navbar =>{
    <!--Sección de carrito de compras-->
        <li id="botonCarrito"  clase="displayIcon" class="navbar-nav">
 
-         <a class="nav-link"><img class="cart" data-toggle="modal" data-target=".bd-example-modal-lg" id="botonCarrito" src="../ASSETS/ICON/carrito-de-compras.png" alt="carrito"></i></a>
+         <a class="nav-link" href="../HTML/carrito.html"><img class="cart"  src="../ASSETS/ICON/carrito-de-compras.png" alt="carrito"></i></a>
 
        </li>
      
@@ -108,7 +108,7 @@ var html = test(navbar =>{
      </li>
            
      <li class="navbar-nav">
-       <a class="nav-link"><img class="cart" src="../ASSETS/ICON/carrito-de-compras.png" alt="carrito"></i></a>
+       <a class="nav-link" href="../HTML/carrito.html"><img class="cart" src="../ASSETS/ICON/carrito-de-compras.png" alt="carrito"></i></a>
      </li>
    </div>
    </div>

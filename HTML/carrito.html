@@ -2,53 +2,50 @@
 <html lang="en">
 
 <head>
-    <title>Carrito Compras</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Molengo&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../CSS/home.css">
+    <link rel="stylesheet" href="../CSS/carrusel.css">
+    <link rel="stylesheet" href="../CSS/footer.css">
     <link rel="stylesheet" href="../CSS/carrito.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Molengo&family=Raleway:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/listaDeObjetos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>Carrito de Compras</title>
 </head>
 
 <body>
 
-    <div class="container mt-3">
-        <h3>Large Modal Example</h3>
-        <p>Click on the button to open the modal.</p>
-
-        <button id="botonCarrito" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
-            Open modal
-        </button>
+    <!--Navbar-->
+    <div id="navbar">
     </div>
 
-    <!-- The Modal -->
-    <div class="modal" id="myModal">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
+    <div id="alert" class="alert" role="alert"></div>
 
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Carrito de Compras</h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
+    <h1>Carrito de Compras</h1>
 
-                <!-- Modal body -->
-                <div class="modal-body" id="modal-body">
-                   
-                </div>
-
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                    <button type="submit" class="cssbuttons-io">Comprar</button>
-                </div>
-
-            </div>
+    <div class="modal-body">
+        <div id="carrito-body" class="product-container">   
         </div>
     </div>
 
-    <script src="../JS/carrito.js"></script>
+    <p>Total: $<span id="carrito-total"></span></p>
+
+    <div id="button-comprar">
+
+    </div>
+
+    <script src="../JS/navbar.js"></script>
+    <script src="../JS/hamburguesa.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="../JS/filtrosRopa.js" async defer></script>
+    <script src="../JS/carrito.js" async defer></script>
 </body>
 
 
