@@ -1,113 +1,137 @@
-.textos, .user-name, .user-email, .user-phone, .user-address {
-    font-family: 'raleway', sans-serif;
-    font-size: 15px;
-    text-align: justify;
+.sidebar{
+  background-color: #333;
+  color: rgb(14, 14, 14);
+  height: 100%;
+}
+
+.sidebar a{
+  margin-left: 10px;
+  display: block;
+  color: rgb(0, 0, 0);
+  padding-bottom: 10px;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.card{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-body {
+    margin: 30px 0px 30px 0px;
+    display: grid;
+    width: 100%;
   }
   
-  .titulo, .edit-info-header{
-    margin-top:10px;
-    font-family: 'Molengo', sans-serif;
+  .product-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 5px; /* Espacio entre las tarjetas de producto */
+    width: 100%;
   }
   
-  #ContenedorCompras{
-    margin-top:80px ;
-  }
-  .sidebar{
-    background-color: #333;
-    color: rgb(14, 14, 14);
-    height: 100%;
-  }
-  
-  .sidebar a{
-    margin-left: 10px;
-    display: block;
-    color: rgb(0, 0, 0);
-    padding-bottom: 10px;
-    font-size: 20px;
-    text-decoration: none;
-  }
-  
-  .card{
-    position: relative;
+  /*Propiedades de la card*/
+  .product-card {
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 300px; /* Ancho máximo para cada tarjeta de producto */
   }
   
-  .content{
-    background-color: whitesmoke;
-  }
-  
-  
-  .card-body input{
-    padding: 4px;
-    border: 1px solid #000000;
+  /*Imagen del producto*/
+  .product-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
     border-radius: 10px;
-    box-sizing: border-box;
+    transition: all .5s;
   }
-  a:hover, a:focus {
-    color: #617461 !important;
-    cursor: pointer; 
-  }
-
   
-  #botonCargarImagen {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 500;
-    font-size: 7px;
-    letter-spacing: 0.05em;
-    border-radius: 0.8em;
-    border: none;
+  /*Recuadro de la imagen*/
+  .product-card figure{
     overflow: hidden;
   }
-  
-  #botonCargarImagen span {
-    position: relative;
-    z-index: 10;
-    transition: color 0.4s;
-    display: inline-flex;
-    align-items: center;
-    padding: 0.8em 1.2em 0.8em 1.05em;
+  /*Animacion de la imagen*/
+  .product-image:hover{
+    transform: scale(1.2);
+  }
+  /*Contenedor de la info del producto*/
+  .product-details {
+    flex:1
   }
   
-  #botonCargarImagen::before,
-  #botonCargarImagen::after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
+  .product-details h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
   }
   
-  #botonCargarImagen::before {
-    content: "";
-    background: #A4D0A4;
-    color: white;
-    width: 120%;
-    left: -10%;
-    transform: skew(30deg);
-    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+  .product-details ul {
+    list-style: none;
+    padding: 0;
   }
   
-  #botonCargarImagen:hover {
-    background: #617461;
-    color: white;
+  .product-details ul li {
+    margin-bottom: 5px;
   }
   
-  #botonCargarImagen:hover::before {
-    transform: translate3d(100%, 0, 0);
+  .cssbuttons-io {
+      position: relative;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 500;
+      font-size: 18px;
+      letter-spacing: 0.05em;
+      border-radius: 0.8em;
+      border: none;
+      overflow: hidden;
+    }
+  
+    .cssbuttons-io span {
+      position: relative;
+      z-index: 10;
+      transition: color 0.4s;
+      display: inline-flex;
+      align-items: center;
+      padding: 0.8em 1.2em 0.8em 1.05em;
+    }
+  
+    .cssbuttons-io::before,
+    .cssbuttons-io::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+  
+    .cssbuttons-io::before {
+      content: "";
+      background: #A4D0A4;
+      color: white;
+      width: 120%;
+      left: -10%;
+      transform: skew(30deg);
+      transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+    }
+  
+    .cssbuttons-io:hover {
+      background: #617461;
+      color: white;
   }
   
-  #botonCargarImagen:active {
-    transform: scale(0.95);
-  }
+    .cssbuttons-io:hover::before {
+      transform: translate3d(100%, 0, 0);
+    }
   
-
-#alineacion{
-  align-items: center;
-  justify-content: center;
-
-}
+    .cssbuttons-io:active {
+      transform: scale(0.95);
+    }
+  
+   
+  

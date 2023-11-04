@@ -1,3 +1,9 @@
+// Define el objeto carrito en el ámbito global
+let carrito = JSON.parse(localStorage.getItem('carrito')) ||{
+    productos: [],
+    total: 0
+};
+
 // Se crea una variable app, la cual contendrá posteriormente la informacion del archivo ropa.jsonp(Este archivo contiene los datos de los 10 objetos y se define como jsonp o Json con padding, ya que permite llamar los datos contenidos mediante una funcion "callBack")
 var app ={}
 var callBack = function(datos){
@@ -7,6 +13,7 @@ var callBack = function(datos){
     function mostrarTarjetas(categoria) {
     var html = "";
         app.ropa.forEach(ropa => {
+            ropa.CantidadEnCarrito = 0;
             if (categoria === "all" || ropa.Talla === categoria || ropa.Color === categoria || ropa['Tipo de bordado'] === categoria) {
                 html += `
                 <div class="product-card">
@@ -33,7 +40,47 @@ var callBack = function(datos){
     });      
 
         // Agrega las tarjetas al contenedor
-    document.getElementById("articles-container").innerHTML = html;
+
+        document.getElementById("articles-container").innerHTML = html;
+    
+        let botones = document.querySelectorAll(".cssbuttons-io");
+        botones.forEach((boton, index) => {
+            boton.addEventListener('click', () => {
+
+                
+
+                const productoId = app.ropa[index].Id;
+                const repeatProduct = carrito.productos.find(producto => producto.id === productoId);
+
+                if(repeatProduct){
+                    repeatProduct.cantidad += 1;
+                    carrito.total += app.ropa[index].Precio;
+                    localStorage.setItem('carrito', JSON.stringify(carrito));
+
+                } else{
+                    const producto = {
+                        id: app.ropa[index].Id,
+                        img: app.ropa[index].img,
+                        nombre: app.ropa[index].Nombre,
+                        talla: app.ropa[index].Talla,
+                        precio: app.ropa[index].Precio,
+                        color: app.ropa[index].Color,
+                        cantidad: 1,
+                      };
+                    carrito.productos.push(producto);
+                    app.ropa[index].CantidadEnCarrito += 1;
+                    carrito.total += app.ropa[index].Precio;    
+                    localStorage.setItem('carrito', JSON.stringify(carrito));
+                }
+
+              
+              
+              
+              console.log(carrito);
+            });
+          });
+          
+
 
 }
     // Manejar eventos de clic en los elementos de filtro
@@ -47,3 +94,4 @@ var callBack = function(datos){
 
     mostrarTarjetas('all'); // Muestra todas las tarjetas al principio
 };
+
