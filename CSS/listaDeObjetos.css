@@ -86,6 +86,7 @@ h3 h4 h5 h6 p {
     padding: 15px 0;
     margin-bottom: 20px;
     background: #A4d0A4;
+    cursor: pointer;
 
     text-decoration: none;
     text-align: center;
@@ -93,21 +94,28 @@ h3 h4 h5 h6 p {
 }
 
 /*Clases para las secciones del filtro afectadas por js*/
-.filtro-section-1, .filtro-section-2, .filtro-section-3, .filtro-section-4, .filtro-section-5, .filtro-section-6 {
+.filtro-section-1, .filtro-section-2, .filtro-section-3, .filtro-section-4, .filtro-section-5, .filtro-section-6, .filtro-section-7 {
     display: none;
   }
 
   .visible {
     display: block;
-    text-align: center;
+    text-align: left;
   }
 
-a{
-cursor: pointer;
-text-decoration: none;
-color: black;
-}
 
+
+label{
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+}
+#check1:checked, #check2:checked, #check3:checked, #check4:checked, #check5:checked, #check6:checked, #check7:checked, #check8:checked, #check9:checked, #check10:checked, #check11:checked, #check12:checked, #check13:checked {
+    accent-color: #a4d0a4;
+}
+#check1:checked ~ label, #check2:checked ~ label, #check3:checked ~ label, #check4:checked ~ label, #check5:checked ~ label, #check6:checked ~ label,#check7:checked ~ label, #check8:checked ~ label, #check9:checked ~ label, #check10:checked ~ label, #check11:checked ~ label,#check12:checked ~ label, #check13:checked ~ label{
+    color: #a4d0a4;
+} 
 
 
 /* Seccion de cards*/

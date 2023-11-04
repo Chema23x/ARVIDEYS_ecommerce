@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
         desplegarFiltro.addEventListener("click", function(event) {
 
             let filtroActual = event.currentTarget;
-            let opciones = filtroActual.querySelectorAll('.filtro-section-1, .filtro-section-2, .filtro-section-3, .filtro-section-4, .filtro-section-5, .filtro-section-6');
+            let opciones = filtroActual.querySelectorAll('.filtro-section-1, .filtro-section-2, .filtro-section-3, .filtro-section-4, .filtro-section-5, .filtro-section-6, .filtro-section-7');
             opciones.forEach(function(opcion) {
                 opcion.classList.toggle("visible");
             });
