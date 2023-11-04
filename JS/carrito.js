@@ -1,5 +1,5 @@
 // Define el objeto carrito en el ámbito global
-let compras = JSON.parse(localStorage.getItem('compras')) ||{
+let compras = JSON.parse(localStorage.getItem('compras')) || {
   productos: [],
   total: 0
 };
@@ -58,21 +58,21 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       localStorage.setItem('carrito', JSON.stringify(carrito));
     }
-  
+
     // Restar el precio del producto eliminado del total del carrito
     carrito.total -= producto.precio;
     localStorage.setItem('carrito', JSON.stringify(carrito));
     totalCarrito.textContent = carrito.total;
   }
-  
-  function addElement(producto){
-    producto.cantidad ++;
+
+  function addElement(producto) {
+    producto.cantidad++;
     carrito.total += producto.precio;
     localStorage.setItem('carrito', JSON.stringify(carrito));
     totalCarrito.textContent = carrito.total;
   }
 
-  
+
   function comprar() {
     // Copia los productos del carrito a compras
     compras.productos.push(...carrito.productos);
@@ -94,31 +94,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Actualiza las compras en el almacenamiento local
     localStorage.setItem('compras', JSON.stringify(compras));
+
+    // Actualiza los datos del modal
+    const productosModal = document.getElementById('cantidadProductos');
+    productosModal.textContent = carrito.productos.length;
+
+    const totalCarritoModal = document.getElementById('totalCarritoModal');
+    totalCarritoModal.textContent = carrito.total;
+
+    const pagoModal = bootstrap.Modal.getInstance(document.getElementById('pagoModal'));
+    pagoModal.hide();
   }
-  
 
   if (carrito != null) {
     carrito.productos.forEach(producto => {
       const divElement = document.createElement('div');
       divElement.innerHTML = `
         <div class="product-card">
-                       <figure>
-                           <img src="${producto.img}" alt="${producto.nombre}" class="product-image">
-                       </figure>
-                       <div class="product-details">
-                           <h2>${producto.nombre}</h2>
-                           <ul>
-                               <li>Talla: ${producto.talla}</li>
-                               <li>Color: ${producto.color}</li>
-                               <li>Precio: $${producto.precio}</li>
-                           </ul>
-                           <p><i name="resta-producto" class="bi bi-dash-circle"></i>Cantidad: ${producto.cantidad}<i name="suma-producto" class="bi bi-plus-circle"></i></p>
-                       </div>
-                       <button class="btn btn-danger" name="delete">
-                        Eliminar
-                    </button>
-                   </div>
-         `;
+          <figure>
+            <img src="${producto.img}" alt="${producto.nombre}" class="product-image">
+          </figure>
+          <div class="product-details">
+            <h2>${producto.nombre}</h2>
+            <ul>
+              <li>Talla: ${producto.talla}</li>
+              <li>Color: ${producto.color}</li>
+              <li>Precio: $${producto.precio}</li>
+            </ul>
+            <p>
+              <i name="resta-producto" class="bi bi-dash-circle"></i>Cantidad: ${producto.cantidad}<i name="suma-producto" class="bi bi-plus-circle"></i>
+            </p>
+          </div>
+          <button class="btn btn-danger" name="delete">Eliminar</button>
+        </div>
+      `;
       bodyCarrito.appendChild(divElement);
 
       const deleteButton = divElement.querySelector('[name="delete"]');
@@ -135,22 +144,95 @@ document.addEventListener("DOMContentLoaded", function () {
       botonAdd.addEventListener('click', () => {
         addElement(producto);
       });
-      
-      const botonComprar = document.getElementById('button-comprar');
-      botonComprar.addEventListener('click', comprar);
-
     });
 
     totalCarrito.textContent = carrito.total;
 
-    const boton = document.createElement('div');
-    boton.innerHTML = `
-        <button class="btn btn-success">
-        Comprar
-        </button>
-      `;
-    buttonComprar.appendChild(boton);
+    buttonComprar.addEventListener('click', () => {
+      // Actualiza los datos del modal
+      const productosModal = document.getElementById('cantidadProductos');
+      productosModal.textContent = carrito.productos.length;
+
+      const totalCarritoModal = document.getElementById('totalCarritoModal');
+      totalCarritoModal.textContent = carrito.total;
+
+      const costoEnvio = document.getElementById('costoEnvio');
+      costoEnvio.textContent = 150;
+
+      const totalCompra = document.getElementById('totalCompra');
+      totalCompra.textContent = carrito.total+150;
+    });
+
+
+
+    //Formulario y sus validaciones
+    document.getElementById('pago-form').addEventListener('submit', function (e) {
+
+      e.preventDefault();
+      let validacion = true;
+
+      //Alerta
+
+      function showAlerta(mensaje, contenedorID) {
+        const contenedor = document.getElementById(contenedorID);
+        const alertp = document.createElement('p');
+        alertp.textContent = mensaje;
+
+        contenedor.appendChild(alertp);
+
+        setTimeout(() => {
+          contenedor.removeChild(alertp); // Oculta la alerta después de 1.5 segundos
+        }, 1500);
+
+        validacion = false;
+      }
+
+      // Validaciones 
+      const nombreTarjeta = document.getElementById('nombreTarjeta');
+      const numeroTarjeta = document.getElementById('numeroTarjeta');
+      const fechaExpiracion = document.getElementById('fechaExpiracion');
+      const cvv = document.getElementById('cvv');
+
+      if (nombreTarjeta.value.trim() === '') {
+        showAlerta('Nombre no valido', 'validacionNombre');
+        e.preventDefault();
+      }
+
+      const tarjetaNumeroValidacion = /^\d{16}$/; // 16 dígitos
+      if (!tarjetaNumeroValidacion.test(numeroTarjeta.value.replace(/ /g, ''))) {
+        showAlerta('Número de tarjeta no valido', 'validacionNumero');
+        e.preventDefault();
+      }
+
+      const fechaValidacion = /^(0[1-9]|1[0-2])\/\d{2}$/; // MM/YY
+      if (!fechaValidacion.test(fechaExpiracion.value)) {
+        showAlerta('Fecha de expiracion no valida', 'validacionFecha');
+        e.preventDefault();
+      }
+
+      const cvvValidacion = /^\d{3,4}$/; // 3 o 4 dígitos
+      if (!cvvValidacion.test(cvv.value)) {
+        showAlerta('Cvv no valido', 'validacionCvv');
+        e.preventDefault();
+      }
+
+      if (validacion) {
+        comprar();
+      }
+
+    });
+
+
 
 
   }
 });
+
+// Agregar evento al botón "Pagar" para mostrar el modal de pago
+document.getElementById('confirmarCompra').addEventListener('click', () => {
+  // Muestra el modal de pago
+  const pagoModal = new bootstrap.Modal(document.getElementById('pagoModal'));
+  pagoModal.show();
+});
+
+

@@ -26,18 +26,84 @@
 
     <div id="alert" class="alert" role="alert"></div>
 
-    <h1>Carrito de Compras</h1>
+    <h1 id="titleCarrito">Carrito de Compras</h1>
 
     <div class="modal-body">
         <div id="carrito-body" class="product-container">
         </div>
     </div>
 
-    <p>Total: $<span id="carrito-total"></span></p>
+    <p>Total del Carrito: $<span id="carrito-total"></span></p>
 
-    <div id="button-comprar" class="mb-5 mt-4">
 
+
+    <button id="button-comprar" class="cssbuttons-io mb-5" data-bs-toggle="modal" data-bs-target="#comprarModal">
+        <span>Comprar Carrito</span>
+    </button>
+
+    <!-- Modal Resumen de compra -->
+    <div class="modal fade" id="comprarModal" tabindex="-1" aria-labelledby="comprarModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalTitle">Resumen de la Compra</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Cantidad de Productos a Comprar: <span id="cantidadProductos"></span></p>
+            <p>Total del Carrito: $<span id="totalCarritoModal"></span></p>
+            <p>Costo de Envio: $<span id="costoEnvio"></span></p>
+            <p>Cupon de descuento<span id="cupon"></span></p>
+            <p>Total de la Compra: $<span id="totalCompra"></span></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn cssbuttons-io" id="confirmarCompra"><span>Confirmar Compra</span></button>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- Modal de ingreso de datos de pago -->
+<div class="modal fade modal-lg" id="pagoModal" tabindex="-1" aria-labelledby="pagoModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="pagoModaTitle">Ingresar Datos de Pago</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="pago-form">
+            <div class="mb-3">
+              <label for="nombreTarjeta" class="form-label">Nombre en la Tarjeta</label>
+              <input type="text" class="form-control" id="nombreTarjeta">
+              <p id="validacionNombre" class="alert-text"></p>
+            </div>
+            <div class="mb-3">
+              <label for="numeroTarjeta" class="form-label">Número de Tarjeta</label>
+              <input type="text" class="form-control" id="numeroTarjeta">
+              <p id="validacionNumero" class="alert-text"></p>
+            </div>
+            <div class="mb-3">
+              <label for="fechaExpiracion" class="form-label">Fecha de Expiración</label>
+              <input type="text" class="form-control" id="fechaExpiracion">
+              <p id="validacionFecha" class="alert-text"></p>
+            </div>
+            <div class="mb-3">
+              <label for="cvv" class="form-label">CVV</label>
+              <input type="text" class="form-control" id="cvv">
+              <p id="validacionCvv" class="alert-text"></p>
+            </div>
+            <div class="modal-footer mt-2">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="submit" class="btn cssbuttons-io" id="confirmarPago"><span>Confirmar Pago</span></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
     <script src="../JS/navbar.js"></script>
     <script src="../JS/hamburguesa.js"></script>

@@ -112,4 +112,36 @@
     transform: scale(0.95);
   }
 
+  
+  #titleCarrito, #modalTitle, #pagoModaTitle{
+    font-family: 'Molengo', sans-serif;
+    text-align: center;
+  }
+
  
+ /*BORDE DE LA TARJETA DEL FORMULARIO*/
+.form-control {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #A4D0A4;
+  box-sizing: border-box;
+  border-color: #A4D0A4 !important;
+  box-shadow: none !important;
+  border-radius: 20px !important;
+}
+.form-control:focus{
+border-color: black !important;
+box-shadow: none !important;
+border-radius: 20px !important;
+}
+
+form {
+  gap: 10px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.alert-text{
+  font-family: 'Raleway', sans-serif;
+  font-size: 10px;
+  color: red;
+}
