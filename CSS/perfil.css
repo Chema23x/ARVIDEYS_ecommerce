@@ -6,6 +6,12 @@
   text-align: justify;
 
 }
+#ContenedorPerfil{
+  margin-top: 80px;
+}
+
+
+
 
 .titulo, .edit-info-header{
   margin-top:10px;
@@ -60,15 +66,15 @@
 }
 
 input:focus {
-  outline: none; /* Esto eliminará el borde azul predeterminado en algunos navegadores */
-  border:2px solid #A4D0A4; /* Cambia 'yourDesiredColor' al color que prefieras */
+  outline: none; 
+  border:2px solid #A4D0A4; 
 }
 
 
 a:hover, a:focus {
-  color: #617461 !important; /* Cambiar 'yourDesiredHoverColor' al color que prefieras para el estado de hover y foco */
-  text-decoration: none; /* Esto evita que los enlaces estén subrayados */
-  cursor: pointer; /* Cambia el cursor al pasar sobre el enlace */
+  color: #617461 !important; 
+  text-decoration: none; 
+  cursor: pointer; 
 }
 .save-button {
   position: absolute;
