@@ -86,3 +86,11 @@
   .cssbuttons-io:active {
     transform: scale(0.95);
   }
+  #linkContraseña{
+    text-align: center;
+    /* justify-content: center; */
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.2rem;
+    color: black;
+    text-decoration: none;
+}
