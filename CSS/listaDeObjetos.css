@@ -55,8 +55,6 @@ h3 h4 h5 h6 p {
 }
 
 
-    
-
 
 /*Responsive contenedores de los filtros*/
 @media screen and (max-width:1000px) {
@@ -94,13 +92,13 @@ h3 h4 h5 h6 p {
 }
 
 /*Clases para las secciones del filtro afectadas por js*/
-.filtro-section-1, .filtro-section-2, .filtro-section-3, .filtro-section-4, .filtro-section-5, .filtro-section-6, .filtro-section-7 {
+.filtro-sections-1, .filtro-sections-2, .filtro-sections-3, .filtro-sections-4, .filtro-sections-5, .filtro-sections-6, .filtro-sections-7 {
     display: none;
   }
 
-  .visible {
+  .visibles {
     display: block;
-    text-align: left;
+    text-align:left;
   }
 
 

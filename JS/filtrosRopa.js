@@ -7,9 +7,9 @@ document.addEventListener("DOMContentLoaded", function() {
         desplegarFiltro.addEventListener("click", function(event) {
 
             let filtroActual = event.currentTarget;
-            let opciones = filtroActual.querySelectorAll('.filtro-section-1, .filtro-section-2, .filtro-section-3, .filtro-section-4, .filtro-section-5, .filtro-section-6, .filtro-section-7');
+            let opciones = filtroActual.querySelectorAll('.filtro-sections-1, .filtro-sections-2, .filtro-sections-3, .filtro-sections-4, .filtro-sections-5, .filtro-sections-6, .filtro-sections-7');
             opciones.forEach(function(opcion) {
-                opcion.classList.toggle("visible");
+                opcion.classList.toggle("visibles");
             });
         });
     });

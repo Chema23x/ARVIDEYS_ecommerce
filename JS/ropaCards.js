@@ -11,19 +11,31 @@ var callBack = function (datos) {
 
     var filtrosActivos = [];
 
-    // Manejar eventos de clic en los elementos de filtro
-    var filterItems = document.querySelectorAll('.filter-item');
-    filterItems.forEach(item => {
-        item.addEventListener('click', function () {
+  // Manejar eventos de clic en los elementos de filtro
+var filterItems = document.querySelectorAll('.filter-item');
+filterItems.forEach(item => {
+    item.addEventListener('click', function () {
+        // Verificar si se hizo clic en "Todo"
+        if (item.id === 'todo') {
+            // Limpiar filtrosActivos
+            filtrosActivos = [];
+
+            // Desmarcar checkboxes con la clase 'filtro-checkbox'
+            var checkboxes = document.querySelectorAll('.filtro-checkbox');
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = false;
+            });
+        } else {
             var categoria = item.getAttribute('category');
             if (filtrosActivos.includes(categoria)) {
                 filtrosActivos = filtrosActivos.filter(filtro => filtro !== categoria);
             } else {
                 filtrosActivos.push(categoria);
             }
-            mostrarTarjetas(filtrosActivos);
-        });
+        }
+        mostrarTarjetas(filtrosActivos);
     });
+});
 
     function mostrarTarjetas(filtros) {
         var html = "";
