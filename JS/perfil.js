@@ -107,6 +107,20 @@ botonCargarImagen.addEventListener('click', () => {
             imagenPerfil.style.width = '200px'; 
             imagenPerfil.style.height = '200px';
             localStorage.setItem('imagenPerfil', reader.result);
+
+             const imagenPerfilSegundoHTML = document.getElementById('imagenPerfilSegundo');
+             if (imagenPerfilSegundoHTML) {
+                 imagenPerfilSegundoHTML.src = reader.result;
+                 imagenPerfilSegundoHTML.style.width = '200px'; 
+                 imagenPerfilSegundoHTML.style.height = '200px'; 
+             }
+             const imagenPerfilTercerHTML = document.getElementById('imagenPerfilTercer');
+             if (imagenPerfilTercerHTML) {
+                 imagenPerfilTercerHTML.src = reader.result;
+                 imagenPerfilTercerHTML.style.width = '200px'; 
+                 imagenPerfilTercerHTML.style.height = '200px'; 
+             }
+        
         };
 
         if (file) {
@@ -125,6 +139,19 @@ window.addEventListener('load', () => {
         imagenPerfil.src = imagenGuardada;
         imagenPerfil.style.width = '200px'; 
         imagenPerfil.style.height = '200px';
+         const imagenPerfilSegundoHTML = document.getElementById('imagenPerfilSegundo');
+         if (imagenPerfilSegundoHTML) {
+             imagenPerfilSegundoHTML.src = imagenGuardada;
+             imagenPerfilSegundoHTML.style.width = '200px'; 
+             imagenPerfilSegundoHTML.style.height = '200px'; 
+         }
+         const imagenPerfilTercerHTML = document.getElementById('imagenPerfilTercer');
+         if (imagenPerfilTercerHTML){
+             imagenPerfilTercerHTML.src = imagenGuardada;
+             imagenPerfilTercerHTML.style.width = '200px'; 
+             imagenPerfilTercerHTML.style.height = '200px'; 
+         }
     }
+
 });
 

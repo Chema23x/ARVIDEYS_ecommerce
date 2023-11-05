@@ -1,19 +1,19 @@
 
 
-// Clase cupon-disponible
-const cuponContainer = document.querySelector('.cupon-disponible');
+// // Clase cupon-disponible
+// const cuponContainer = document.querySelector('.cupon-disponible');
 
-// ¿Usuario Registrado?
-if (isUserLoggedIn) {
-  // Usuario Registrado
-  cuponContainer.innerHTML = `
-    <h3>Tienes un cupón disponible del 10% de descuento</h3>
-    <p>Utiliza el código: <strong>CUPON10</strong> al finalizar tu compra para aplicar el descuento.</p>
-  `;
-} else {
-  // Usuario no registrado
-  cuponContainer.innerHTML = '<p>No tienes ningún cupón disponible en este momento.</p>';
-}
+// // ¿Usuario Registrado?
+// if (isUserLoggedIn) {
+//   // Usuario Registrado
+//   cuponContainer.innerHTML = `
+//     <h3>Tienes un cupón disponible del 10% de descuento</h3>
+//     <p>Utiliza el código: <strong>CUPON10</strong> al finalizar tu compra para aplicar el descuento.</p>
+//   `;
+// } else {
+//   // Usuario no registrado
+//   cuponContainer.innerHTML = '<p>No tienes ningún cupón disponible en este momento.</p>';
+// }
 
 
 //Confeti
@@ -48,3 +48,15 @@ function startConfeti() {
     }, 250);
 }
 
+//Foto
+window.addEventListener('load', () => {
+ const imagenGuardada = localStorage.getItem('imagenPerfil');
+  if (imagenGuardada) {
+     const imagenPerfilTercerHTML = document.getElementById('imagenPerfilTercer');
+      if (imagenPerfilTercerHTML) {
+           imagenPerfilTercerHTML.src = imagenGuardada;
+           imagenPerfilTercerHTML.style.width = '200px'; 
+           imagenPerfilTercerHTML.style.height = '200px'; 
+       }
+   }
+ });

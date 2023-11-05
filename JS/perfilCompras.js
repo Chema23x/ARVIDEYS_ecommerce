@@ -30,3 +30,18 @@ document.addEventListener("DOMContentLoaded", function () {
         comprasBody.appendChild(message);
     }
 });
+
+
+//Foto
+
+window.addEventListener('load', () => {
+   const imagenGuardada = localStorage.getItem('imagenPerfil');
+    if (imagenGuardada) {
+         const imagenPerfilSegundoHTML = document.getElementById('imagenPerfilSegundo');
+         if (imagenPerfilSegundoHTML) {
+             imagenPerfilSegundoHTML.src = imagenGuardada;
+             imagenPerfilSegundoHTML.style.width = '200px';
+             imagenPerfilSegundoHTML.style.height = '200px'; 
+         }
+     }
+ });
