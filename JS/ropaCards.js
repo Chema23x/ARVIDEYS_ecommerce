@@ -37,43 +37,43 @@ filterItems.forEach(item => {
     });
 });
 
-    function mostrarTarjetas(filtros) {
-        var html = "";
-        app.ropa.forEach(ropa => {
-            ropa.CantidadEnCarrito = 0;
-            var cumpleFiltros = true;
-            filtros.forEach(filtro => {
-                if (filtro !== "all" && !ropa.Talla.includes(filtro) && !ropa.Color.includes(filtro) && !ropa['Tipo de bordado'].includes(filtro)) {
-                    cumpleFiltros = false;
-                }
-            });
+function mostrarTarjetas(filtros) {
+    var html = "";
+    var cumpleFiltros = false;
 
-            if (cumpleFiltros) {
-                html += `
-                    <div class="product-card">
-                        <figure>
-                            <img src="${ropa.img}" alt="${ropa.Nombre}" class="product-image">
-                        </figure>
-                        <div class="product-details">
-                            <h2>${ropa.Nombre}</h2>
-                            <ul>
-                                <li>Talla: ${ropa.Talla}</li>
-                                <li>Precio: $${ropa.Precio}</li>
-                                <li>Color: ${ropa.Color}</li>
-                                <li>Tipo de bordado: ${ropa['Tipo de bordado']}</li>
-                            </ul>
-                            <div class="boton">
-                                <button id="buttonCart" class="cssbuttons-io">
-                                    <span>Añadir al carrito</span>
-                                </button>
-                            </div>
+    if (filtros.length === 0 || filtros.includes("all")) {
+        cumpleFiltros = true;
+    }
+
+    app.ropa.forEach(ropa => {
+        ropa.CantidadEnCarrito = 0;
+
+        if (cumpleFiltros || filtros.some(filtro => ropa.Talla.includes(filtro) || ropa.Color.includes(filtro) || ropa['Tipo de bordado'].includes(filtro))) {
+            html += `
+                <div class="product-card">
+                    <figure>
+                        <img src="${ropa.img}" alt="${ropa.Nombre}" class="product-image">
+                    </figure>
+                    <div class="product-details">
+                        <h2>${ropa.Nombre}</h2>
+                        <ul>
+                            <li>Talla: ${ropa.Talla}</li>
+                            <li>Precio: $${ropa.Precio}</li>
+                            <li>Color: ${ropa.Color}</li>
+                            <li>Tipo de bordado: ${ropa['Tipo de bordado']}</li>
+                        </ul>
+                        <div class="boton">
+                            <button class="cssbuttons-io">
+                                <span>Añadir al carrito</span>
+                            </button>
                         </div>
                     </div>
-                `;
-            }
-        });
+                </div>
+            `;
+        }
+    });
 
-        document.getElementById("articles-container").innerHTML = html;
+    document.getElementById("articles-container").innerHTML = html;
 
         // Agrega el evento de clic a los botones de añadir al carrito
         let botones = document.querySelectorAll(".cssbuttons-io");
