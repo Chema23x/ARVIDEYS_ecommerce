@@ -50,19 +50,44 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <p>Cantidad de Productos a Comprar: <span id="cantidadProductos"></span></p>
-            <p>Total del Carrito: $<span id="totalCarritoModal"></span></p>
+            <p>Productos Adquiridos</p>
+            <div id="imagenesCarrito" class="row"></div>
+            <!-- <p>Cantidad de Productos a Comprar: <span id="cantidadProductos"></span></p> -->
+            <p class="mt-3">Total del Carrito: $<span id="totalCarritoModal"></span></p>
             <p>Costo de Envio: $<span id="costoEnvio"></span></p>
-            <p>Cupon de descuento<span id="cupon"></span></p>
+            <p id="cupon" class="cuponText"><i class="bi bi-piggy-bank-fill iconos"></i>&nbsp;&nbsp;Cupon de descuento</p>
             <p>Total de la Compra: $<span id="totalCompra"></span></p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" id="deleteButton" class="btn" data-bs-dismiss="modal">Cancelar</button>
             <button type="button" class="btn cssbuttons-io" id="confirmarCompra"><span>Confirmar Compra</span></button>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Modal Cupon-->
+<div class="modal fade" id="cuponModal" tabindex="-1" aria-labelledby="cuponModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="cuponInput" class="form-label">Cupón</label>
+            <input type="text" class="form-control" id="cuponInput">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn cssbuttons-io" id="aplicarCupon"><span>Aplicar Cupón</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
     <!-- Modal de ingreso de datos de pago -->
 <div class="modal fade modal-lg" id="pagoModal" tabindex="-1" aria-labelledby="pagoModal" aria-hidden="true">
@@ -80,7 +105,7 @@
               <p id="validacionNombre" class="alert-text"></p>
             </div>
             <div class="mb-3">
-              <label for="numeroTarjeta" class="form-label">Número de Tarjeta</label>
+              <i class="bi bi-credit-card-2-front-fill iconos"></i><label for="numeroTarjeta" class="form-label">&nbsp;&nbsp;Número de Tarjeta</label>
               <input type="text" class="form-control" id="numeroTarjeta">
               <p id="validacionNumero" class="alert-text"></p>
             </div>
@@ -90,12 +115,12 @@
               <p id="validacionFecha" class="alert-text"></p>
             </div>
             <div class="mb-3">
-              <label for="cvv" class="form-label">CVV</label>
+              <i class="bi bi-credit-card-2-back-fill iconos"></i><label for="cvv" class="form-label">&nbsp;&nbsp;CVV</label>
               <input type="text" class="form-control" id="cvv">
               <p id="validacionCvv" class="alert-text"></p>
             </div>
             <div class="modal-footer mt-2">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" id="deleteButton" class="btn" data-bs-dismiss="modal">Cancelar</button>
               <button type="submit" class="btn cssbuttons-io" id="confirmarPago"><span>Confirmar Pago</span></button>
             </div>
           </form>
