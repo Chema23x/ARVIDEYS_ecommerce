@@ -4,6 +4,7 @@ let carrito = JSON.parse(localStorage.getItem('carrito')) || {
     total: 0
 };
 
+
 var app = {};
 var callBack = function (datos) {
     console.log(datos);
@@ -62,6 +63,9 @@ function mostrarTarjetas(filtros) {
                             <li>Color: ${ropa.Color}</li>
                             <li>Tipo de bordado: ${ropa['Tipo de bordado']}</li>
                         </ul>
+                        <div class="alert alert-success" id="alerta" style="display: none;">
+                        ¡Producto añadido con éxito!
+                            </div>
                         <div class="boton">
                             <button class="cssbuttons-io">
                                 <span>Añadir al carrito</span>
@@ -75,16 +79,19 @@ function mostrarTarjetas(filtros) {
 
     document.getElementById("articles-container").innerHTML = html;
 
+
         // Agrega el evento de clic a los botones de añadir al carrito
         let botones = document.querySelectorAll(".cssbuttons-io");
         botones.forEach((boton, index) => {
-            boton.addEventListener('click', () => {
+            boton.addEventListener('click', function () {
                 const productoId = app.ropa[index].Id;
                 const repeatProduct = carrito.productos.find(producto => producto.id === productoId);
-
+        
                 if (repeatProduct) {
                     repeatProduct.cantidad += 1;
                     carrito.total += app.ropa[index].Precio;
+                    localStorage.setItem('carrito', JSON.stringify(carrito));
+
                 } else {
                     const producto = {
                         id: app.ropa[index].Id,
@@ -98,14 +105,31 @@ function mostrarTarjetas(filtros) {
                     carrito.productos.push(producto);
                     app.ropa[index].CantidadEnCarrito += 1;
                     carrito.total += app.ropa[index].Precio;
+
+                    localStorage.setItem('carrito', JSON.stringify(carrito));
                 }
-
-                // Guarda el carrito en el almacenamiento local
-                localStorage.setItem('carrito', JSON.stringify(carrito));
-
-                // Muestra el carrito en la consola
-                console.log(carrito);
+        
+                // Encuentra la alerta específica dentro de la tarjeta actual
+                const tarjeta = this.closest('.product-card');
+                const alerta = tarjeta.querySelector('.alert');
+                alerta.style.display = 'block';
+        
+                // Ocultar la alerta después de 2 segundos
+                setTimeout(() => {
+                    alerta.style.display = 'none';
+                }, 2000);
             });
+        });
+
+
+
+    }
+    // Manejar eventos de clic en los elementos de filtro
+    var filterItems = document.querySelectorAll('.filter-item');
+    filterItems.forEach(item => {
+        item.addEventListener('click', function () {
+            var categoria = item.getAttribute('category');
+            mostrarTarjetas(categoria);
         });
     }
 

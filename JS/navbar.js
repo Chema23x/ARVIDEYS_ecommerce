@@ -10,7 +10,7 @@ var html = test(navbar =>{
      
        
        <li id="botonPerfil" class="navbar-nav">
-         <a  class="nav-link" href="../HTML/Perfil.html"><img class="perfil" src="../ASSETS/ICON/perfil.png" alt="profile"></i></a>
+         <a  class="nav-link" href="../HTML/login.html"><img class="perfil" src="../ASSETS/ICON/perfil.png" alt="profile"></i></a>
        </li>
              
    <!--Sección de carrito de compras-->
@@ -104,7 +104,7 @@ var html = test(navbar =>{
    </ul>
    <div class="menu">
      <li class="navbar-nav">
-       <a class="nav-link" href="../HTML/Perfil.html"><img class="perfil" src="../ASSETS/ICON/perfil.png" alt="profile"></i></a>
+       <a class="nav-link" href="../HTML/login.html"><img class="perfil" src="../ASSETS/ICON/perfil.png" alt="profile"></i></a>
      </li>
            
      <li class="navbar-nav">

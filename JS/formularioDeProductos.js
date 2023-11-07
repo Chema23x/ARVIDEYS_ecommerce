@@ -24,7 +24,7 @@ class UI {
                     <strong> Color:</strong> ${product.colorPrenda}
                     <strong> Tipo de Bordado:</strong> ${product.tipoProducto}
                     <strong> Imagen de Producto: </strong> ${product.imagenProducto}<br>
-                    <button class="btn btn-danger" name="delete">
+                    <button class="btn btn-danger" name="delete" id="deleteButton">
                         Eliminar
                     </button>
                 </div>
@@ -97,7 +97,7 @@ document.getElementById('product-form').addEventListener('submit', function (e) 
     /**Validaciones */
     let validacion = true;
     const validacionURL = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/;
-
+ 
 
     //Categoria
     if (categoriaProducto == 'Categoria') {
@@ -168,6 +168,8 @@ document.getElementById('product-form').addEventListener('submit', function (e) 
                 console.error('Error:', error);
             });
     }
+
+  
 
     //FIN DEL PROCESO POST
     e.preventDefault();
