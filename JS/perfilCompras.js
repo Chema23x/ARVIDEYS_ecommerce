@@ -30,3 +30,36 @@ document.addEventListener("DOMContentLoaded", function () {
         comprasBody.appendChild(message);
     }
 });
+
+
+//Foto
+
+window.addEventListener('load', () => {
+   const imagenGuardada = localStorage.getItem('imagenPerfil');
+    if (imagenGuardada) {
+         const imagenPerfilSegundoHTML = document.getElementById('imagenPerfilSegundo');
+         if (imagenPerfilSegundoHTML) {
+             imagenPerfilSegundoHTML.src = imagenGuardada;
+             imagenPerfilSegundoHTML.style.width = '200px';
+             imagenPerfilSegundoHTML.style.height = '200px'; 
+         }
+     }
+ });
+
+
+
+ //Nombre
+ document.addEventListener('DOMContentLoaded', function () {
+    function updateTitulo(userData) {
+        const titulos = document.getElementsByClassName("titulo");
+        for (let i = 0; i < titulos.length; i++) {
+            titulos[i].textContent = userData.name;
+        }
+    }
+    const userDataString = localStorage.getItem('userData');
+    if (userDataString) {
+        const userData = JSON.parse(userDataString);
+        updateTitulo(userData);
+    }
+});
+
