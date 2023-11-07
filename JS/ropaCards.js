@@ -131,7 +131,7 @@ function mostrarTarjetas(filtros) {
             var categoria = item.getAttribute('category');
             mostrarTarjetas(categoria);
         });
-    }
+    })
 
     mostrarTarjetas(filtrosActivos); // Muestra todas las tarjetas al principio
 };
