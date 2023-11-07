@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const editIcon = document.querySelector('.edit-icon');
     const userNameElement = document.querySelector('.user-name');
     const userEmailElement = document.querySelector('.user-email');
-    const userPhoneElement = document.querySelector('.user-phone');
-    const userAddressElement = document.querySelector('.user-address');
+    const userTelephoneElement = document.querySelector('.user-telephone'); 
+    const userDirectionElement = document.querySelector('.user-direction'); 
 
     function updateTitulo(userData) {
         const titulos = document.getElementsByClassName("titulo");
@@ -15,10 +15,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const userDataString = localStorage.getItem('userData');
     if (userDataString) {
         const userData = JSON.parse(userDataString);
-        userNameElement.textContent = userData.name;
+        userNameElement.textContent = `${userData.name} ${userData.lastName}`;
         userEmailElement.textContent = userData.email;
-        userPhoneElement.textContent = userData.phone;
-        userAddressElement.textContent = userData.address;
+        userTelephoneElement.textContent = userData.telephone; 
+        userDirectionElement.textContent = userData.direction; 
 
         updateTitulo(userData);
     }
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
         spanElement.textContent = 'Guardar';
         saveButton.appendChild(spanElement);
 
-        const inputs = [userNameElement, userEmailElement, userPhoneElement, userAddressElement].map((element, index) => {
+        const inputs = [userNameElement, userEmailElement, userTelephoneElement, userDirectionElement].map((element, index) => {
             const input = document.createElement('input');
             input.value = element.textContent; // Asignar el valor actual al input
             element.innerHTML = '';
@@ -53,17 +53,17 @@ document.addEventListener('DOMContentLoaded', function () {
             } else if (!emailRegex.test(inputs[1].value)) {
                 showAlert('Por favor ingrese un correo electrónico válido', 'danger', userEmailElement);
             } else if (!phoneRegex.test(inputs[2].value)) {
-                showAlert('Por favor ingrese un número de teléfono válido de 10 dígitos', 'danger', userPhoneElement);
+                showAlert('Por favor ingrese un número de teléfono válido de 10 dígitos', 'danger', userTelephoneElement);
             } else {
-                userNameElement.textContent = inputs[0].value; // Actualizar contenido del elemento
+                userNameElement.textContent = inputs[0].value; 
                 userEmailElement.textContent = inputs[1].value;
-                userPhoneElement.textContent = inputs[2].value;
-                userAddressElement.textContent = inputs[3].value;
+                userTelephoneElement.textContent = inputs[2].value;
+                userDirectionElement.textContent = inputs[3].value;
                 const userData = {
                     name: inputs[0].value,
                     email: inputs[1].value,
-                    phone: inputs[2].value,
-                    address: inputs[3].value,
+                    telephone: inputs[2].value,
+                    direction: inputs[3].value, 
                 };
                 localStorage.setItem('userData', JSON.stringify(userData));
 
@@ -82,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
 
 
 
@@ -155,3 +156,18 @@ window.addEventListener('load', () => {
 
 });
 
+
+
+
+//Cerrar Sesion 
+const botonCerrarSesion = document.getElementById('botonCerrarSesion');
+
+botonCerrarSesion.addEventListener('click', function() {
+    localStorage.removeItem("email");
+        localStorage.removeItem("password");
+    window.location.href = "../HTML/login.html";
+    const botonPerfil = document.querySelector("#botonPerfil a");
+    if (botonPerfil) {
+        botonPerfil.setAttribute("href", "../HTML/login.html");
+    }
+});

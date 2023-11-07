@@ -45,3 +45,21 @@ window.addEventListener('load', () => {
          }
      }
  });
+
+
+
+ //Nombre
+ document.addEventListener('DOMContentLoaded', function () {
+    function updateTitulo(userData) {
+        const titulos = document.getElementsByClassName("titulo");
+        for (let i = 0; i < titulos.length; i++) {
+            titulos[i].textContent = userData.name;
+        }
+    }
+    const userDataString = localStorage.getItem('userData');
+    if (userDataString) {
+        const userData = JSON.parse(userDataString);
+        updateTitulo(userData);
+    }
+});
+

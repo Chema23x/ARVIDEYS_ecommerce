@@ -186,3 +186,29 @@ a:hover, a:focus {
 #botonCargarImagen:active {
   transform: scale(0.95);
 }
+
+#botonCerrarSesion {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  font-size: 7px;
+  letter-spacing: 0.05em;
+  border-radius: 0.8em;
+  border: none;
+  overflow: hidden;
+  background-color: #f8d7da;
+  border-color: #f8d7da;
+  color: #dc3545;
+}
+
+#botonCerrarSesion span {
+  position: relative;
+  z-index: 10;
+  transition: color 0.4s;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.8em 1.2em 0.8em 1.05em;
+}
+
