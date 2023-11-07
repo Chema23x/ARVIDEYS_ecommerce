@@ -4,19 +4,56 @@ let carrito = JSON.parse(localStorage.getItem('carrito')) || {
     total: 0
 };
 
-var app = {}
+
+var app = {};
 var callBack = function (datos) {
     console.log(datos);
     app.ropa = datos;
-    function mostrarTarjetas(categoria) {
-        var html = "";
-        app.ropa.forEach(ropa => {
-            ropa.CantidadEnCarrito = 0;
-            if (categoria === "all" || ropa.Talla === categoria || ropa.Color === categoria || ropa['Tipo de bordado'] === categoria) {
-                html += `
+
+    var filtrosActivos = [];
+
+  // Manejar eventos de clic en los elementos de filtro
+var filterItems = document.querySelectorAll('.filter-item');
+filterItems.forEach(item => {
+    item.addEventListener('click', function () {
+        // Verificar si se hizo clic en "Todo"
+        if (item.id === 'todo') {
+            // Limpiar filtrosActivos
+            filtrosActivos = [];
+
+            // Desmarcar checkboxes con la clase 'filtro-checkbox'
+            var checkboxes = document.querySelectorAll('.filtro-checkbox');
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = false;
+            });
+        } else {
+            var categoria = item.getAttribute('category');
+            if (filtrosActivos.includes(categoria)) {
+                filtrosActivos = filtrosActivos.filter(filtro => filtro !== categoria);
+            } else {
+                filtrosActivos.push(categoria);
+            }
+        }
+        mostrarTarjetas(filtrosActivos);
+    });
+});
+
+function mostrarTarjetas(filtros) {
+    var html = "";
+    var cumpleFiltros = false;
+
+    if (filtros.length === 0 || filtros.includes("all")) {
+        cumpleFiltros = true;
+    }
+
+    app.ropa.forEach(ropa => {
+        ropa.CantidadEnCarrito = 0;
+
+        if (cumpleFiltros || filtros.some(filtro => ropa.Talla.includes(filtro) || ropa.Color.includes(filtro) || ropa['Tipo de bordado'].includes(filtro))) {
+            html += `
                 <div class="product-card">
                     <figure>
-                    <img src="${ropa.img}" alt="${ropa.Nombre}" class="product-image">
+                        <img src="${ropa.img}" alt="${ropa.Nombre}" class="product-image">
                     </figure>
                     <div class="product-details">
                         <h2>${ropa.Nombre}</h2>
@@ -30,20 +67,20 @@ var callBack = function (datos) {
                         ¡Producto añadido con éxito!
                             </div>
                         <div class="boton">
-                            <button id="buttonCart" class="cssbuttons-io">
+                            <button class="cssbuttons-io">
                                 <span>Añadir al carrito</span>
                             </button>
                         </div>
                     </div>
                 </div>
             `;
-            }
-        });
+        }
+    });
 
-        // Agrega las tarjetas al contenedor
+    document.getElementById("articles-container").innerHTML = html;
 
-        document.getElementById("articles-container").innerHTML = html;
 
+        // Agrega el evento de clic a los botones de añadir al carrito
         let botones = document.querySelectorAll(".cssbuttons-io");
         botones.forEach((boton, index) => {
             boton.addEventListener('click', function () {
@@ -54,6 +91,7 @@ var callBack = function (datos) {
                     repeatProduct.cantidad += 1;
                     carrito.total += app.ropa[index].Precio;
                     localStorage.setItem('carrito', JSON.stringify(carrito));
+
                 } else {
                     const producto = {
                         id: app.ropa[index].Id,
@@ -67,6 +105,7 @@ var callBack = function (datos) {
                     carrito.productos.push(producto);
                     app.ropa[index].CantidadEnCarrito += 1;
                     carrito.total += app.ropa[index].Precio;
+
                     localStorage.setItem('carrito', JSON.stringify(carrito));
                 }
         
@@ -92,8 +131,7 @@ var callBack = function (datos) {
             var categoria = item.getAttribute('category');
             mostrarTarjetas(categoria);
         });
-    });
+    }
 
-    mostrarTarjetas('all'); // Muestra todas las tarjetas al principio
+    mostrarTarjetas(filtrosActivos); // Muestra todas las tarjetas al principio
 };
-
