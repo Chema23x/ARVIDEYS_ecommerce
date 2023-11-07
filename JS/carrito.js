@@ -244,25 +244,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (nombreTarjeta.value.trim() === '') {
         showAlerta('Nombre no valido', 'validacionNombre');
-        e.preventDefault();
       }
 
       const tarjetaNumeroValidacion = /^\d{16}$/; // 16 dígitos
       if (!tarjetaNumeroValidacion.test(numeroTarjeta.value.replace(/ /g, ''))) {
         showAlerta('Número de tarjeta no valido', 'validacionNumero');
-        e.preventDefault();
       }
 
       const fechaValidacion = /^(0[1-9]|1[0-2])\/\d{2}$/; // MM/YY
       if (!fechaValidacion.test(fechaExpiracion.value)) {
         showAlerta('Fecha de expiracion no valida', 'validacionFecha');
-        e.preventDefault();
       }
 
       const cvvValidacion = /^\d{3,4}$/; // 3 o 4 dígitos
       if (!cvvValidacion.test(cvv.value)) {
         showAlerta('Cvv no valido', 'validacionCvv');
-        e.preventDefault();
       }
 
       if (validacion) {
