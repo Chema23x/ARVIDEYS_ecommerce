@@ -40,16 +40,18 @@ filterItems.forEach(item => {
 
 function mostrarTarjetas(filtros) {
     var html = "";
-    var cumpleFiltros = false;
-
-    if (filtros.length === 0 || filtros.includes("all")) {
-        cumpleFiltros = true;
-    }
-
     app.ropa.forEach(ropa => {
         ropa.CantidadEnCarrito = 0;
+        var cumpleFiltros = true;
 
-        if (cumpleFiltros || filtros.some(filtro => ropa.Talla.includes(filtro) || ropa.Color.includes(filtro) || ropa['Tipo de bordado'].includes(filtro))) {
+        // Verificar si la prenda cumple con al menos uno de los filtros en cada categoría
+        Object.keys(filtros).forEach(categoria => {
+            if (filtros[categoria].length > 0 && !filtros[categoria].some(filtro => ropa[categoria] === filtro)) {
+                cumpleFiltros = false;
+            }
+        });
+
+        if (cumpleFiltros) {
             html += `
                 <div class="product-card">
                     <figure>
@@ -125,13 +127,30 @@ function mostrarTarjetas(filtros) {
 
     }
     // Manejar eventos de clic en los elementos de filtro
+    var filtrosActivos = {
+        Talla: [],
+        Color: [],
+        'Tipo de bordado': []
+    };
+    
+    // Manejar eventos de clic en los elementos de filtro
     var filterItems = document.querySelectorAll('.filter-item');
     filterItems.forEach(item => {
         item.addEventListener('click', function () {
             var categoria = item.getAttribute('category');
-            mostrarTarjetas(categoria);
+            var filtro = item.getAttribute('filter');
+    
+            // Verificar si el filtro ya está seleccionado, si sí, quitarlo; de lo contrario, añadirlo
+            if (filtrosActivos[categoria].includes(filtro)) {
+                filtrosActivos[categoria] = filtrosActivos[categoria].filter(f => f !== filtro);
+            } else {
+                filtrosActivos[categoria].push(filtro);
+            }
+    
+            // Mostrar las tarjetas con los filtros activos
+            mostrarTarjetas(filtrosActivos);
         });
-    })
-
+    });
+    
     mostrarTarjetas(filtrosActivos); // Muestra todas las tarjetas al principio
 };
