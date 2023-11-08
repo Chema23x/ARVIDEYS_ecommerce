@@ -84,10 +84,12 @@ h3 h4 h5 h6 p {
     margin-bottom: 20px;
     background: #A4d0A4;
     cursor: pointer;
+    border-radius: 20px;
 
     text-decoration: none;
     text-align: center;
-    color: #fff;
+    color: black;
+    font-family: 'Raleway', sans-serif;
 }
 
 /*Clases para las secciones del filtro afectadas por js*/
