@@ -4,13 +4,11 @@
   margin-top: 20px;
 }
 
-
 .form-check-input:checked {
   background-color: #617A55  !important; 
   color: white; /* Cambia el color del texto seleccionado */
   box-shadow: none !important;
   border-color: none !important;
-
 }
 
 .form-check-input:focus{
@@ -86,3 +84,21 @@
   .cssbuttons-io:active {
     transform: scale(0.95);
   }
+  #linkContraseña{
+    text-align: center;
+    /* justify-content: center; */
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.2rem;
+    color: black;
+    text-decoration: none;
+}
+
+.form-check{
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.9rem;
+}
+.RemUser{
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.8rem;
+}
+

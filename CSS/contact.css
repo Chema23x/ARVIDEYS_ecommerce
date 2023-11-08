@@ -23,7 +23,7 @@ body {
 #shopCard {
     flex-grow: 1;
     flex-basis: 200;
-    background-color: #A4D0A4;
+    background-color: #ffffff;
     border: 1px solid #617A55;
     border-radius: 20px;
     margin: 5px;
@@ -185,9 +185,19 @@ textarea {
     padding-top: 20px;
 }
 
-#linkContact{
+#linksContact{
     text-align: center;
-    /* justify-content: center; */
     font-family: 'Raleway', sans-serif;
     font-size: 1.2rem;
+    color: black;
+    text-decoration: none;
+    transition: transform 0.2s;
 }
+
+#linksContact:hover{
+    transform: scale(1.1);
+    color: #617461;
+    font-size: 1.3rem;
+}
+
+

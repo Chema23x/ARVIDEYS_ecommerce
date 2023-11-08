@@ -2,8 +2,26 @@ document.addEventListener('DOMContentLoaded', function () {
     const editIcon = document.querySelector('.edit-icon');
     const userNameElement = document.querySelector('.user-name');
     const userEmailElement = document.querySelector('.user-email');
-    const userPhoneElement = document.querySelector('.user-phone');
-    const userAddressElement = document.querySelector('.user-address');
+    const userTelephoneElement = document.querySelector('.user-telephone'); 
+    const userDirectionElement = document.querySelector('.user-direction'); 
+
+    function updateTitulo(userData) {
+        const titulos = document.getElementsByClassName("titulo");
+        for (let i = 0; i < titulos.length; i++) {
+            titulos[i].textContent = userData.name;
+        }
+    }
+
+    const userDataString = localStorage.getItem('userData');
+    if (userDataString) {
+        const userData = JSON.parse(userDataString);
+        userNameElement.textContent = `${userData.name} ${userData.lastName}`;
+        userEmailElement.textContent = userData.email;
+        userTelephoneElement.textContent = userData.telephone; 
+        userDirectionElement.textContent = userData.direction; 
+
+        updateTitulo(userData);
+    }
 
     editIcon.addEventListener('click', () => {
         const nameRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]*$/;
@@ -16,9 +34,9 @@ document.addEventListener('DOMContentLoaded', function () {
         spanElement.textContent = 'Guardar';
         saveButton.appendChild(spanElement);
 
-        const inputs = [userNameElement, userEmailElement, userPhoneElement, userAddressElement].map((element, index) => {
+        const inputs = [userNameElement, userEmailElement, userTelephoneElement, userDirectionElement].map((element, index) => {
             const input = document.createElement('input');
-            input.value = element.textContent;
+            input.value = element.textContent; // Asignar el valor actual al input
             element.innerHTML = '';
             element.appendChild(input);
             if (index === 3) {
@@ -35,12 +53,21 @@ document.addEventListener('DOMContentLoaded', function () {
             } else if (!emailRegex.test(inputs[1].value)) {
                 showAlert('Por favor ingrese un correo electrónico válido', 'danger', userEmailElement);
             } else if (!phoneRegex.test(inputs[2].value)) {
-                showAlert('Por favor ingrese un número de teléfono válido de 10 dígitos', 'danger', userPhoneElement);
+                showAlert('Por favor ingrese un número de teléfono válido de 10 dígitos', 'danger', userTelephoneElement);
             } else {
-                userNameElement.innerHTML = inputs[0].value;
-                userEmailElement.innerHTML = inputs[1].value;
-                userPhoneElement.innerHTML = inputs[2].value;
-                userAddressElement.innerHTML = inputs[3].value;
+                userNameElement.textContent = inputs[0].value; 
+                userEmailElement.textContent = inputs[1].value;
+                userTelephoneElement.textContent = inputs[2].value;
+                userDirectionElement.textContent = inputs[3].value;
+                const userData = {
+                    name: inputs[0].value,
+                    email: inputs[1].value,
+                    telephone: inputs[2].value,
+                    direction: inputs[3].value, 
+                };
+                localStorage.setItem('userData', JSON.stringify(userData));
+
+                updateTitulo(userData);
             }
         });
 
@@ -55,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
 
 
 
@@ -77,6 +105,23 @@ botonCargarImagen.addEventListener('click', () => {
 
         reader.onload = function () {
             imagenPerfil.src = reader.result;
+            imagenPerfil.style.width = '200px'; 
+            imagenPerfil.style.height = '200px';
+            localStorage.setItem('imagenPerfil', reader.result);
+
+             const imagenPerfilSegundoHTML = document.getElementById('imagenPerfilSegundo');
+             if (imagenPerfilSegundoHTML) {
+                 imagenPerfilSegundoHTML.src = reader.result;
+                 imagenPerfilSegundoHTML.style.width = '200px'; 
+                 imagenPerfilSegundoHTML.style.height = '200px'; 
+             }
+             const imagenPerfilTercerHTML = document.getElementById('imagenPerfilTercer');
+             if (imagenPerfilTercerHTML) {
+                 imagenPerfilTercerHTML.src = reader.result;
+                 imagenPerfilTercerHTML.style.width = '200px'; 
+                 imagenPerfilTercerHTML.style.height = '200px'; 
+             }
+        
         };
 
         if (file) {
@@ -89,4 +134,40 @@ botonCargarImagen.addEventListener('click', () => {
     document.body.removeChild(fileInput);
 });
 
+window.addEventListener('load', () => {
+    const imagenGuardada = localStorage.getItem('imagenPerfil');
+    if (imagenGuardada) {
+        imagenPerfil.src = imagenGuardada;
+        imagenPerfil.style.width = '200px'; 
+        imagenPerfil.style.height = '200px';
+         const imagenPerfilSegundoHTML = document.getElementById('imagenPerfilSegundo');
+         if (imagenPerfilSegundoHTML) {
+             imagenPerfilSegundoHTML.src = imagenGuardada;
+             imagenPerfilSegundoHTML.style.width = '200px'; 
+             imagenPerfilSegundoHTML.style.height = '200px'; 
+         }
+         const imagenPerfilTercerHTML = document.getElementById('imagenPerfilTercer');
+         if (imagenPerfilTercerHTML){
+             imagenPerfilTercerHTML.src = imagenGuardada;
+             imagenPerfilTercerHTML.style.width = '200px'; 
+             imagenPerfilTercerHTML.style.height = '200px'; 
+         }
+    }
 
+});
+
+
+
+
+//Cerrar Sesion 
+const botonCerrarSesion = document.getElementById('botonCerrarSesion');
+
+botonCerrarSesion.addEventListener('click', function() {
+    localStorage.removeItem("email");
+        localStorage.removeItem("password");
+    window.location.href = "../HTML/login.html";
+    const botonPerfil = document.querySelector("#botonPerfil a");
+    if (botonPerfil) {
+        botonPerfil.setAttribute("href", "../HTML/login.html");
+    }
+});

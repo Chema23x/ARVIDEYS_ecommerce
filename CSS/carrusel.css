@@ -11,26 +11,12 @@ font-family: 'Raleway', sans-serif;
     margin-bottom: 30px;
     padding: 20px;
 }
-
 .card-title {
     margin-top: 20px;
     color: #617A55;
     font-family: 'Molengo', sans-serif;
 }
 
-/* Para pantallas más grandes o iguales a 768px */
-@media (min-width: 768px) {
-    .container-md {
-        max-width: 720px;
-    }
-}
-
-/* Para pantallas más grandes o iguales a 576px */
-@media (min-width: 576px) {
-    .container-sm {
-        max-width: 540px;
-    }
-}
 
 .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
     width: 100%;
@@ -39,10 +25,11 @@ font-family: 'Raleway', sans-serif;
     margin-right: auto;
     margin-left: auto;
 }
+
 *, ::after, ::before {
     box-sizing: border-box;
 }
-user agent stylesheet
+
 div {
     display: block;
 }
