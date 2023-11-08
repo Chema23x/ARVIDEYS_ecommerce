@@ -77,22 +77,23 @@ document.addEventListener("DOMContentLoaded", function() {
     if (botonPerfil) {
         botonPerfil.setAttribute("href", "../HTML/Perfil.html");
     }
+    const showPasswordCheckbox = document.getElementById("showPasswordCheckbox");
+    if (showPasswordCheckbox) {
+        showPasswordCheckbox.addEventListener("change", togglePassword);
+    }
 });
 
 
 // Muestra u oculta contraseña
-document.addEventListener("DOMContentLoaded", function() {
-    const passwordInput = document.getElementById("exampleInputPassword1");
-    const showPasswordCheckbox = document.getElementById("showPasswordCheckbox");
-
-    showPasswordCheckbox.addEventListener("change", function() {
-        if (this.checked) {
-            passwordInput.type = "text";
-        } else {
-            passwordInput.type = "password";
-        }
-    });
-});
+function togglePassword() {
+    var passwordInput = document.getElementById("exampleInputPassword1");
+    var checkbox = document.getElementById("showPasswordCheckbox");
+    if (checkbox.checked) {
+        passwordInput.type = "text";
+    } else {
+        passwordInput.type = "password";
+    }
+}
 
 
 
