@@ -1,14 +1,16 @@
 class Product {
-    constructor(categoriaProducto, precioUnitario, cantidadProducto, tallaProducto, colorPrenda, tipoProducto,imagenProducto) {
+    constructor(categoriaProducto, price, quantity, size, product_color, embroidery_type,product_image) {
         this.categoriaProducto = categoriaProducto;
-        this.precioUnitario = precioUnitario;
-        this.cantidadProducto = cantidadProducto;
-        this.tallaProducto = tallaProducto;
-        this.colorPrenda = colorPrenda;
-        this.tipoProducto = tipoProducto;
-        this.imagenProducto = imagenProducto;
+        this.price = price;
+        this.quantity = quantity;
+        this.size = size;
+        this.product_color = product_color;
+        this.embroidery_type = embroidery_type;
+        this.product_image = product_image;
     }
 }
+
+delete Product.categoriaProducto;
 
 class UI {
     addProduct(product) {
@@ -18,12 +20,12 @@ class UI {
             <div class="card text-center mb-4">
                 <div class="card-body">
                     <strong> Tipo De Producto:</strong> ${product.categoriaProducto}
-                    <strong> Precio:</strong> ${product.precioUnitario}
-                    <strong> Cantidad:</strong> ${product.cantidadProducto}<br>
-                    <strong> Talla:</strong> ${product.tallaProducto}
-                    <strong> Color:</strong> ${product.colorPrenda}
-                    <strong> Tipo de Bordado:</strong> ${product.tipoProducto}
-                    <strong> Imagen de Producto: </strong> ${product.imagenProducto}<br>
+                    <strong> Precio:</strong> ${product.price}
+                    <strong> Cantidad:</strong> ${product.quantity}<br>
+                    <strong> Talla:</strong> ${product.size}
+                    <strong> Color:</strong> ${product.product_color}
+                    <strong> Tipo de Bordado:</strong> ${product.embroidery_type}
+                    <strong> Imagen de Producto: </strong> ${product.product_image}<br>
                     <button class="btn btn-danger" name="delete" id="deleteButton">
                         Eliminar
                     </button>
@@ -70,12 +72,12 @@ function showDeleteAlert() {
 
 document.getElementById('product-form').addEventListener('submit', function (e) {
     const categoriaProducto = document.getElementById('categoriaProducto').value;
-    const precioUnitario = parseFloat(document.getElementById('precioUnitario').value);
-    const cantidadProducto = parseFloat(document.getElementById('cantidadProducto').value);
-    const tallaProducto = document.getElementById('tallaProducto').value;
-    const colorPrenda = document.getElementById('colorPrenda').value;
-    const tipoProducto = document.getElementById('tipoProducto').value;
-    const imagenProducto = document.getElementById('imagenProducto').value;
+    const price = parseFloat(document.getElementById('precioUnitario').value);
+    const quantity = parseFloat(document.getElementById('cantidadProducto').value);
+    const size = document.getElementById('tallaProducto').value;
+    const product_color = document.getElementById('colorPrenda').value;
+    const embroidery_type = document.getElementById('tipoProducto').value;
+    const product_image = document.getElementById('imagenProducto').value;
 
     //Alerta
 
@@ -106,57 +108,59 @@ document.getElementById('product-form').addEventListener('submit', function (e) 
     }
 
     //Precio 
-    if (isNaN(precioUnitario) || (precioUnitario) <= 0 || precioUnitario == '') {
+    if (isNaN(price) || (price) <= 0 || price == '') {
         mostrarAlerta('Por favor, ingrese un precio de la prenda', 'validacionPrecio');
         e.preventDefault();
     }
     //Cantidad
-    if (isNaN(cantidadProducto) || (cantidadProducto) <= 0 || cantidadProducto == '') {
+    if (isNaN(quantity) || (quantity) <= 0 || quantity == '') {
         mostrarAlerta('Por favor, ingresa una cantidad valida', 'validacionCantidad');
         e.preventDefault();
     }
     //Talla
-    if (tallaProducto == 'Talla') {
+    if (size == 'Talla') {
         mostrarAlerta('Por favor, seleccione una talla', 'validacionTalla');
         e.preventDefault();
     }
 
     //Color
-    if (colorPrenda == 'Color De Prendas') {
+    if (product_color == 'Color De Prendas') {
         mostrarAlerta('Por favor, seleccione un color', 'validacionColor');
         e.preventDefault();
     }
     //Tipo de Bordado
-    if (tipoProducto == 'Tipo De Bordado') {
+    if (embroidery_type == 'Tipo De Bordado') {
         mostrarAlerta('Por favor, seleccione un tipo de bordado', 'validacionBordado');
         e.preventDefault();
     }
 
     //Imagen
 
-    if (!validacionURL.test(imagenProducto)){
+    if (!validacionURL.test(product_image)){
         mostrarAlerta('Por favor, igrese un URL valido', 'validacionImagen');
         e.preventDefault();
     }
 
     if (validacion) {
-        console.log(categoriaProducto, precioUnitario, cantidadProducto, tallaProducto, colorPrenda, tipoProducto,imagenProducto);
-        const product = new Product(categoriaProducto, precioUnitario, cantidadProducto, tallaProducto, colorPrenda, tipoProducto,imagenProducto);
+        
+        console.log(categoriaProducto, price, quantity, size, product_color, embroidery_type,product_image);
+        const product = new Product(categoriaProducto, price, quantity, size, product_color, embroidery_type,product_image);
         const ui = new UI();
 
         ui.addProduct(product);
         ui.showAddAlert();
         ui.resetForm();
-        console.log(new Product(categoriaProducto, precioUnitario, cantidadProducto, tallaProducto, colorPrenda, tipoProducto,imagenProducto));
+        console.log(new Product(categoriaProducto, price, quantity, size, product_color, embroidery_type,product_image));
 
 
         // Funcion listaProductoJSON sera enviada a un formato JSON para una reutilizacion posterior
         const listaProductoJSON = JSON.stringify(product);
-        console.log(listaProductoJSON);
-        fetch('https://jsonplaceholder.typicode.com/posts', {
+
+        fetch('http://localhost:8080/api/products?categoryId=3', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json;'
+                'Content-Type': 'application/json'
+                // Agrega otros encabezados si es necesario
             },
             body: listaProductoJSON
         })
