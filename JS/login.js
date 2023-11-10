@@ -27,9 +27,8 @@ document.getElementById('loginOn').addEventListener('click', function (e) {
     const userDataString = localStorage.getItem('userData');
     if (userDataString) {
         const userData = JSON.parse(userDataString);
-        if (userData.email === email && userData.password === password) {
+        if (userData.email_address === email && userData.password === password) {
             parrafo.innerHTML = "Inicio de sesión exitoso";
-
             
             // Redirecciona después de 2.5 segundos
             setTimeout(() => {
@@ -48,18 +47,18 @@ document.getElementById('loginOn').addEventListener('click', function (e) {
 
     // Validaciones y almacenamiento en localStorage
     if (Validation && rememberUser) {
-        localStorage.setItem("email", email);
+        localStorage.setItem("email_address", email);
         localStorage.setItem("password", password);
     } else if (!rememberUser) {
-        localStorage.removeItem("email");
+        localStorage.removeItem("email_address");
         localStorage.removeItem("password");
     }
 });
 
 // Código para llenar los campos de entrada con los datos almacenados
-if (localStorage.getItem("email") && localStorage.getItem("password")) {
+if (localStorage.getItem("email_address") && localStorage.getItem("password")) {
     // Recupera los datos almacenados en localStorage
-    const rememberUserLS = localStorage.getItem("email");
+    const rememberUserLS = localStorage.getItem("email_address");
     const rememberPasswordLS = localStorage.getItem("password");
 
     // Llena los campos de entrada con los datos almacenados
@@ -68,7 +67,7 @@ if (localStorage.getItem("email") && localStorage.getItem("password")) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    if (localStorage.getItem("email") && localStorage.getItem("password")) {
+    if (localStorage.getItem("email_address") && localStorage.getItem("password")) {
         // Si hay sesion ya iniciada redirige al perfil de
         window.location.href = "../HTML/Perfil.html";
     }

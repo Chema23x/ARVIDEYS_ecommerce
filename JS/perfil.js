@@ -8,18 +8,17 @@ document.addEventListener('DOMContentLoaded', function () {
     function updateTitulo(userData) {
         const titulos = document.getElementsByClassName("titulo");
         for (let i = 0; i < titulos.length; i++) {
-            titulos[i].textContent = userData.name;
+            titulos[i].textContent = userData.first_name;
         }
     }
 
     const userDataString = localStorage.getItem('userData');
     if (userDataString) {
         const userData = JSON.parse(userDataString);
-        userNameElement.textContent = `${userData.name} ${userData.lastName}`;
-        userEmailElement.textContent = userData.email;
-        userTelephoneElement.textContent = userData.telephone; 
-        userDirectionElement.textContent = userData.direction; 
-
+        userNameElement.textContent = `${userData.first_name}`;
+        userEmailElement.textContent = userData.email_address;
+        userTelephoneElement.textContent = userData.phone_number; 
+        userDirectionElement.textContent = userData.address; 
         updateTitulo(userData);
     }
 
